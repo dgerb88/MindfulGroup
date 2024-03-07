@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class BreathViewController: UIViewController {
     
     @IBOutlet weak var circleView: UIView!
     @IBOutlet weak var instructionLabel: UILabel!
