@@ -3,8 +3,8 @@
 //  mindfulness
 //
 //  Created by Dax on 4/15/24.
-//  Made a branch, let's see. Something else
-//
+//  Made a branch
+//  Andrew made a branch
 
 import UIKit
 
