@@ -2,7 +2,7 @@
 //  ViewController.swift
 //  mindfulness
 //
-//  Created by Brayden Lemke on 2/27/24.
+//  Created by Dax on 4/15/24.
 //
 
 import UIKit
