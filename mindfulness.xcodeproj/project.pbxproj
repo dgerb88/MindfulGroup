@@ -20,6 +20,7 @@
 		A379CC3D2B8F9323005D9F8B /* InitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A379CC3C2B8F9323005D9F8B /* InitialViewController.swift */; };
 		A379CC3F2B962EED005D9F8B /* QuoteController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A379CC3E2B962EED005D9F8B /* QuoteController.swift */; };
 		A379CC412B962F05005D9F8B /* Quote.swift in Sources */ = {isa = PBXBuildFile; fileRef = A379CC402B962F05005D9F8B /* Quote.swift */; };
+		FCAB004F2BD02A2E0098C644 /* JournalTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCAB004E2BD02A2E0098C644 /* JournalTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		A379CC3C2B8F9323005D9F8B /* InitialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialViewController.swift; sourceTree = "<group>"; };
 		A379CC3E2B962EED005D9F8B /* QuoteController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteController.swift; sourceTree = "<group>"; };
 		A379CC402B962F05005D9F8B /* Quote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quote.swift; sourceTree = "<group>"; };
+		FCAB004E2BD02A2E0098C644 /* JournalTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +82,7 @@
 				4F750A452BD017C000FA120D /* MeditationViewController.swift */,
 				4F750A4B2BD0283900FA120D /* MeditationSecondViewController.swift */,
 				4F750A412BCEDB6D00FA120D /* Journal.storyboard */,
+				FCAB004E2BD02A2E0098C644 /* JournalTableViewController.swift */,
 				4F750A432BCEDB8900FA120D /* Breathing.storyboard */,
 				A379CC342B8E36B5005D9F8B /* Info.plist */,
 				A379CC3E2B962EED005D9F8B /* QuoteController.swift */,
@@ -165,6 +168,7 @@
 				A379CC3F2B962EED005D9F8B /* QuoteController.swift in Sources */,
 				A379CC2B2B8E36B4005D9F8B /* BreathViewController.swift in Sources */,
 				A379CC272B8E36B4005D9F8B /* AppDelegate.swift in Sources */,
+				FCAB004F2BD02A2E0098C644 /* JournalTableViewController.swift in Sources */,
 				A379CC292B8E36B4005D9F8B /* SceneDelegate.swift in Sources */,
 				4F750A462BD017C000FA120D /* MeditationViewController.swift in Sources */,
 				A379CC412B962F05005D9F8B /* Quote.swift in Sources */,
