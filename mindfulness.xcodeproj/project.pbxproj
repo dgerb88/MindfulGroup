@@ -9,10 +9,11 @@
 /* Begin PBXBuildFile section */
 		4F750A422BCEDB6D00FA120D /* Journal.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F750A412BCEDB6D00FA120D /* Journal.storyboard */; };
 		4F750A442BCEDB8900FA120D /* Breathing.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F750A432BCEDB8900FA120D /* Breathing.storyboard */; };
+		4F750A462BD017C000FA120D /* MeditationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F750A452BD017C000FA120D /* MeditationViewController.swift */; };
 		A379CC272B8E36B4005D9F8B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A379CC262B8E36B4005D9F8B /* AppDelegate.swift */; };
 		A379CC292B8E36B4005D9F8B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A379CC282B8E36B4005D9F8B /* SceneDelegate.swift */; };
 		A379CC2B2B8E36B4005D9F8B /* BreathViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A379CC2A2B8E36B4005D9F8B /* BreathViewController.swift */; };
-		A379CC2E2B8E36B4005D9F8B /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A379CC2C2B8E36B4005D9F8B /* Home.storyboard */; };
+		A379CC2E2B8E36B4005D9F8B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A379CC2C2B8E36B4005D9F8B /* Main.storyboard */; };
 		A379CC302B8E36B5005D9F8B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A379CC2F2B8E36B5005D9F8B /* Assets.xcassets */; };
 		A379CC332B8E36B5005D9F8B /* Meditation.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A379CC312B8E36B5005D9F8B /* Meditation.storyboard */; };
 		A379CC3D2B8F9323005D9F8B /* InitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A379CC3C2B8F9323005D9F8B /* InitialViewController.swift */; };
@@ -23,11 +24,12 @@
 /* Begin PBXFileReference section */
 		4F750A412BCEDB6D00FA120D /* Journal.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Journal.storyboard; sourceTree = "<group>"; };
 		4F750A432BCEDB8900FA120D /* Breathing.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Breathing.storyboard; sourceTree = "<group>"; };
+		4F750A452BD017C000FA120D /* MeditationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeditationViewController.swift; sourceTree = "<group>"; };
 		A379CC232B8E36B4005D9F8B /* mindfulness.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mindfulness.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A379CC262B8E36B4005D9F8B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A379CC282B8E36B4005D9F8B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		A379CC2A2B8E36B4005D9F8B /* BreathViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreathViewController.swift; sourceTree = "<group>"; };
-		A379CC2D2B8E36B4005D9F8B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Home.storyboard; sourceTree = "<group>"; };
+		A379CC2D2B8E36B4005D9F8B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A379CC2F2B8E36B5005D9F8B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A379CC322B8E36B5005D9F8B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Meditation.storyboard; sourceTree = "<group>"; };
 		A379CC342B8E36B5005D9F8B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -69,7 +71,8 @@
 				A379CC262B8E36B4005D9F8B /* AppDelegate.swift */,
 				A379CC282B8E36B4005D9F8B /* SceneDelegate.swift */,
 				A379CC2A2B8E36B4005D9F8B /* BreathViewController.swift */,
-				A379CC2C2B8E36B4005D9F8B /* Home.storyboard */,
+				4F750A452BD017C000FA120D /* MeditationViewController.swift */,
+				A379CC2C2B8E36B4005D9F8B /* Main.storyboard */,
 				A379CC3C2B8F9323005D9F8B /* InitialViewController.swift */,
 				A379CC2F2B8E36B5005D9F8B /* Assets.xcassets */,
 				A379CC312B8E36B5005D9F8B /* Meditation.storyboard */,
@@ -143,7 +146,7 @@
 				4F750A422BCEDB6D00FA120D /* Journal.storyboard in Resources */,
 				A379CC332B8E36B5005D9F8B /* Meditation.storyboard in Resources */,
 				A379CC302B8E36B5005D9F8B /* Assets.xcassets in Resources */,
-				A379CC2E2B8E36B4005D9F8B /* Home.storyboard in Resources */,
+				A379CC2E2B8E36B4005D9F8B /* Main.storyboard in Resources */,
 				4F750A442BCEDB8900FA120D /* Breathing.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -159,6 +162,7 @@
 				A379CC2B2B8E36B4005D9F8B /* BreathViewController.swift in Sources */,
 				A379CC272B8E36B4005D9F8B /* AppDelegate.swift in Sources */,
 				A379CC292B8E36B4005D9F8B /* SceneDelegate.swift in Sources */,
+				4F750A462BD017C000FA120D /* MeditationViewController.swift in Sources */,
 				A379CC412B962F05005D9F8B /* Quote.swift in Sources */,
 				A379CC3D2B8F9323005D9F8B /* InitialViewController.swift in Sources */,
 			);
@@ -167,12 +171,12 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		A379CC2C2B8E36B4005D9F8B /* Home.storyboard */ = {
+		A379CC2C2B8E36B4005D9F8B /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				A379CC2D2B8E36B4005D9F8B /* Base */,
 			);
-			name = Home.storyboard;
+			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 		A379CC312B8E36B5005D9F8B /* Meditation.storyboard */ = {
