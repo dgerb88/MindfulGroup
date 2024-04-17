@@ -62,10 +62,10 @@
             </objects>
             <point key="canvasLocation" x="250" y="386"/>
         </scene>
-        <!--View Controller-->
+        <!--Meditation Second View Controller-->
         <scene sceneID="lpN-np-Eh0">
             <objects>
-                <viewController id="NDd-SI-u1o" sceneMemberID="viewController">
+                <viewController id="NDd-SI-u1o" customClass="MeditationSecondViewController" customModule="mindfulness" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="v0m-T4-slE">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

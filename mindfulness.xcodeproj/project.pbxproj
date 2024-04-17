@@ -10,6 +10,7 @@
 		4F750A422BCEDB6D00FA120D /* Journal.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F750A412BCEDB6D00FA120D /* Journal.storyboard */; };
 		4F750A442BCEDB8900FA120D /* Breathing.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F750A432BCEDB8900FA120D /* Breathing.storyboard */; };
 		4F750A462BD017C000FA120D /* MeditationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F750A452BD017C000FA120D /* MeditationViewController.swift */; };
+		4F750A4C2BD0283900FA120D /* MeditationSecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F750A4B2BD0283900FA120D /* MeditationSecondViewController.swift */; };
 		A379CC272B8E36B4005D9F8B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A379CC262B8E36B4005D9F8B /* AppDelegate.swift */; };
 		A379CC292B8E36B4005D9F8B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A379CC282B8E36B4005D9F8B /* SceneDelegate.swift */; };
 		A379CC2B2B8E36B4005D9F8B /* BreathViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A379CC2A2B8E36B4005D9F8B /* BreathViewController.swift */; };
@@ -25,6 +26,7 @@
 		4F750A412BCEDB6D00FA120D /* Journal.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Journal.storyboard; sourceTree = "<group>"; };
 		4F750A432BCEDB8900FA120D /* Breathing.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Breathing.storyboard; sourceTree = "<group>"; };
 		4F750A452BD017C000FA120D /* MeditationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeditationViewController.swift; sourceTree = "<group>"; };
+		4F750A4B2BD0283900FA120D /* MeditationSecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeditationSecondViewController.swift; sourceTree = "<group>"; };
 		A379CC232B8E36B4005D9F8B /* mindfulness.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mindfulness.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A379CC262B8E36B4005D9F8B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A379CC282B8E36B4005D9F8B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -71,11 +73,12 @@
 				A379CC262B8E36B4005D9F8B /* AppDelegate.swift */,
 				A379CC282B8E36B4005D9F8B /* SceneDelegate.swift */,
 				A379CC2A2B8E36B4005D9F8B /* BreathViewController.swift */,
-				4F750A452BD017C000FA120D /* MeditationViewController.swift */,
 				A379CC2C2B8E36B4005D9F8B /* Main.storyboard */,
 				A379CC3C2B8F9323005D9F8B /* InitialViewController.swift */,
 				A379CC2F2B8E36B5005D9F8B /* Assets.xcassets */,
 				A379CC312B8E36B5005D9F8B /* Meditation.storyboard */,
+				4F750A452BD017C000FA120D /* MeditationViewController.swift */,
+				4F750A4B2BD0283900FA120D /* MeditationSecondViewController.swift */,
 				4F750A412BCEDB6D00FA120D /* Journal.storyboard */,
 				4F750A432BCEDB8900FA120D /* Breathing.storyboard */,
 				A379CC342B8E36B5005D9F8B /* Info.plist */,
@@ -158,6 +161,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4F750A4C2BD0283900FA120D /* MeditationSecondViewController.swift in Sources */,
 				A379CC3F2B962EED005D9F8B /* QuoteController.swift in Sources */,
 				A379CC2B2B8E36B4005D9F8B /* BreathViewController.swift in Sources */,
 				A379CC272B8E36B4005D9F8B /* AppDelegate.swift in Sources */,
