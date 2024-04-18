@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "Default_a_washing_machine_1.jpg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
