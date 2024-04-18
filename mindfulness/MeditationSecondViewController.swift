@@ -9,22 +9,47 @@ import UIKit
 
 class MeditationSecondViewController: UIViewController {
     
+    var time: Int?
+    var environment: String?
+    var progress: Float = 0
+    var timeCount = 0
+    var timer: Timer?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        progressView.setProgress(progress, animated: true)
+        startProgressTimer()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func startProgressTimer() {
+            timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateProgress), userInfo: nil, repeats: true)
     }
-    */
+    
+    func stopProgressTimer() {
+           timer?.invalidate()
+           timer = nil
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+            super.viewWillDisappear(animated)
+            stopProgressTimer()
+        }
 
+    @objc func updateProgress() {
+           timeCount += 1
+           progress = Float(timeCount) / (Float(time!) * 60)
+           progressView.setProgress(progress, animated: true)
+           
+           if progress >= 1.0 {
+               stopProgressTimer()
+               dismiss(animated: true, completion: nil)
+           }
+       }
+    
+    
+    @IBOutlet weak var progressView: UIProgressView!
+    
+    @IBAction func donePressed(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
 }

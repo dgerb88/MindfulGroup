@@ -11,6 +11,8 @@ class MeditationViewController: UIViewController {
 
     let time = ["1 min", "2 min", "3 min", "4 min", "5 min", "6 min", "7 min", "8 min", "9 min", "10 min"]
     let environments = ["Forest", "Waves", "Rain", "Waterfall", "Trickling water", "Washing machine"]
+    var selectedTimeValue = 1
+    var selectedEnvironmentValue = "Forest"
     
     @IBOutlet weak var timePicker: UIPickerView!
     @IBOutlet weak var typePicker: UIPickerView!
@@ -24,6 +26,12 @@ class MeditationViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
 
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let destination = segue.destination as! MeditationSecondViewController
+        destination.time = selectedTimeValue
+        destination.environment = selectedEnvironmentValue
+    }
+    
 }
 
 extension MeditationViewController: UIPickerViewDelegate, UIPickerViewDataSource {
@@ -41,8 +49,10 @@ extension MeditationViewController: UIPickerViewDelegate, UIPickerViewDataSource
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         if pickerView == timePicker {
+            selectedTimeValue = pickerView.selectedRow(inComponent: component) + 1
             return time[row]
         } else {
+            selectedEnvironmentValue = environments[row]
             return environments[row]
         }
     }
