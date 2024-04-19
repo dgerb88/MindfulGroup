@@ -16,29 +16,33 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="exT-7R-7dX">
-                                <rect key="frame" x="184" y="413.66666666666669" width="25" height="25"/>
-                                <color key="backgroundColor" systemColor="systemBlueColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="25" id="XK8-rW-JYR"/>
-                                    <constraint firstAttribute="height" constant="25" id="uga-wU-RUt"/>
-                                </constraints>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DbX-am-IHD" userLabel="InstructionLabelBackgroundView">
+                                <rect key="frame" x="76" y="154" width="241" height="80"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GKR-BW-ho7" userLabel="OtherInstructionLabelBackground">
+                                        <rect key="frame" x="0.0" y="0.0" width="240" height="80"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Breath In" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1XI-d3-yAE">
+                                        <rect key="frame" x="32" y="21" width="177" height="37"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="31"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Breath In" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1XI-d3-yAE">
-                                <rect key="frame" x="132" y="159" width="129.33333333333337" height="40.666666666666657"/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="exT-7R-7dX">
+                                <rect key="frame" x="184" y="414" width="25" height="25"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBlueColor"/>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="UxK-Kb-A01"/>
-                        <color key="backgroundColor" red="0.55013686925744165" green="0.14882319389558321" blue="0.5912905092592593" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstItem="1XI-d3-yAE" firstAttribute="top" secondItem="UxK-Kb-A01" secondAttribute="top" constant="100" id="4jq-Fz-3Zk"/>
-                            <constraint firstItem="1XI-d3-yAE" firstAttribute="centerX" secondItem="1L4-1x-7ZC" secondAttribute="centerX" id="TeQ-Dl-Y5U"/>
-                            <constraint firstItem="exT-7R-7dX" firstAttribute="centerX" secondItem="1L4-1x-7ZC" secondAttribute="centerX" id="YP0-7V-24e"/>
-                            <constraint firstItem="exT-7R-7dX" firstAttribute="centerY" secondItem="1L4-1x-7ZC" secondAttribute="centerY" id="wbj-2y-rju"/>
-                        </constraints>
+                        <color key="backgroundColor" red="0.59513563948306591" green="0.21643688725490198" blue="0.396078431372549" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="gnQ-Gh-Rh1"/>
                     <navigationItem key="navigationItem" id="fh4-Wn-ZDs"/>
@@ -46,11 +50,13 @@
                     <connections>
                         <outlet property="circleView" destination="exT-7R-7dX" id="kVf-P9-djR"/>
                         <outlet property="instructionLabel" destination="1XI-d3-yAE" id="d9N-uv-X5K"/>
+                        <outlet property="instructionLabelBackground" destination="DbX-am-IHD" id="T4a-h6-UQ8"/>
+                        <outlet property="otherInstructionLabelBackground" destination="GKR-BW-ho7" id="6XA-Wf-ndh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hYA-bb-H31" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="921" y="-1"/>
+            <point key="canvasLocation" x="919.84732824427476" y="-1.4084507042253522"/>
         </scene>
     </scenes>
     <resources>
