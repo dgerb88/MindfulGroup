@@ -28,7 +28,6 @@ class BreathViewController: UIViewController {
         let originalGreen = CGFloat(210.0/255.0)
         let originalBlue = CGFloat(219.0/255.0)
         
-        testImageView.backgroundColor = UIColor(red: originalRed, green: originalGreen, blue: originalBlue, alpha: 1)
         
         let breathInOutDuration: Double = 5
         let delayDuration: Double = 6
@@ -51,12 +50,11 @@ class BreathViewController: UIViewController {
                     let green = CGFloat(109.0/255.0)
                     let blue = CGFloat(176.0/255.0)
                     
-                    self.testImageView.backgroundColor = UIColor(red: red, green: green, blue: blue, alpha: 1)
                 }
                 UIView.addKeyframe(withRelativeStartTime: secondStartRelativeTime, relativeDuration: breathInOutRelativeDuration) {
                     self.testImageView.transform = CGAffineTransform(scaleX: 1, y: 1)
                     self.testImageView.layer.opacity = 0.5
-                    self.testImageView.backgroundColor = UIColor(red: originalRed, green: originalGreen, blue: originalBlue, alpha: 1)
+                    
                 }
             }
         }

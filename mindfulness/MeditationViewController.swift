@@ -10,7 +10,7 @@ import UIKit
 class MeditationViewController: UIViewController {
 
     let time = ["1 min", "2 min", "3 min", "4 min", "5 min", "6 min", "7 min", "8 min", "9 min", "10 min"]
-    let environments = ["Forest", "Waves", "Rain", "Waterfall", "Trickling water", "Washing machine"]
+    let environments = ["Forest", "Waves", "Rain", "Waterfall", "Trickling water", "Washing machine", "Evil washing machine"]
     var selectedTimeValue = 1
     var selectedEnvironmentValue = "Forest"
     
@@ -52,7 +52,7 @@ extension MeditationViewController: UIPickerViewDelegate, UIPickerViewDataSource
             selectedTimeValue = pickerView.selectedRow(inComponent: component) + 1
             return time[row]
         } else {
-            selectedEnvironmentValue = environments[row]
+            selectedEnvironmentValue = environments[pickerView.selectedRow(inComponent: component)]
             return environments[row]
         }
     }
