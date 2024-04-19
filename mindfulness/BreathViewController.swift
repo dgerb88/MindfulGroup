@@ -11,6 +11,7 @@ import UIKit
 
 class BreathViewController: UIViewController {
     
+    @IBOutlet weak var testImageView: UIImageView!
     @IBOutlet weak var circleView: UIView!
     @IBOutlet weak var instructionLabel: UILabel!
     
@@ -29,7 +30,7 @@ class BreathViewController: UIViewController {
         let originalGreen = CGFloat(210.0/255.0)
         let originalBlue = CGFloat(219.0/255.0)
         
-        circleView.backgroundColor = UIColor(red: originalRed, green: originalGreen, blue: originalBlue, alpha: 1)
+        testImageView.backgroundColor = UIColor(red: originalRed, green: originalGreen, blue: originalBlue, alpha: 1)
         
         let breathInOutDuration: Double = 5
         let delayDuration: Double = 6
@@ -41,20 +42,20 @@ class BreathViewController: UIViewController {
         
         UIView.animateKeyframes(withDuration: totalDuration, delay: 0, options: [.repeat, .allowUserInteraction]) {
             UIView.addKeyframe(withRelativeStartTime: firstStartRelativeTime, relativeDuration: breathInOutRelativeDuration) {
-                self.circleView.transform = CGAffineTransform(scaleX: 5, y: 5)
-                self.circleView.layer.opacity = 1
+                self.testImageView.transform = CGAffineTransform(scaleX: 5, y: 5)
+                self.testImageView.layer.opacity = 1
             }
             UIView.addKeyframe(withRelativeStartTime: breathInOutRelativeDuration, relativeDuration: delayDuration / totalDuration) {
                 let red = CGFloat(0.0/255.0)
                 let green = CGFloat(109.0/255.0)
                 let blue = CGFloat(176.0/255.0)
                 
-                self.circleView.backgroundColor = UIColor(red: red, green: green, blue: blue, alpha: 1)
+                self.testImageView.backgroundColor = UIColor(red: red, green: green, blue: blue, alpha: 1)
             }
             UIView.addKeyframe(withRelativeStartTime: secondStartRelativeTime, relativeDuration: breathInOutRelativeDuration) {
-                self.circleView.transform = CGAffineTransform(scaleX: 1, y: 1)
-                self.circleView.layer.opacity = 0.5
-                self.circleView.backgroundColor = UIColor(red: originalRed, green: originalGreen, blue: originalBlue, alpha: 1)
+                self.testImageView.transform = CGAffineTransform(scaleX: 1, y: 1)
+                self.testImageView.layer.opacity = 0.5
+                self.testImageView.backgroundColor = UIColor(red: originalRed, green: originalGreen, blue: originalBlue, alpha: 1)
             }
         }
         

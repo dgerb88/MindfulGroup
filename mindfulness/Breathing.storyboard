@@ -4,7 +4,6 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -35,11 +34,10 @@
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="exT-7R-7dX">
-                                <rect key="frame" x="184" y="414" width="25" height="25"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="sullyTestImage" translatesAutoresizingMaskIntoConstraints="NO" id="oKg-4V-5j4">
+                                <rect key="frame" x="-294" y="335" width="981" height="643"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" systemColor="systemBlueColor"/>
-                            </view>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="UxK-Kb-A01"/>
                         <color key="backgroundColor" red="0.59513563948306591" green="0.21643688725490198" blue="0.396078431372549" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -48,10 +46,10 @@
                     <navigationItem key="navigationItem" id="fh4-Wn-ZDs"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="circleView" destination="exT-7R-7dX" id="kVf-P9-djR"/>
                         <outlet property="instructionLabel" destination="1XI-d3-yAE" id="d9N-uv-X5K"/>
                         <outlet property="instructionLabelBackground" destination="DbX-am-IHD" id="T4a-h6-UQ8"/>
                         <outlet property="otherInstructionLabelBackground" destination="GKR-BW-ho7" id="6XA-Wf-ndh"/>
+                        <outlet property="testImageView" destination="oKg-4V-5j4" id="Yu2-jT-bQc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hYA-bb-H31" sceneMemberID="firstResponder"/>
@@ -60,8 +58,6 @@
         </scene>
     </scenes>
     <resources>
-        <systemColor name="systemBlueColor">
-            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
+        <image name="sullyTestImage" width="860" height="716"/>
     </resources>
 </document>
