@@ -71,7 +71,7 @@ class MeditationSecondViewController: UIViewController {
     }
     
     func formatTimeCount(_ time: Int) -> (String, String) {
-        var minutes = String(time / 60)
+        let minutes = String(time / 60)
         var seconds = String(time % 60)
         if Int(seconds)! < 10 {
             seconds = "0\(seconds)"
