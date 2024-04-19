@@ -52,7 +52,7 @@ extension MeditationViewController: UIPickerViewDelegate, UIPickerViewDataSource
             selectedTimeValue = pickerView.selectedRow(inComponent: component) + 1
             return time[row]
         } else {
-            selectedEnvironmentValue = environments[row]
+            selectedEnvironmentValue = environments[pickerView.selectedRow(inComponent: component)]
             return environments[row]
         }
     }
