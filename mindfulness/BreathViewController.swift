@@ -12,7 +12,6 @@ import UIKit
 class BreathViewController: UIViewController {
     
     @IBOutlet weak var testImageView: UIImageView!
-    @IBOutlet weak var circleView: UIView!
     @IBOutlet weak var instructionLabel: UILabel!
     
     @IBOutlet weak var instructionLabelBackground: UIView!
@@ -21,8 +20,7 @@ class BreathViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        circleView.layer.cornerRadius = 12
-        circleView.layer.opacity = 0.5
+    
         otherInstructionLabelBackground.layer.opacity = 0.5
         otherInstructionLabelBackground.layer.cornerRadius = 10
         
@@ -40,22 +38,26 @@ class BreathViewController: UIViewController {
         let firstStartRelativeTime: Double = 0
         let secondStartRelativeTime = (breathInOutDuration + delayDuration) / totalDuration
         
-        UIView.animateKeyframes(withDuration: totalDuration, delay: 0, options: [.repeat, .allowUserInteraction]) {
-            UIView.addKeyframe(withRelativeStartTime: firstStartRelativeTime, relativeDuration: breathInOutRelativeDuration) {
-                self.testImageView.transform = CGAffineTransform(scaleX: 5, y: 5)
-                self.testImageView.layer.opacity = 1
-            }
-            UIView.addKeyframe(withRelativeStartTime: breathInOutRelativeDuration, relativeDuration: delayDuration / totalDuration) {
-                let red = CGFloat(0.0/255.0)
-                let green = CGFloat(109.0/255.0)
-                let blue = CGFloat(176.0/255.0)
-                
-                self.testImageView.backgroundColor = UIColor(red: red, green: green, blue: blue, alpha: 1)
-            }
-            UIView.addKeyframe(withRelativeStartTime: secondStartRelativeTime, relativeDuration: breathInOutRelativeDuration) {
-                self.testImageView.transform = CGAffineTransform(scaleX: 1, y: 1)
-                self.testImageView.layer.opacity = 0.5
-                self.testImageView.backgroundColor = UIColor(red: originalRed, green: originalGreen, blue: originalBlue, alpha: 1)
+        Task {
+            try? await Task.sleep(nanoseconds: UInt64(5))
+            
+            await UIView.animateKeyframes(withDuration: totalDuration, delay: 0, options: [.repeat, .allowUserInteraction]) {
+                UIView.addKeyframe(withRelativeStartTime: firstStartRelativeTime, relativeDuration: breathInOutRelativeDuration) {
+                    self.testImageView.transform = CGAffineTransform(scaleX: 5, y: 5)
+                    self.testImageView.layer.opacity = 1
+                }
+                UIView.addKeyframe(withRelativeStartTime: breathInOutRelativeDuration, relativeDuration: delayDuration / totalDuration) {
+                    let red = CGFloat(0.0/255.0)
+                    let green = CGFloat(109.0/255.0)
+                    let blue = CGFloat(176.0/255.0)
+                    
+                    self.testImageView.backgroundColor = UIColor(red: red, green: green, blue: blue, alpha: 1)
+                }
+                UIView.addKeyframe(withRelativeStartTime: secondStartRelativeTime, relativeDuration: breathInOutRelativeDuration) {
+                    self.testImageView.transform = CGAffineTransform(scaleX: 1, y: 1)
+                    self.testImageView.layer.opacity = 0.5
+                    self.testImageView.backgroundColor = UIColor(red: originalRed, green: originalGreen, blue: originalBlue, alpha: 1)
+                }
             }
         }
         
