@@ -14,11 +14,16 @@ class BreathViewController: UIViewController {
     @IBOutlet weak var circleView: UIView!
     @IBOutlet weak var instructionLabel: UILabel!
     
+    @IBOutlet weak var instructionLabelBackground: UIView!
+    
+    @IBOutlet weak var otherInstructionLabelBackground: UIView!
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         circleView.layer.cornerRadius = 12
         circleView.layer.opacity = 0.5
+        otherInstructionLabelBackground.layer.opacity = 0.5
+        otherInstructionLabelBackground.layer.cornerRadius = 10
         
         let originalRed = CGFloat(177.0/255.0)
         let originalGreen = CGFloat(210.0/255.0)
