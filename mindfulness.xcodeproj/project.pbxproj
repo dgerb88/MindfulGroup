@@ -21,6 +21,7 @@
 		A379CC3F2B962EED005D9F8B /* QuoteController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A379CC3E2B962EED005D9F8B /* QuoteController.swift */; };
 		A379CC412B962F05005D9F8B /* Quote.swift in Sources */ = {isa = PBXBuildFile; fileRef = A379CC402B962F05005D9F8B /* Quote.swift */; };
 		FCAB004F2BD02A2E0098C644 /* JournalTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCAB004E2BD02A2E0098C644 /* JournalTableViewController.swift */; };
+		FCAB00942BD2B6B80098C644 /* MindfulnessDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FCAB00922BD2B6B80098C644 /* MindfulnessDataModel.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		A379CC3E2B962EED005D9F8B /* QuoteController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteController.swift; sourceTree = "<group>"; };
 		A379CC402B962F05005D9F8B /* Quote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quote.swift; sourceTree = "<group>"; };
 		FCAB004E2BD02A2E0098C644 /* JournalTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalTableViewController.swift; sourceTree = "<group>"; };
+		FCAB00932BD2B6B80098C644 /* MindfulnessDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MindfulnessDataModel.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +75,7 @@
 			isa = PBXGroup;
 			children = (
 				A379CC262B8E36B4005D9F8B /* AppDelegate.swift */,
+				FCAB00922BD2B6B80098C644 /* MindfulnessDataModel.xcdatamodeld */,
 				A379CC282B8E36B4005D9F8B /* SceneDelegate.swift */,
 				A379CC2A2B8E36B4005D9F8B /* BreathViewController.swift */,
 				A379CC2C2B8E36B4005D9F8B /* Main.storyboard */,
@@ -164,6 +167,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FCAB00942BD2B6B80098C644 /* MindfulnessDataModel.xcdatamodeld in Sources */,
 				4F750A4C2BD0283900FA120D /* MeditationSecondViewController.swift in Sources */,
 				A379CC3F2B962EED005D9F8B /* QuoteController.swift in Sources */,
 				A379CC2B2B8E36B4005D9F8B /* BreathViewController.swift in Sources */,
@@ -395,6 +399,20 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		FCAB00922BD2B6B80098C644 /* MindfulnessDataModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				FCAB00932BD2B6B80098C644 /* MindfulnessDataModel.xcdatamodel */,
+			);
+			currentVersion = FCAB00932BD2B6B80098C644 /* MindfulnessDataModel.xcdatamodel */;
+			name = MindfulnessDataModel.xcdatamodeld;
+			path = /Users/andrewhigbee/MindfulGroup/mindfulness/MindfulnessDataModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = A379CC1B2B8E36B4005D9F8B /* Project object */;
 }
