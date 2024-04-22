@@ -24,9 +24,12 @@ class BreathViewController: UIViewController {
         otherInstructionLabelBackground.layer.opacity = 0.5
         otherInstructionLabelBackground.layer.cornerRadius = 10
         
-        let originalRed = CGFloat(177.0/255.0)
-        let originalGreen = CGFloat(210.0/255.0)
-        let originalBlue = CGFloat(219.0/255.0)
+//        let originalRed = CGFloat(177.0/255.0)
+//        let originalGreen = CGFloat(210.0/255.0)
+//        let originalBlue = CGFloat(219.0/255.0)
+        self.testImageView.layer.shadowColor = UIColor.red.cgColor
+        self.testImageView.layer.shadowOpacity = 1
+        self.testImageView.layer.shadowRadius = 50
         
         
         let breathInOutDuration: Double = 5
@@ -42,18 +45,28 @@ class BreathViewController: UIViewController {
             
             await UIView.animateKeyframes(withDuration: totalDuration, delay: 0, options: [.repeat, .allowUserInteraction]) {
                 UIView.addKeyframe(withRelativeStartTime: firstStartRelativeTime, relativeDuration: breathInOutRelativeDuration) {
-                    self.testImageView.transform = CGAffineTransform(scaleX: 5, y: 5)
+                    self.testImageView.transform = CGAffineTransform(scaleX: 1.5, y: 1.5)
                     self.testImageView.layer.opacity = 1
+//                    self.testImageView.layer.shadowColor = UIColor.red.cgColor
+//                    self.testImageView.layer.shadowOpacity = 1
+//                    self.testImageView.layer.shadowRadius = 100
                 }
                 UIView.addKeyframe(withRelativeStartTime: breathInOutRelativeDuration, relativeDuration: delayDuration / totalDuration) {
-                    let red = CGFloat(0.0/255.0)
-                    let green = CGFloat(109.0/255.0)
-                    let blue = CGFloat(176.0/255.0)
+//                    let red = CGFloat(0.0/255.0)
+//                    let green = CGFloat(109.0/255.0)
+//                    let blue = CGFloat(176.0/255.0)
+//                    self.testImageView.layer.shadowColor = UIColor.red.cgColor
+//                    self.testImageView.layer.shadowOpacity = 1
+//                    self.testImageView.layer.shadowRadius = 100
                     
                 }
                 UIView.addKeyframe(withRelativeStartTime: secondStartRelativeTime, relativeDuration: breathInOutRelativeDuration) {
                     self.testImageView.transform = CGAffineTransform(scaleX: 1, y: 1)
-                    self.testImageView.layer.opacity = 0.5
+//                    self.testImageView.layer.opacity = 0.5
+                    self.testImageView.layer.shadowColor = UIColor.cyan.cgColor
+                    self.testImageView.layer.shadowOpacity = 1
+                    self.testImageView.layer.shadowRadius = 50
+                   
                     
                 }
             }
@@ -63,11 +76,11 @@ class BreathViewController: UIViewController {
             do {
                 while true {
                     instructionLabel.text = "Breath In"
-                    try await Task.sleep(nanoseconds: UInt64(5000000000))
+                    try await Task.sleep(nanoseconds: UInt64(6000000000))
                     instructionLabel.text = "Hold"
-                    try await Task.sleep(nanoseconds: UInt64(5000000000))
+                    try await Task.sleep(nanoseconds: UInt64(3000000000))
                     instructionLabel.text = "Breath Out"
-                    try await Task.sleep(nanoseconds: UInt64(5000000000))
+                    try await Task.sleep(nanoseconds: UInt64(6000000000))
                 }
                 
             } catch {
