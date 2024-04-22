@@ -44,7 +44,7 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Start Meditation"/>
                                 <connections>
-                                    <segue destination="NDd-SI-u1o" kind="presentation" id="mSW-pi-kZB"/>
+                                    <segue destination="NDd-SI-u1o" kind="presentation" modalPresentationStyle="fullScreen" id="mSW-pi-kZB"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -67,7 +67,7 @@
             <objects>
                 <viewController id="NDd-SI-u1o" customClass="MeditationSecondViewController" customModule="mindfulness" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="v0m-T4-slE">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V6U-ri-wNf">
@@ -79,15 +79,11 @@
                                     <action selector="donePressed:" destination="NDd-SI-u1o" eventType="touchUpInside" id="FR8-8U-Ej9"/>
                                 </connections>
                             </button>
-                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" fixedFrame="YES" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="TcO-9C-u64">
-                                <rect key="frame" x="121" y="576" width="150" height="5"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </progressView>
-                            <label userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hkQ-NX-Wga">
-                                <rect key="frame" x="137" y="476" width="118" height="68"/>
+                            <label userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0:34" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hkQ-NX-Wga">
+                                <rect key="frame" x="138" y="397" width="116" height="58"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="45"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="32"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -99,7 +95,6 @@
                     <navigationItem key="navigationItem" id="ONw-d1-8cf"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="progressView" destination="TcO-9C-u64" id="XsM-DS-hcr"/>
                         <outlet property="timeLabel" destination="hkQ-NX-Wga" id="33I-uN-JTM"/>
                     </connections>
                 </viewController>
