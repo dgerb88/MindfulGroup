@@ -20,10 +20,10 @@
                         <color key="selectedImageTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
+                        <segue destination="DE8-LC-oMT" kind="relationship" relationship="viewControllers" id="hXH-pq-w7D"/>
                         <segue destination="AAu-vC-dFs" kind="relationship" relationship="viewControllers" id="5cg-er-jdV"/>
                         <segue destination="Eo1-qw-nL9" kind="relationship" relationship="viewControllers" id="4Le-NR-eZ8"/>
                         <segue destination="p1E-uv-FQR" kind="relationship" relationship="viewControllers" id="51J-aW-TaZ"/>
-                        <segue destination="DE8-LC-oMT" kind="relationship" relationship="viewControllers" id="hXH-pq-w7D"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YqX-oI-WGO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
