@@ -1,18 +1,53 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="tEy-vZ-eLU">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="0eo-l5-poa">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Item-->
+        <!--Breathing-->
+        <scene sceneID="vhW-kb-smM">
+            <objects>
+                <viewController id="ywn-1x-StT" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="m3I-qU-P7e">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pma-ox-XWY">
+                                <rect key="frame" x="127" y="409" width="139" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="gray" title="Start Breathing"/>
+                                <connections>
+                                    <segue destination="tEy-vZ-eLU" kind="presentation" id="eNB-k6-xAz"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="J1n-6I-eD0"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Breathing" id="gnQ-Gh-Rh1">
+                        <imageReference key="image" image="wind" catalog="system" variableValue="1"/>
+                        <color key="badgeColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <imageReference key="selectedImage" image="wind" catalog="system" variableValue="1"/>
+                    </tabBarItem>
+                    <navigationItem key="navigationItem" id="sdB-RC-pZA"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="X0Z-hY-5tH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1048.0916030534352" y="16.901408450704228"/>
+        </scene>
+        <!--Breath View Controller-->
         <scene sceneID="fhW-Yi-4NX">
             <objects>
                 <viewController id="tEy-vZ-eLU" customClass="BreathViewController" customModule="mindfulness" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="1L4-1x-7ZC">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DbX-am-IHD" userLabel="InstructionLabelBackgroundView">
@@ -40,12 +75,12 @@
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="UxK-Kb-A01"/>
-                        <color key="backgroundColor" red="0.59513563948306591" green="0.21643688725490198" blue="0.396078431372549" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.59607843137254901" green="0.21568627450980393" blue="0.396078431372549" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="gnQ-Gh-Rh1"/>
                     <navigationItem key="navigationItem" id="fh4-Wn-ZDs"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="entireScreenView" destination="1L4-1x-7ZC" id="Z8S-Ef-xVm"/>
                         <outlet property="instructionLabel" destination="1XI-d3-yAE" id="d9N-uv-X5K"/>
                         <outlet property="instructionLabelBackground" destination="DbX-am-IHD" id="T4a-h6-UQ8"/>
                         <outlet property="otherInstructionLabelBackground" destination="GKR-BW-ho7" id="6XA-Wf-ndh"/>
@@ -54,10 +89,32 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hYA-bb-H31" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="919.84732824427476" y="-1.4084507042253522"/>
+            <point key="canvasLocation" x="1964" y="17"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="JaA-Sx-BxE">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="0eo-l5-poa" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="kr6-a1-aYH">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="ywn-1x-StT" kind="relationship" relationship="rootViewController" id="2Zv-sk-3if"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Uat-Ti-8Lv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="121.37404580152672" y="16.901408450704228"/>
         </scene>
     </scenes>
     <resources>
         <image name="sullyTestImage" width="860" height="716"/>
+        <image name="wind" catalog="system" width="128" height="103"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>
