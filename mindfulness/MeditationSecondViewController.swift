@@ -7,6 +7,7 @@
 
 import UIKit
 import AVFoundation
+import MediaPlayer
 
 class MeditationSecondViewController: UIViewController {
     
@@ -61,6 +62,7 @@ class MeditationSecondViewController: UIViewController {
         let url = URL(fileURLWithPath: pathToSound)
         do {
             audioPlayer = try AVAudioPlayer(contentsOf: url)
+            try AVAudioSession.sharedInstance().setCategory(.playback)
             audioPlayer?.play()
         } catch {
             print(error.localizedDescription)

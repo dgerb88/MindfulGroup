@@ -47,13 +47,13 @@ extension MeditationViewController: UIPickerViewDelegate, UIPickerViewDataSource
         }
     }
     
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+    func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
         if pickerView == timePicker {
             selectedTimeValue = pickerView.selectedRow(inComponent: component) + 1
-            return time[row]
+            return NSAttributedString(string: time[row], attributes: [NSAttributedString.Key.foregroundColor: UIColor.white])
         } else {
             selectedEnvironmentValue = environments[pickerView.selectedRow(inComponent: component)]
-            return environments[row]
+            return NSAttributedString(string: environments[row], attributes: [NSAttributedString.Key.foregroundColor: UIColor.white])
         }
     }
     
