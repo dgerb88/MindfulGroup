@@ -33,11 +33,11 @@ class ItemManager {
         return fetchedEntries ?? []
     }
     
-    func deleteList(at indexPath: IndexPath) {
-        let entry = allEntries()[indexPath.row]
-        context.delete(entry)
-        saveContext()
-    }
+//    func deleteList(at indexPath: IndexPath) {
+//        let entry = allEntries()[indexPath.row]
+//        context.delete(entry)
+//        saveContext()
+//    }
     
     
     // MARK: - Items
