@@ -19,6 +19,7 @@
 		4FA4DF2B2BD6BFA500E67687 /* Forest.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 4FA4DF232BD6B6D100E67687 /* Forest.m4a */; };
 		4FA4DF2C2BD6BFA700E67687 /* Waves.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 4FA4DF222BD6B5A200E67687 /* Waves.m4a */; };
 		4FA4DF2D2BD6BFAA00E67687 /* Waterfall.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 4FA4DF252BD6B91900E67687 /* Waterfall.m4a */; };
+		4FA4DF2F2BD80E5000E67687 /* MeditationModal.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4FA4DF2E2BD80E5000E67687 /* MeditationModal.storyboard */; };
 		A379CC272B8E36B4005D9F8B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A379CC262B8E36B4005D9F8B /* AppDelegate.swift */; };
 		A379CC292B8E36B4005D9F8B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A379CC282B8E36B4005D9F8B /* SceneDelegate.swift */; };
 		A379CC2B2B8E36B4005D9F8B /* BreathViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A379CC2A2B8E36B4005D9F8B /* BreathViewController.swift */; };
@@ -44,6 +45,7 @@
 		4FA4DF252BD6B91900E67687 /* Waterfall.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = Waterfall.m4a; sourceTree = "<group>"; };
 		4FA4DF262BD6BA6500E67687 /* Rain.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = Rain.m4a; sourceTree = "<group>"; };
 		4FA4DF272BD6BB8E00E67687 /* Evil washing machine.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Evil washing machine.m4a"; sourceTree = "<group>"; };
+		4FA4DF2E2BD80E5000E67687 /* MeditationModal.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MeditationModal.storyboard; sourceTree = "<group>"; };
 		A379CC232B8E36B4005D9F8B /* mindfulness.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mindfulness.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A379CC262B8E36B4005D9F8B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A379CC282B8E36B4005D9F8B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -110,6 +112,7 @@
 				A379CC2F2B8E36B5005D9F8B /* Assets.xcassets */,
 				A379CC312B8E36B5005D9F8B /* Meditation.storyboard */,
 				4F750A452BD017C000FA120D /* MeditationViewController.swift */,
+				4FA4DF2E2BD80E5000E67687 /* MeditationModal.storyboard */,
 				4FA4DF212BD6B1E800E67687 /* Sounds */,
 				4F750A4B2BD0283900FA120D /* MeditationSecondViewController.swift */,
 				4FA4DF1F2BD6A18600E67687 /* CircularProgressView.swift */,
@@ -189,6 +192,7 @@
 				4FA4DF2D2BD6BFAA00E67687 /* Waterfall.m4a in Resources */,
 				A379CC2E2B8E36B4005D9F8B /* Main.storyboard in Resources */,
 				4F750A442BCEDB8900FA120D /* Breathing.storyboard in Resources */,
+				4FA4DF2F2BD80E5000E67687 /* MeditationModal.storyboard in Resources */,
 				4FA4DF2C2BD6BFA700E67687 /* Waves.m4a in Resources */,
 				4FA4DF2A2BD6BFA200E67687 /* Evil washing machine.m4a in Resources */,
 				4FA4DF292BD6BF9F00E67687 /* Trickling water.m4a in Resources */,
