@@ -48,7 +48,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="Jgj-s7-T0b" kind="presentation" destinationCreationSelector="addEditEntrySegue:sender:" id="Ppa-PD-qf6"/>
+                                    <segue destination="Jgj-s7-T0b" kind="presentation" id="776-Jm-bov"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -60,7 +60,7 @@
                     <navigationItem key="navigationItem" title="Journal" id="egF-bd-Jec">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="TKB-XN-tLi">
                             <connections>
-                                <segue destination="Jgj-s7-T0b" kind="presentation" id="8QS-Qy-Q0J"/>
+                                <segue destination="Jgj-s7-T0b" kind="presentation" id="hwi-c9-JXi"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -156,7 +156,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="HTB-Kk-O78" kind="relationship" relationship="rootViewController" destinationCreationSelector="addEditEntrySegue:sender:" id="XWa-PN-oQ6"/>
+                        <segue destination="HTB-Kk-O78" kind="relationship" relationship="rootViewController" destinationCreationSelector="editEntrySegue:sender:" id="XWa-PN-oQ6"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8kI-WL-jZl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -183,7 +183,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="8QS-Qy-Q0J"/>
+        <segue reference="776-Jm-bov"/>
     </inferredMetricsTieBreakers>
     <resources>
         <systemColor name="labelColor">

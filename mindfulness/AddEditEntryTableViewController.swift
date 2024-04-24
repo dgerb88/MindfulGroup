@@ -12,15 +12,12 @@ class AddEditEntryTableViewController: UITableViewController {
     @IBOutlet weak var titleTextField: UITextField!
     
     @IBOutlet weak var bodyTextView: UITextView!
-    
-    var edit: Bool?
-    
+        
     var journalEntry: JournalEntry?
     
-    init?(coder: NSCoder, journalEntry: JournalEntry?, editBool: Bool) {
+    init?(coder: NSCoder, journalEntry: JournalEntry?) {
         super.init(coder: coder)
         self.journalEntry = journalEntry
-        self.edit = editBool
     }
     
     required init?(coder: NSCoder) {
@@ -29,6 +26,8 @@ class AddEditEntryTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        tableView.reloadData()
 
         if let journalEntry = self.journalEntry {
             titleTextField.text = journalEntry.title
@@ -40,14 +39,6 @@ class AddEditEntryTableViewController: UITableViewController {
             title = "Add Post"
         }
     }
-
-    /*
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-         guard segue.identifier == "saveUnwind" else { return }
-         
-         post = Post(postid: NetworkController.posts.count, numComments: 0, title: titleTextField.text!, body: bodyTextView.text, authorUserName: User.current!.userName, authorUserId: User.current!.userUUID.uuidString, userLiked: false, likes: 0, createdDate: Date().formatted(), comments: [])
-     }
-     */
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard segue.identifier == "saveUnwind" else { return }

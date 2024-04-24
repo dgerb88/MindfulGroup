@@ -51,13 +51,11 @@ class EntryManager {
     
     func updateEntry(_ entry: JournalEntry, title: String, body: String) {
 
-           let managedContext = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-
            entry.title = title
         entry.body = body
 
            do {
-               try managedContext.save()
+               try context.save()
            } catch let error as NSError  {
                print("Could not save \(error), \(error.userInfo)")
            }

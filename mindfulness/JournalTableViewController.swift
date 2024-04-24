@@ -62,26 +62,17 @@ class JournalTableViewController: UITableViewController {
     }
     */
 
-    
-    @IBSegueAction func addEditEntrySegue(_ coder: NSCoder, sender: Any?) -> AddEditEntryTableViewController? {
-        if let cell = sender as? UITableViewCell, let indexPath = tableView.indexPath(for: cell) {
-            let entryToEdit = manager.allEntries()[indexPath.row]
-            
-            return AddEditEntryTableViewController(coder: coder, journalEntry: entryToEdit, editBool: true)
-        } else {
-            return AddEditEntryTableViewController(coder: coder)
-        }
-        
+    @IBSegueAction func editEntrySegue(_ coder: NSCoder, sender: Any?) -> AddEditEntryTableViewController? {
+        guard let cell = sender as? UITableViewCell, let indexPath = tableView.indexPath(for: cell) else { return nil }
+
+        let entryToEdit = manager.allEntries()[indexPath.row]
+
+        return AddEditEntryTableViewController(coder: coder, journalEntry: entryToEdit)
     }
     
+    
     @IBAction func unwindToJournalTableView(segue: UIStoryboardSegue) {
-//        guard segue.identifier == "saveUnwind", let sourceViewController = segue.source as? AddEditEntryTableViewController, var entry = sourceViewController.journalEntry else { return }
-//        
-//        if let selectedIndexPath = tableView.indexPathForSelectedRow {
-//            EntryManager.shared.updateEntry(entry, title: entry.title ?? "", body: entry.body ?? "")
-//        } else {
-//            EntryManager.shared.createNewEntry(with: entry.title ?? "", with: entry.body ?? "")
-//        }
+        tableView.reloadData()
     }
     
     
