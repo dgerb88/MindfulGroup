@@ -8,38 +8,39 @@
 import UIKit
 
 class JournalTableViewController: UITableViewController {
+    
+    private let manager = EntryManager.shared
+    
+    @IBOutlet weak var searchBar: UISearchBar!
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
 
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return manager.allEntries().count
     }
 
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
+        let cell = tableView.dequeueReusableCell(withIdentifier: "entryCell", for: indexPath)
+        
+        let entry = manager.allEntries()[indexPath.row]
+        cell.textLabel?.text = entry.title
+        cell.detailTextLabel?.text = entry.date?.formatted(date: .complete, time: .complete)
 
         return cell
     }
-    */
+    
 
     /*
     // Override to support conditional editing of the table view.
@@ -61,29 +62,62 @@ class JournalTableViewController: UITableViewController {
     }
     */
 
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
+    
+    @IBSegueAction func addEditEntrySegue(_ coder: NSCoder, sender: Any?) -> AddEditEntryTableViewController? {
+        if let cell = sender as? UITableViewCell, let indexPath = tableView.indexPath(for: cell) {
+            let entryToEdit = manager.allEntries()[indexPath.row]
+            
+            return AddEditEntryTableViewController(coder: coder, journalEntry: entryToEdit, editBool: true)
+        } else {
+            return AddEditEntryTableViewController(coder: coder)
+        }
+        
     }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
+    
+    @IBAction func unwindToJournalTableView(segue: UIStoryboardSegue) {
+//        guard segue.identifier == "saveUnwind", let sourceViewController = segue.source as? AddEditEntryTableViewController, var entry = sourceViewController.journalEntry else { return }
+//        
+//        if let selectedIndexPath = tableView.indexPathForSelectedRow {
+//            EntryManager.shared.updateEntry(entry, title: entry.title ?? "", body: entry.body ?? "")
+//        } else {
+//            EntryManager.shared.createNewEntry(with: entry.title ?? "", with: entry.body ?? "")
+//        }
     }
-    */
-
+    
+    
+    
     /*
+     if let cell = sender as? PostTableViewCell, let indexPath = tableView.indexPath(for: cell) {
+         let postToEdit = NetworkController.posts[indexPath.row]
+         
+         return EditPostTableViewController(coder: coder, post: postToEdit)
+     } else {
+         return EditPostTableViewController(coder: coder)
+     }
+     */
+
+    
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    
+    func getSearch() -> [JournalEntry] {
+        let term = searchBar.text ?? ""
+        var entries = manager.allEntries()
+        
+        let lowercasedTerm = term.lowercased()
+        return entries.filter { entry in
+            let titleMatch = entry.title!.lowercased().contains(lowercasedTerm)
+            let bodyMatch = entry.body!.lowercased().contains(lowercasedTerm)
+            return titleMatch || bodyMatch
+        }
     }
-    */
+    
+}
 
+extension JournalTableViewController: UISearchBarDelegate {
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        getSearch()
+        searchBar.resignFirstResponder()
+    }
 }

@@ -7,16 +7,17 @@
 
 import Foundation
 import CoreData
+import UIKit
 
-class ItemManager {
-    static let shared = ItemManager()
+class EntryManager {
+    static let shared = EntryManager()
     
     private let context = PersistenceController.shared.viewContext
     
     
     // MARK: - Lists
     
-    func createNewEntry(with title: String, with body: String) {
+    func createNewEntry(title: String, body: String) {
         let newEntry = JournalEntry(context: context)
         newEntry.id = UUID()
         newEntry.title = title
@@ -47,6 +48,20 @@ class ItemManager {
         context.delete(entry)
         saveContext()
     }
+    
+    func updateEntry(_ entry: JournalEntry, title: String, body: String) {
+
+           let managedContext = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+
+           entry.title = title
+        entry.body = body
+
+           do {
+               try managedContext.save()
+           } catch let error as NSError  {
+               print("Could not save \(error), \(error.userInfo)")
+           }
+       }
 
     private func saveContext() {
         PersistenceController.shared.saveContext()
