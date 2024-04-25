@@ -20,7 +20,6 @@
 		4FA4DF2D2BD6BFAA00E67687 /* Waterfall.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 4FA4DF252BD6B91900E67687 /* Waterfall.m4a */; };
 		4FA4DF2F2BD80E5000E67687 /* MeditationModal.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4FA4DF2E2BD80E5000E67687 /* MeditationModal.storyboard */; };
 		4FA4DF322BD8155A00E67687 /* (null) in Sources */ = {isa = PBXBuildFile; };
-		4FA4DF382BDA99D700E67687 /* MindfulnessDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4FA4DF362BDA99D700E67687 /* MindfulnessDataModel.xcdatamodeld */; };
 		66DFDDD42BD811F1003D2FCF /* Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66DFDDD32BD811F1003D2FCF /* Hex.swift */; };
 		A379CC272B8E36B4005D9F8B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A379CC262B8E36B4005D9F8B /* AppDelegate.swift */; };
 		A379CC292B8E36B4005D9F8B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A379CC282B8E36B4005D9F8B /* SceneDelegate.swift */; };
@@ -31,6 +30,7 @@
 		A379CC3D2B8F9323005D9F8B /* InitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A379CC3C2B8F9323005D9F8B /* InitialViewController.swift */; };
 		A379CC3F2B962EED005D9F8B /* QuoteController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A379CC3E2B962EED005D9F8B /* QuoteController.swift */; };
 		A379CC412B962F05005D9F8B /* Quote.swift in Sources */ = {isa = PBXBuildFile; fileRef = A379CC402B962F05005D9F8B /* Quote.swift */; };
+		FC01D23F2BDA9F4B00F38211 /* QuickJournal.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FC01D23E2BDA9F4B00F38211 /* QuickJournal.storyboard */; };
 		FCAB004F2BD02A2E0098C644 /* JournalTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCAB004E2BD02A2E0098C644 /* JournalTableViewController.swift */; };
 		FCAB00982BD2CC6F0098C644 /* EntryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCAB00972BD2CC6E0098C644 /* EntryManager.swift */; };
 		FCAB009A2BD2CE040098C644 /* PersistenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCAB00992BD2CE040098C644 /* PersistenceController.swift */; };
@@ -50,7 +50,6 @@
 		4FA4DF262BD6BA6500E67687 /* Rain.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = Rain.m4a; sourceTree = "<group>"; };
 		4FA4DF272BD6BB8E00E67687 /* Evil washing machine.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Evil washing machine.m4a"; sourceTree = "<group>"; };
 		4FA4DF2E2BD80E5000E67687 /* MeditationModal.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MeditationModal.storyboard; sourceTree = "<group>"; };
-		4FA4DF372BDA99D700E67687 /* MindfulnessDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MindfulnessDataModel.xcdatamodel; sourceTree = "<group>"; };
 		66DFDDD32BD811F1003D2FCF /* Hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hex.swift; sourceTree = "<group>"; };
 		A379CC232B8E36B4005D9F8B /* mindfulness.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mindfulness.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A379CC262B8E36B4005D9F8B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -63,6 +62,7 @@
 		A379CC3C2B8F9323005D9F8B /* InitialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialViewController.swift; sourceTree = "<group>"; };
 		A379CC3E2B962EED005D9F8B /* QuoteController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteController.swift; sourceTree = "<group>"; };
 		A379CC402B962F05005D9F8B /* Quote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quote.swift; sourceTree = "<group>"; };
+		FC01D23E2BDA9F4B00F38211 /* QuickJournal.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = QuickJournal.storyboard; sourceTree = "<group>"; };
 		FCAB004E2BD02A2E0098C644 /* JournalTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalTableViewController.swift; sourceTree = "<group>"; };
 		FCAB00972BD2CC6E0098C644 /* EntryManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryManager.swift; sourceTree = "<group>"; };
 		FCAB00992BD2CE040098C644 /* PersistenceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceController.swift; sourceTree = "<group>"; };
@@ -129,6 +129,7 @@
 				4F750A4B2BD0283900FA120D /* MeditationSecondViewController.swift */,
 				4FA4DF1F2BD6A18600E67687 /* CircularProgressView.swift */,
 				4F750A412BCEDB6D00FA120D /* Journal.storyboard */,
+				FC01D23E2BDA9F4B00F38211 /* QuickJournal.storyboard */,
 				FCB98DF92BD87F9B00251537 /* AddEditEntryTableViewController.swift */,
 				FCAB004E2BD02A2E0098C644 /* JournalTableViewController.swift */,
 				4F750A432BCEDB8900FA120D /* Breathing.storyboard */,
@@ -206,6 +207,7 @@
 				A379CC2E2B8E36B4005D9F8B /* Main.storyboard in Resources */,
 				4F750A442BCEDB8900FA120D /* Breathing.storyboard in Resources */,
 				4FA4DF2F2BD80E5000E67687 /* MeditationModal.storyboard in Resources */,
+				FC01D23F2BDA9F4B00F38211 /* QuickJournal.storyboard in Resources */,
 				4FA4DF2C2BD6BFA700E67687 /* Waves.m4a in Resources */,
 				4FA4DF2A2BD6BFA200E67687 /* Evil washing machine.m4a in Resources */,
 				4FA4DF292BD6BF9F00E67687 /* Trickling water.m4a in Resources */,
