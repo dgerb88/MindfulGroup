@@ -4,7 +4,6 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -19,6 +18,7 @@
                             <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SFu-B2-3PP">
                                 <rect key="frame" x="0.0" y="139" width="393" height="162"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </pickerView>
                             <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cbG-Gm-Kvy">
                                 <rect key="frame" x="0.0" y="395" width="393" height="162"/>
@@ -28,28 +28,31 @@
                                 <rect key="frame" x="55" y="110" width="282" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Choose your meditation environment" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GJN-TP-czZ">
                                 <rect key="frame" x="56" y="366" width="281" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hDC-de-yfS">
                                 <rect key="frame" x="123" y="638" width="147" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Start Meditation"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Start Meditation">
+                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="baseBackgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </buttonConfiguration>
                                 <connections>
-                                    <segue destination="NDd-SI-u1o" kind="presentation" id="mSW-pi-kZB"/>
+                                    <segue destination="5Ri-QQ-4fQ" kind="presentation" modalPresentationStyle="fullScreen" id="pOx-lg-6HK"/>
                                 </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="0.59607843137254901" green="0.21568627450980393" blue="0.396078431372549" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <navigationItem key="navigationItem" id="rcf-oa-pC2"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
@@ -62,46 +65,19 @@
             </objects>
             <point key="canvasLocation" x="1176.3358778625955" y="385.91549295774649"/>
         </scene>
-        <!--Meditation Second View Controller-->
-        <scene sceneID="lpN-np-Eh0">
+        <!--MeditationModal-->
+        <scene sceneID="9oi-i7-DmD">
             <objects>
-                <viewController id="NDd-SI-u1o" customClass="MeditationSecondViewController" customModule="mindfulness" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="v0m-T4-slE">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V6U-ri-wNf">
-                                <rect key="frame" x="124" y="653" width="145" height="44"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Done"/>
-                                <connections>
-                                    <action selector="donePressed:" destination="NDd-SI-u1o" eventType="touchUpInside" id="FR8-8U-Ej9"/>
-                                </connections>
-                            </button>
-                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" fixedFrame="YES" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="TcO-9C-u64">
-                                <rect key="frame" x="121" y="576" width="150" height="5"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </progressView>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="ZLM-JY-TtA"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                    <toolbarItems/>
-                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
-                    <connections>
-                        <outlet property="progressView" destination="TcO-9C-u64" id="XsM-DS-hcr"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="FEr-DV-CLo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <viewControllerPlaceholder storyboardName="MeditationModal" id="5Ri-QQ-4fQ" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1ZA-Kk-V9x" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1953.4351145038167" y="385.91549295774649"/>
+            <point key="canvasLocation" x="2107" y="374"/>
         </scene>
         <!--Meditation-->
         <scene sceneID="gzd-N6-vTh">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="pvk-PB-d83" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Meditation" image="brain.head.profile" catalog="system" id="ogw-xa-dQZ"/>
+                    <tabBarItem key="tabBarItem" title="Meditation" image="figure.mind.and.body" catalog="system" id="ogw-xa-dQZ"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="LmN-9o-W6U">
                         <rect key="frame" x="0.0" y="59" width="393" height="44"/>
@@ -118,9 +94,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="brain.head.profile" catalog="system" width="120" height="128"/>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
+        <image name="figure.mind.and.body" catalog="system" width="128" height="102"/>
     </resources>
 </document>
