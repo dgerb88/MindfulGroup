@@ -97,7 +97,7 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="DRQ-GF-wB1" kind="relationship" relationship="rootViewController" id="fbc-3U-dnH"/>
+                        <segue destination="DRQ-GF-wB1" kind="relationship" relationship="rootViewController" destinationCreationSelector="addEditEntrySegue:sender:" id="fbc-3U-dnH"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sw2-z8-tKJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

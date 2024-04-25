@@ -64,6 +64,14 @@ class JournalTableViewController: UITableViewController {
     }
     */
 
+    @IBSegueAction func addEditEntrySegue(_ coder: NSCoder, sender: Any?) -> AddEditEntryTableViewController? {
+        guard let cell = sender as? UITableViewCell, let indexPath = tableView.indexPath(for: cell) else { return nil }
+
+        let entryToEdit = filteredEntries[indexPath.row]
+
+        return AddEditEntryTableViewController(coder: coder, journalEntry: entryToEdit)
+    }
+    
     @IBSegueAction func editEntrySegue(_ coder: NSCoder, sender: Any?) -> AddEditEntryTableViewController? {
         guard let cell = sender as? UITableViewCell, let indexPath = tableView.indexPath(for: cell) else { return nil }
 
