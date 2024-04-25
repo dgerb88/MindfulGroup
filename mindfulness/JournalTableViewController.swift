@@ -12,35 +12,37 @@ class JournalTableViewController: UITableViewController {
     private let manager = EntryManager.shared
     
     @IBOutlet weak var searchBar: UISearchBar!
+    
+    var allEntries: [JournalEntry] = []
+    var filteredEntries: [JournalEntry] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        filteredEntries = manager.allEntries()
+        tableView.reloadData()
     }
 
     // MARK: - Table view data source
 
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 1
-    }
-
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return manager.allEntries().count
+        return filteredEntries.count
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "entryCell", for: indexPath)
         
-        let entry = manager.allEntries()[indexPath.row]
+        let entry = filteredEntries[indexPath.row]
         cell.textLabel?.text = entry.title
         cell.detailTextLabel?.text = entry.date?.formatted(date: .complete, time: .complete)
 
         return cell
     }
     
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
 
     /*
     // Override to support conditional editing of the table view.
@@ -65,13 +67,14 @@ class JournalTableViewController: UITableViewController {
     @IBSegueAction func editEntrySegue(_ coder: NSCoder, sender: Any?) -> AddEditEntryTableViewController? {
         guard let cell = sender as? UITableViewCell, let indexPath = tableView.indexPath(for: cell) else { return nil }
 
-        let entryToEdit = manager.allEntries()[indexPath.row]
+        let entryToEdit = filteredEntries[indexPath.row]
 
         return AddEditEntryTableViewController(coder: coder, journalEntry: entryToEdit)
     }
     
     
     @IBAction func unwindToJournalTableView(segue: UIStoryboardSegue) {
+        filteredEntries = manager.allEntries()
         tableView.reloadData()
     }
     
@@ -91,18 +94,20 @@ class JournalTableViewController: UITableViewController {
     // MARK: - Navigation
 
     
-    func getSearch() -> [JournalEntry] {
-        let term = searchBar.text ?? ""
-        var entries = manager.allEntries()
-        
-        let lowercasedTerm = term.lowercased()
-        return entries.filter { entry in
-            let titleMatch = entry.title!.lowercased().contains(lowercasedTerm)
-            let bodyMatch = entry.body!.lowercased().contains(lowercasedTerm)
-            return titleMatch || bodyMatch
+        func getSearch() {
+            if !searchBar.text!.isEmpty {
+                let searchText = searchBar.text
+                filteredEntries = manager.allEntries().filter { entry in
+                    let titleMatch = entry.title!.lowercased().contains(searchText!.lowercased())
+                    let bodyMatch = entry.body!.lowercased().contains(searchText!.lowercased())
+                    return titleMatch || bodyMatch
+                }
+                tableView.reloadData()
+            } else {
+                filteredEntries = manager.allEntries()
+                tableView.reloadData()
+            }
         }
-    }
-    
 }
 
 extension JournalTableViewController: UISearchBarDelegate {

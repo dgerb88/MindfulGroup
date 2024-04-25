@@ -52,5 +52,10 @@ class AddEditEntryTableViewController: UITableViewController {
         }
         
     }
+    
+    @IBAction func cancelButtonTapped(_ sender: UIBarButtonItem) {
+        dismiss(animated: true)
+    }
+    
 
 }

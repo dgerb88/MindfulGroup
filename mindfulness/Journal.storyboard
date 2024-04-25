@@ -73,7 +73,7 @@
             </objects>
             <point key="canvasLocation" x="-477" y="-58"/>
         </scene>
-        <!--Root View Controller-->
+        <!--Add Edit Entry Table View Controller-->
         <scene sceneID="cEj-ng-BAH">
             <objects>
                 <tableViewController id="HTB-Kk-O78" customClass="AddEditEntryTableViewController" customModule="mindfulness" customModuleProvider="target" sceneMemberID="viewController">
@@ -130,7 +130,12 @@
                             <outlet property="delegate" destination="HTB-Kk-O78" id="HVo-y2-jEw"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="bmR-y3-3vh">
+                    <navigationItem key="navigationItem" id="bmR-y3-3vh">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="vyN-vd-6eb">
+                            <connections>
+                                <action selector="cancelButtonTapped:" destination="HTB-Kk-O78" id="pSR-cO-YA8"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="n5k-rI-Hf9">
                             <connections>
                                 <segue destination="QCL-UA-4Lk" kind="unwind" identifier="saveUnwind" unwindAction="unwindToJournalTableViewWithSegue:" id="sxx-ub-rcU"/>
