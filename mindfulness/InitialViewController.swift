@@ -16,7 +16,7 @@ class InitialViewController: UIViewController {
         super.viewDidLoad()
         Task {
             if let quote = try? await QuoteController.getQuote() {
-                quoteLabel.text = "\(quote.q)\n-\(quote.a)"
+                quoteLabel.text = "\(quote.q)\n\n-\(quote.a)"
             }
         }
     }
