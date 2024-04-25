@@ -10,6 +10,7 @@ import UIKit
 class InitialViewController: UIViewController {
     
     @IBOutlet weak var quoteLabel: UILabel!
+    let environments = ["Forest", "Waves", "Rain", "Waterfall", "Trickling water", "Evil washing machine"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,7 +24,7 @@ class InitialViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let destination = segue.destination as! MeditationSecondViewController
         destination.time = 5
-        destination.environment = "Waves"
+        destination.environment = environments.randomElement()
     }
     
 
