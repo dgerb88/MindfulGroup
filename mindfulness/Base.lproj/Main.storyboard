@@ -92,18 +92,38 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ufP-Ms-cK0">
+                                <rect key="frame" x="16" y="467" width="361" height="58"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" image="book.pages" catalog="system" title="Quick Journal Entry">
+                                    <color key="baseBackgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <segue destination="LOY-iM-7Q9" kind="presentation" id="kFV-4K-CEj"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="GOt-Qx-xz1"/>
                         <color key="backgroundColor" red="0.59607843140000005" green="0.2156862745" blue="0.39607843139999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Home" image="house" catalog="system" id="Zkg-aB-SW2"/>
                     <connections>
+                        <outlet property="andrewButton" destination="ufP-Ms-cK0" id="VKY-1j-xVb"/>
                         <outlet property="quoteLabel" destination="0HA-RM-og1" id="Qzl-F2-o4D"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xAt-E6-StO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1445.0381679389313" y="-126.05633802816902"/>
+        </scene>
+        <!--QuickJournal-->
+        <scene sceneID="FiZ-5Z-i0v">
+            <objects>
+                <viewControllerPlaceholder storyboardName="QuickJournal" id="LOY-iM-7Q9" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ndC-io-SK5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-669" y="-208"/>
         </scene>
         <!--MeditationModal-->
         <scene sceneID="0QM-lY-6gs">
@@ -115,6 +135,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="book.pages" catalog="system" width="107" height="128"/>
         <image name="figure.mind.and.body" catalog="system" width="128" height="102"/>
         <image name="house" catalog="system" width="128" height="104"/>
     </resources>
