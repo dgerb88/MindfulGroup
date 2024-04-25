@@ -172,7 +172,7 @@
         <scene sceneID="nvY-so-vcd">
             <objects>
                 <navigationController title="Journal" id="GGa-gP-hRy" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="N1S-JR-K5V" userLabel="Journal"/>
+                    <tabBarItem key="tabBarItem" title="Journal" image="book.pages" catalog="system" id="N1S-JR-K5V" userLabel="Journal"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="eOA-xm-cVU">
                         <rect key="frame" x="0.0" y="59" width="393" height="44"/>
@@ -191,6 +191,7 @@
         <segue reference="776-Jm-bov"/>
     </inferredMetricsTieBreakers>
     <resources>
+        <image name="book.pages" catalog="system" width="107" height="128"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
