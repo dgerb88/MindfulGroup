@@ -16,17 +16,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0:34" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cp6-pc-dwJ">
-                                <rect key="frame" x="138" y="397" width="116" height="58"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0:34" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cp6-pc-dwJ">
+                                <rect key="frame" x="162.66666666666666" y="407" width="68" height="38.333333333333314"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="32"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MJp-YV-FcI">
-                                <rect key="frame" x="116" y="670" width="161" height="44"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MJp-YV-FcI">
+                                <rect key="frame" x="128" y="670" width="137" height="34"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Done">
                                     <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -39,6 +37,13 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="GbM-L6-RWy"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="cp6-pc-dwJ" firstAttribute="centerX" secondItem="eat-4m-nan" secondAttribute="centerX" id="I9f-QJ-uMI"/>
+                            <constraint firstItem="GbM-L6-RWy" firstAttribute="trailing" secondItem="MJp-YV-FcI" secondAttribute="trailing" constant="128" id="Jzr-K2-rqc"/>
+                            <constraint firstItem="MJp-YV-FcI" firstAttribute="leading" secondItem="GbM-L6-RWy" secondAttribute="leading" constant="128" id="KhM-hB-VgV"/>
+                            <constraint firstItem="cp6-pc-dwJ" firstAttribute="centerY" secondItem="eat-4m-nan" secondAttribute="centerY" id="Out-0g-1aC"/>
+                            <constraint firstItem="MJp-YV-FcI" firstAttribute="top" secondItem="cp6-pc-dwJ" secondAttribute="bottom" constant="224.66999999999999" id="hau-CD-vud"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="timeLabel" destination="cp6-pc-dwJ" id="Pzx-sJ-3Qo"/>
