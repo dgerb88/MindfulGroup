@@ -21,9 +21,10 @@ class InitialViewController: UIViewController {
         }
     }
     
-    @IBOutlet weak var andrewButton: UIButton!
+    
+    @IBOutlet weak var DaxButton: UIButton!
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if sender as? UIButton != andrewButton {
+        if sender as? UIButton == DaxButton {
             let destination = segue.destination as! MeditationSecondViewController
             destination.time = 5
             destination.environment = environments.randomElement()
