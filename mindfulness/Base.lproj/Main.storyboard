@@ -82,7 +82,7 @@
                                     <color key="baseBackgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <segue destination="zUV-Ek-jBy" kind="presentation" modalPresentationStyle="fullScreen" id="8IJ-HT-WoA"/>
+                                    <segue destination="zUV-Ek-jBy" kind="presentation" modalPresentationStyle="fullScreen" id="iVl-CN-Qc3"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tKy-h0-V7G">
@@ -100,7 +100,16 @@
                                     <color key="baseBackgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <segue destination="LOY-iM-7Q9" kind="presentation" id="kFV-4K-CEj"/>
+                                    <segue destination="LOY-iM-7Q9" kind="presentation" modalPresentationStyle="fullScreen" id="8a8-mx-YX9"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hxK-E3-l9k">
+                                <rect key="frame" x="159" y="301" width="75" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                <connections>
+                                    <segue destination="pCv-Nc-IMK" kind="presentation" modalPresentationStyle="fullScreen" id="S9q-qR-vyC"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -109,13 +118,21 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Home" image="house" catalog="system" id="Zkg-aB-SW2"/>
                     <connections>
-                        <outlet property="andrewButton" destination="ufP-Ms-cK0" id="VKY-1j-xVb"/>
+                        <outlet property="DaxButton" destination="gxg-w8-reD" id="qbt-j2-GMh"/>
                         <outlet property="quoteLabel" destination="0HA-RM-og1" id="Qzl-F2-o4D"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xAt-E6-StO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1445.0381679389313" y="-126.05633802816902"/>
+        </scene>
+        <!--QuickBreathing-->
+        <scene sceneID="wP5-t4-VZf">
+            <objects>
+                <viewControllerPlaceholder storyboardName="QuickBreathing" id="pCv-Nc-IMK" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aY7-lb-RMI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-797" y="-287"/>
         </scene>
         <!--QuickJournal-->
         <scene sceneID="FiZ-5Z-i0v">

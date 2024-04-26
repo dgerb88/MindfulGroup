@@ -15,7 +15,6 @@ class BreathViewController: UIViewController {
     @IBOutlet weak var instructionLabel: UILabel!
     @IBOutlet weak var instructionLabelBackground: UIView!
     @IBOutlet weak var otherInstructionLabelBackground: UIView!
-    @IBOutlet var entireScreenView: UIView!
     
     var startAnimation: Bool = false
     var stopAnimation: Bool = false
@@ -49,7 +48,6 @@ class BreathViewController: UIViewController {
     
     override func viewDidDisappear(_ animated: Bool) {
         stopBreathingAnimation()
-        entireScreenView.layer.removeAllAnimations()
     }
     override func viewDidLayoutSubviews() {
          super.viewDidLayoutSubviews()
