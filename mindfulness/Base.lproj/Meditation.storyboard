@@ -15,26 +15,22 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SFu-B2-3PP">
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SFu-B2-3PP">
                                 <rect key="frame" x="0.0" y="139" width="393" height="162"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="162" id="Rag-b5-zvt"/>
+                                </constraints>
                             </pickerView>
-                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cbG-Gm-Kvy">
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cbG-Gm-Kvy">
                                 <rect key="frame" x="0.0" y="395" width="393" height="162"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </pickerView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Choose your meditation environment" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GJN-TP-czZ">
-                                <rect key="frame" x="40" y="364" width="312" height="23"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
-                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hDC-de-yfS">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hDC-de-yfS">
                                 <rect key="frame" x="123" y="638" width="147" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="3Ug-JQ-ZGT"/>
+                                </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Start Meditation">
                                     <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -44,16 +40,44 @@
                                     <segue destination="5Ri-QQ-4fQ" kind="presentation" modalPresentationStyle="fullScreen" id="pOx-lg-6HK"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="How long would you like to meditate?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uMy-bJ-LU9">
-                                <rect key="frame" x="39" y="108" width="313" height="23"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="How long would you like to meditate?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uMy-bJ-LU9">
+                                <rect key="frame" x="39" y="85" width="313" height="62"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="62" id="kxv-xR-Ucl"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose your meditation environment" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GJN-TP-czZ">
+                                <rect key="frame" x="28" y="361" width="337" height="26"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="26" id="pFs-mH-3Xc"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" red="0.59607843137254901" green="0.21568627450980393" blue="0.396078431372549" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="GJN-TP-czZ" firstAttribute="top" secondItem="SFu-B2-3PP" secondAttribute="bottom" constant="60" id="9OV-S9-Hlp"/>
+                            <constraint firstItem="uMy-bJ-LU9" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="topMargin" constant="-18" id="Adc-X4-c01"/>
+                            <constraint firstItem="GJN-TP-czZ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="28" id="FCB-8y-t1g"/>
+                            <constraint firstItem="SFu-B2-3PP" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="36" id="Htr-k7-kvO"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="hDC-de-yfS" secondAttribute="bottom" constant="96" id="Onp-gJ-FCt"/>
+                            <constraint firstItem="uMy-bJ-LU9" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="39" id="VEf-1f-FaR"/>
+                            <constraint firstItem="SFu-B2-3PP" firstAttribute="leading" secondItem="cbG-Gm-Kvy" secondAttribute="leading" id="Y5Z-Sp-NWJ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="uMy-bJ-LU9" secondAttribute="trailing" constant="41" id="aSK-nN-0dU"/>
+                            <constraint firstItem="hDC-de-yfS" firstAttribute="top" secondItem="cbG-Gm-Kvy" secondAttribute="bottom" constant="81" id="ane-Qn-8Cr"/>
+                            <constraint firstItem="SFu-B2-3PP" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="eQ8-Mh-CK3"/>
+                            <constraint firstItem="cbG-Gm-Kvy" firstAttribute="top" secondItem="GJN-TP-czZ" secondAttribute="bottom" constant="8" id="o5X-kG-oE8"/>
+                            <constraint firstItem="GJN-TP-czZ" firstAttribute="centerX" secondItem="cbG-Gm-Kvy" secondAttribute="centerX" id="oUg-RL-BJq"/>
+                            <constraint firstItem="SFu-B2-3PP" firstAttribute="trailing" secondItem="cbG-Gm-Kvy" secondAttribute="trailing" id="onp-Ph-FZG"/>
+                            <constraint firstItem="cbG-Gm-Kvy" firstAttribute="centerX" secondItem="hDC-de-yfS" secondAttribute="centerX" id="pOl-st-lbx"/>
+                            <constraint firstItem="SFu-B2-3PP" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="wY8-7m-En6"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="rcf-oa-pC2"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
