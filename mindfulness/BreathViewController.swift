@@ -21,12 +21,16 @@ class BreathViewController: UIViewController {
     var stopAnimation: Bool = false
     let gradientLayer = CAGradientLayer()
     
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupGradientBackground()
-        otherInstructionLabelBackground.layer.opacity = 0.5
+        
         otherInstructionLabelBackground.layer.cornerRadius = 10
         setupInitialShadowState()
+        setupBlurForOtherInstructionLabelBackground()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -44,28 +48,42 @@ class BreathViewController: UIViewController {
     }
     
     override func viewDidDisappear(_ animated: Bool) {
+        stopBreathingAnimation()
         entireScreenView.layer.removeAllAnimations()
     }
     override func viewDidLayoutSubviews() {
          super.viewDidLayoutSubviews()
          gradientLayer.frame = view.bounds  // Ensure the gradient layer covers the full view
      }
-     
+    func setupBlurForOtherInstructionLabelBackground() {
+        let blurEffect = UIBlurEffect(style: .regular) // Choose the appropriate style
+        let blurEffectView = UIVisualEffectView(effect: blurEffect)
+        blurEffectView.frame = otherInstructionLabelBackground.bounds
+        blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight] // Ensures the blur effect resizes with its parent view
+
+        // Set the corner radius and enable clipping
+        blurEffectView.layer.cornerRadius = 10 // Adjust this value to control the roundness of the corners
+        blurEffectView.clipsToBounds = true
+
+        otherInstructionLabelBackground.addSubview(blurEffectView)
+        otherInstructionLabelBackground.sendSubviewToBack(blurEffectView) // Sends the blur view behind any other content in otherInstructionLabelBackground
+    }
     func setupGradientBackground() {
         gradientLayer.frame = view.bounds
         gradientLayer.colors = [
             UIColor(hex: "#983765")?.cgColor,  // Adjust the hex value as needed (including alpha as FF)
             UIColor(hex: "#3F0B27")?.cgColor,
             
-        ].compactMap { $0 }  // Filters out any nil values if the hex was invalid
-        gradientLayer.locations = [0.0, 1.0]  // Adjust this for different color stops
-        gradientLayer.startPoint = CGPoint(x: 0.0, y: 0.0)
-        gradientLayer.endPoint = CGPoint(x: 1.0, y: 1.0)
-        view.layer.insertSublayer(gradientLayer, at: 0)  // Insert the gradient layer at the very back
+        ].compactMap { $0 }  // Ensure all color values are valid
+        gradientLayer.locations = [0.0, 0.8, 1.0]  // Points at which the color changes occur
+        gradientLayer.startPoint = CGPoint(x: 0.5, y: 0.0)  // Middle top
+        
+        gradientLayer.endPoint = CGPoint(x: 0.5, y: 1.0)  // Middle bottom
+        view.layer.insertSublayer(gradientLayer, at: 0)  // Insert the gradient layer behind all other views
     }
     func setupInitialShadowState() {
         testImageView.layer.shadowOpacity = 1
-        testImageView.layer.shadowRadius = 25
+        testImageView.layer.shadowRadius = 10
         testImageView.layer.shadowColor = UIColor.systemPink.cgColor
     }
     
@@ -80,6 +98,9 @@ class BreathViewController: UIViewController {
         }
     }
     
+    @IBAction func doneBreathingPressed(_ sender: UIButton) {
+        dismiss(animated: true, completion: nil)
+    }
     private func scaleUp() {
        
         if !stopAnimation {
@@ -98,8 +119,8 @@ class BreathViewController: UIViewController {
         if !stopAnimation {
             UIView.animate(withDuration: 4, animations: {
                 self.testImageView.layer.shadowOpacity = 1
-                self.testImageView.layer.shadowRadius = 25
-                self.testImageView.layer.shadowColor = UIColor.cyan.cgColor
+                self.testImageView.layer.shadowRadius = 10
+                self.testImageView.layer.shadowColor = UIColor(hex: "#A979DA")?.cgColor
                 self.testImageView.transform = CGAffineTransform(scaleX: 1.49, y: 1.49)
                 self.instructionLabel.text = "Hold"
                 print("Holding")
@@ -116,8 +137,8 @@ class BreathViewController: UIViewController {
                
                 self.testImageView.transform = CGAffineTransform.identity
                 self.testImageView.layer.shadowOpacity = 1
-                self.testImageView.layer.shadowRadius = 25
-                self.testImageView.layer.shadowColor = UIColor.cyan.cgColor
+                self.testImageView.layer.shadowRadius = 10
+                self.testImageView.layer.shadowColor = UIColor(hex: "#CFD7FF")?.cgColor
                 self.instructionLabel.text = "Breath Out"
             }) { _ in
                 if self.startAnimation {  // Check if we should repeat
@@ -139,6 +160,8 @@ class BreathViewController: UIViewController {
         stopAnimation = true
     }
 }
+
+// OLD STUFF
 //    func performBreathingAnimation() {
 //           let breathInOutDuration: Double = 5
 //           let holdDuration: Double = 6
