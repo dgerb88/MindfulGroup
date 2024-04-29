@@ -23,13 +23,13 @@
                                 </constraints>
                             </pickerView>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cbG-Gm-Kvy">
-                                <rect key="frame" x="0.0" y="395" width="393" height="162"/>
+                                <rect key="frame" x="0.0" y="395" width="393" height="216"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </pickerView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hDC-de-yfS">
-                                <rect key="frame" x="123" y="638" width="147" height="35"/>
+                                <rect key="frame" x="123" y="671" width="147" height="44"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="35" id="3Ug-JQ-ZGT"/>
+                                    <constraint firstAttribute="height" constant="44" id="8gs-EP-DM8"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Start Meditation">
@@ -66,11 +66,10 @@
                             <constraint firstItem="uMy-bJ-LU9" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="topMargin" constant="-18" id="Adc-X4-c01"/>
                             <constraint firstItem="GJN-TP-czZ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="28" id="FCB-8y-t1g"/>
                             <constraint firstItem="SFu-B2-3PP" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="36" id="Htr-k7-kvO"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="hDC-de-yfS" secondAttribute="bottom" constant="96" id="Onp-gJ-FCt"/>
                             <constraint firstItem="uMy-bJ-LU9" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="39" id="VEf-1f-FaR"/>
                             <constraint firstItem="SFu-B2-3PP" firstAttribute="leading" secondItem="cbG-Gm-Kvy" secondAttribute="leading" id="Y5Z-Sp-NWJ"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="uMy-bJ-LU9" secondAttribute="trailing" constant="41" id="aSK-nN-0dU"/>
-                            <constraint firstItem="hDC-de-yfS" firstAttribute="top" secondItem="cbG-Gm-Kvy" secondAttribute="bottom" constant="81" id="ane-Qn-8Cr"/>
+                            <constraint firstItem="hDC-de-yfS" firstAttribute="top" secondItem="cbG-Gm-Kvy" secondAttribute="bottom" constant="60" id="ane-Qn-8Cr"/>
                             <constraint firstItem="SFu-B2-3PP" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="eQ8-Mh-CK3"/>
                             <constraint firstItem="cbG-Gm-Kvy" firstAttribute="top" secondItem="GJN-TP-czZ" secondAttribute="bottom" constant="8" id="o5X-kG-oE8"/>
                             <constraint firstItem="GJN-TP-czZ" firstAttribute="centerX" secondItem="cbG-Gm-Kvy" secondAttribute="centerX" id="oUg-RL-BJq"/>

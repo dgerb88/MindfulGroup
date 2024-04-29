@@ -19,10 +19,25 @@ class InitialViewController: UIViewController {
                 quoteLabel.text = "\(quote.q)\n\n-\(quote.a)"
             }
         }
+        journalOutLet.alpha = 1
+        Hstack.alpha = 0
+        howAreYou.alpha = 0
     }
     
+    @IBAction func quickJournalButton(_ sender: Any) {
+        UIView.animate(withDuration: 0.5) {
+            self.journalOutLet.alpha = 0
+            self.Hstack.alpha = 1
+            self.howAreYou.alpha = 1
+        }
+    }
     
+    @IBOutlet weak var howAreYou: UILabel!
+    @IBOutlet weak var journalOutLet: UIButton!
+    @IBOutlet weak var Hstack: UIStackView!
     @IBOutlet weak var DaxButton: UIButton!
+    
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if sender as? UIButton == DaxButton {
             let destination = segue.destination as! MeditationSecondViewController
