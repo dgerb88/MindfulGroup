@@ -67,16 +67,20 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0HA-RM-og1">
-                                <rect key="frame" x="16" y="96" width="361" height="168"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0HA-RM-og1">
+                                <rect key="frame" x="20" y="96" width="353" height="168"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="168" id="0Qp-oy-4gO"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gxg-w8-reD">
-                                <rect key="frame" x="16" y="601" width="361" height="58"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gxg-w8-reD">
+                                <rect key="frame" x="16" y="586.66666666666663" width="361" height="58"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="58" id="7rL-jf-pQx"/>
+                                </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" image="figure.mind.and.body" catalog="system" title="Quick meditation">
                                     <color key="baseBackgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -92,34 +96,156 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ufP-Ms-cK0">
-                                <rect key="frame" x="16" y="467" width="361" height="58"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ufP-Ms-cK0">
+                                <rect key="frame" x="16" y="433.33333333333331" width="361" height="58"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="58" id="hcY-eF-JM0"/>
+                                </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" image="book.pages" catalog="system" title="Quick Journal Entry">
                                     <color key="baseBackgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <segue destination="LOY-iM-7Q9" kind="presentation" modalPresentationStyle="fullScreen" id="8a8-mx-YX9"/>
+                                    <action selector="quickJournalButton:" destination="DE8-LC-oMT" eventType="touchUpInside" id="72U-74-Pnp"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hxK-E3-l9k">
-                                <rect key="frame" x="159" y="301" width="75" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hxK-E3-l9k">
+                                <rect key="frame" x="159" y="301" width="75" height="34.333333333333314"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Button"/>
                                 <connections>
                                     <segue destination="pCv-Nc-IMK" kind="presentation" modalPresentationStyle="fullScreen" id="S9q-qR-vyC"/>
                                 </connections>
                             </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="sbH-9b-uYX">
+                                <rect key="frame" x="8" y="499.33333333333326" width="377" height="30"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pne-JI-qgk">
+                                        <rect key="frame" x="0.0" y="0.0" width="45.333333333333336" height="30"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="😀">
+                                            <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="baseBackgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <segue destination="LOY-iM-7Q9" kind="presentation" id="UCZ-rQ-Q7g"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HGA-8e-ErN">
+                                        <rect key="frame" x="55.333333333333329" y="0.0" width="45.333333333333329" height="30"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="🫤">
+                                            <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="baseBackgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <segue destination="LOY-iM-7Q9" kind="presentation" id="qgW-08-2hU"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2A5-en-jXj">
+                                        <rect key="frame" x="110.66666666666667" y="0.0" width="45.333333333333329" height="30"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="😐">
+                                            <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="baseBackgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <segue destination="LOY-iM-7Q9" kind="presentation" id="E4o-sp-QhU"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Tt-Kr-WDE">
+                                        <rect key="frame" x="166" y="0.0" width="45" height="30"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="😴">
+                                            <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="baseBackgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <segue destination="LOY-iM-7Q9" kind="presentation" id="hzT-oC-HeV"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tZq-CW-cb5">
+                                        <rect key="frame" x="221" y="0.0" width="45.333333333333314" height="30"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="🤬">
+                                            <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="baseBackgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <segue destination="LOY-iM-7Q9" kind="presentation" id="D1i-He-RhO"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fr6-7z-jF1" userLabel="☹️">
+                                        <rect key="frame" x="276.33333333333331" y="0.0" width="45.333333333333314" height="30"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="☹️">
+                                            <color key="baseBackgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <segue destination="LOY-iM-7Q9" kind="presentation" id="zvM-vp-4wk"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8jC-KC-8JI" userLabel="😯">
+                                        <rect key="frame" x="331.66666666666669" y="0.0" width="45.333333333333314" height="30"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="😯">
+                                            <color key="baseBackgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <segue destination="LOY-iM-7Q9" kind="presentation" id="4qT-8m-gla"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="Rkp-ia-sx2"/>
+                                </constraints>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="How are you feeling today?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iDj-CJ-kMG">
+                                <rect key="frame" x="94.000000000000014" y="452.33333333333331" width="205.33333333333337" height="20.333333333333314"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="GOt-Qx-xz1"/>
                         <color key="backgroundColor" red="0.59607843140000005" green="0.2156862745" blue="0.39607843139999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="sbH-9b-uYX" firstAttribute="top" secondItem="ufP-Ms-cK0" secondAttribute="bottom" constant="8" id="9q1-zO-oMS"/>
+                            <constraint firstItem="gxg-w8-reD" firstAttribute="top" secondItem="sbH-9b-uYX" secondAttribute="bottom" constant="57.329999999999998" id="C7z-Kn-UZI"/>
+                            <constraint firstItem="ufP-Ms-cK0" firstAttribute="leading" secondItem="GOt-Qx-xz1" secondAttribute="leading" constant="16" id="IKM-7O-Dyc"/>
+                            <constraint firstItem="GOt-Qx-xz1" firstAttribute="trailing" secondItem="gxg-w8-reD" secondAttribute="trailing" constant="16" id="NWa-Ml-x7P"/>
+                            <constraint firstItem="GOt-Qx-xz1" firstAttribute="trailing" secondItem="0HA-RM-og1" secondAttribute="trailing" constant="20" id="XV2-Le-UC0"/>
+                            <constraint firstItem="iDj-CJ-kMG" firstAttribute="top" secondItem="hxK-E3-l9k" secondAttribute="bottom" constant="117" id="a9m-bc-8C5"/>
+                            <constraint firstItem="gxg-w8-reD" firstAttribute="leading" secondItem="GOt-Qx-xz1" secondAttribute="leading" constant="16" id="alf-TG-WHe"/>
+                            <constraint firstItem="0HA-RM-og1" firstAttribute="top" secondItem="GOt-Qx-xz1" secondAttribute="top" constant="37" id="ay1-nD-Wf0"/>
+                            <constraint firstItem="ufP-Ms-cK0" firstAttribute="top" secondItem="hxK-E3-l9k" secondAttribute="bottom" constant="98" id="b0p-XX-Web"/>
+                            <constraint firstItem="iDj-CJ-kMG" firstAttribute="centerX" secondItem="LJx-hr-3mJ" secondAttribute="centerX" id="bwm-ec-guY"/>
+                            <constraint firstItem="hxK-E3-l9k" firstAttribute="centerX" secondItem="LJx-hr-3mJ" secondAttribute="centerX" id="dDs-mQ-br7"/>
+                            <constraint firstItem="GOt-Qx-xz1" firstAttribute="trailing" secondItem="ufP-Ms-cK0" secondAttribute="trailing" constant="16" id="dEe-Wv-1e2"/>
+                            <constraint firstItem="sbH-9b-uYX" firstAttribute="leading" secondItem="LJx-hr-3mJ" secondAttribute="leading" constant="8" id="iLi-jI-4c5"/>
+                            <constraint firstItem="ufP-Ms-cK0" firstAttribute="centerX" secondItem="LJx-hr-3mJ" secondAttribute="centerX" id="iUB-1i-M2d"/>
+                            <constraint firstItem="0HA-RM-og1" firstAttribute="leading" secondItem="GOt-Qx-xz1" secondAttribute="leading" constant="20" id="idx-Ja-2Rp"/>
+                            <constraint firstAttribute="trailing" secondItem="sbH-9b-uYX" secondAttribute="trailing" constant="8" id="q7d-7g-2F2"/>
+                            <constraint firstItem="hxK-E3-l9k" firstAttribute="top" secondItem="0HA-RM-og1" secondAttribute="bottom" constant="37" id="tFj-bK-Fji"/>
+                            <constraint firstItem="sbH-9b-uYX" firstAttribute="centerX" secondItem="LJx-hr-3mJ" secondAttribute="centerX" id="zI8-Fz-RQm"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Home" image="house" catalog="system" id="Zkg-aB-SW2"/>
                     <connections>
                         <outlet property="DaxButton" destination="gxg-w8-reD" id="qbt-j2-GMh"/>
+                        <outlet property="Hstack" destination="sbH-9b-uYX" id="wnT-Ks-qbY"/>
+                        <outlet property="angryButton" destination="tZq-CW-cb5" id="RTf-qK-hcO"/>
+                        <outlet property="concernedButton" destination="HGA-8e-ErN" id="eRK-HD-4vh"/>
+                        <outlet property="happyButton" destination="Pne-JI-qgk" id="bin-TN-sgf"/>
+                        <outlet property="howAreYou" destination="iDj-CJ-kMG" id="aF9-zj-TWi"/>
+                        <outlet property="journalOutLet" destination="ufP-Ms-cK0" id="o4u-oJ-j0D"/>
+                        <outlet property="meganButton" destination="hxK-E3-l9k" id="LeX-fj-oUo"/>
+                        <outlet property="neutralButton" destination="2A5-en-jXj" id="JDY-CS-Eqz"/>
                         <outlet property="quoteLabel" destination="0HA-RM-og1" id="Qzl-F2-o4D"/>
+                        <outlet property="sadButton" destination="Fr6-7z-jF1" id="4V0-b2-bpC"/>
+                        <outlet property="sleepyButton" destination="2Tt-Kr-WDE" id="sjN-yU-VLU"/>
+                        <outlet property="surprisedButton" destination="8jC-KC-8JI" id="JIZ-HG-oMd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xAt-E6-StO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -132,7 +258,7 @@
                 <viewControllerPlaceholder storyboardName="QuickBreathing" id="pCv-Nc-IMK" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aY7-lb-RMI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-797" y="-287"/>
+            <point key="canvasLocation" x="-718" y="-343"/>
         </scene>
         <!--QuickJournal-->
         <scene sceneID="FiZ-5Z-i0v">
@@ -140,7 +266,7 @@
                 <viewControllerPlaceholder storyboardName="QuickJournal" id="LOY-iM-7Q9" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ndC-io-SK5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-669" y="-208"/>
+            <point key="canvasLocation" x="-201" y="-180"/>
         </scene>
         <!--MeditationModal-->
         <scene sceneID="0QM-lY-6gs">
@@ -148,9 +274,12 @@
                 <viewControllerPlaceholder storyboardName="MeditationModal" id="zUV-Ek-jBy" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Udu-a5-MJj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-786" y="-37"/>
+            <point key="canvasLocation" x="-611" y="74"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="hzT-oC-HeV"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="book.pages" catalog="system" width="107" height="128"/>
         <image name="figure.mind.and.body" catalog="system" width="128" height="102"/>
