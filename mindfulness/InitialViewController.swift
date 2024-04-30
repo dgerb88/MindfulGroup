@@ -37,12 +37,27 @@ class InitialViewController: UIViewController {
     @IBOutlet weak var Hstack: UIStackView!
     @IBOutlet weak var DaxButton: UIButton!
     
+    @IBOutlet weak var meganButton: UIButton!
+    
+    @IBOutlet weak var happyButton: UIButton!
+    @IBOutlet weak var surprisedButton: UIButton!
+    @IBOutlet weak var sadButton: UIButton!
+    @IBOutlet weak var angryButton: UIButton!
+    @IBOutlet weak var sleepyButton: UIButton!
+    @IBOutlet weak var neutralButton: UIButton!
+    @IBOutlet weak var concernedButton: UIButton!
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if sender as? UIButton == DaxButton {
             let destination = segue.destination as! MeditationSecondViewController
             destination.time = 5
             destination.environment = environments.randomElement()
+        } else if sender as? UIButton == meganButton {
+            //Do nothing
+        } else {
+            let button = sender as? UIButton
+            let destination = segue.destination as! AddEditWEmojiViewController
+            destination.emoji = button?.titleLabel
         }
     }
     
