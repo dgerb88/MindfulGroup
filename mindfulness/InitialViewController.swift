@@ -25,7 +25,7 @@ class InitialViewController: UIViewController {
     }
     
     @IBAction func quickJournalButton(_ sender: Any) {
-        UIView.animate(withDuration: 0.5) {
+        UIView.animate(withDuration: 0.3) {
             self.journalOutLet.alpha = 0
             self.Hstack.alpha = 1
             self.howAreYou.alpha = 1
@@ -56,8 +56,14 @@ class InitialViewController: UIViewController {
             //Do nothing
         } else {
             let button = sender as? UIButton
-            let destination = segue.destination as! AddEditWEmojiViewController
-            destination.emoji = button?.titleLabel
+            let destinationNavigationController = segue.destination as! UINavigationController
+            let destination = destinationNavigationController.topViewController as! AddEditWEmojiViewController
+            destination.emoji = button?.titleLabel?.text
+        }
+        UIView.animate(withDuration: 0.5, delay: 1) {
+            self.journalOutLet.alpha = 1
+            self.Hstack.alpha = 0
+            self.howAreYou.alpha = 0
         }
     }
     

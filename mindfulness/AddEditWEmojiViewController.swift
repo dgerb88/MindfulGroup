@@ -13,7 +13,7 @@ class AddEditWEmojiViewController: UIViewController {
     @IBOutlet weak var titleTextField: UITextField!
     
     @IBOutlet weak var bodyTextView: UITextView!
-    
+    var emoji: String?
     var journalEntry: JournalEntry?
     
     init?(coder: NSCoder, journalEntry: JournalEntry?) {
@@ -37,7 +37,9 @@ class AddEditWEmojiViewController: UIViewController {
             
             title = "Add Post"
         }
-
+        if let emoji {
+            titleTextField.text = "\(emoji) "
+        }
         titleTextField!.layer.borderWidth = 1
         bodyTextView!.layer.borderWidth = 1
         // Do any additional setup after loading the view.
