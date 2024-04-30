@@ -33,6 +33,8 @@
 		A379CC3F2B962EED005D9F8B /* QuoteController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A379CC3E2B962EED005D9F8B /* QuoteController.swift */; };
 		A379CC412B962F05005D9F8B /* Quote.swift in Sources */ = {isa = PBXBuildFile; fileRef = A379CC402B962F05005D9F8B /* Quote.swift */; };
 		FC01D23F2BDA9F4B00F38211 /* QuickJournal.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FC01D23E2BDA9F4B00F38211 /* QuickJournal.storyboard */; };
+		FC01D24B2BDBF8CE00F38211 /* MindfulnessDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FC01D2492BDBF8CD00F38211 /* MindfulnessDataModel.xcdatamodeld */; };
+		FC01D24D2BDFEC8D00F38211 /* AddEditWEmojiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC01D24C2BDFEC8D00F38211 /* AddEditWEmojiViewController.swift */; };
 		FCAB004F2BD02A2E0098C644 /* JournalTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCAB004E2BD02A2E0098C644 /* JournalTableViewController.swift */; };
 		FCAB00982BD2CC6F0098C644 /* EntryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCAB00972BD2CC6E0098C644 /* EntryManager.swift */; };
 		FCAB009A2BD2CE040098C644 /* PersistenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCAB00992BD2CE040098C644 /* PersistenceController.swift */; };
@@ -67,6 +69,8 @@
 		A379CC3E2B962EED005D9F8B /* QuoteController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteController.swift; sourceTree = "<group>"; };
 		A379CC402B962F05005D9F8B /* Quote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quote.swift; sourceTree = "<group>"; };
 		FC01D23E2BDA9F4B00F38211 /* QuickJournal.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = QuickJournal.storyboard; sourceTree = "<group>"; };
+		FC01D24A2BDBF8CE00F38211 /* MindfulnessDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MindfulnessDataModel.xcdatamodel; sourceTree = "<group>"; };
+		FC01D24C2BDFEC8D00F38211 /* AddEditWEmojiViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEditWEmojiViewController.swift; sourceTree = "<group>"; };
 		FCAB004E2BD02A2E0098C644 /* JournalTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalTableViewController.swift; sourceTree = "<group>"; };
 		FCAB00972BD2CC6E0098C644 /* EntryManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryManager.swift; sourceTree = "<group>"; };
 		FCAB00992BD2CE040098C644 /* PersistenceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceController.swift; sourceTree = "<group>"; };
@@ -116,9 +120,9 @@
 		A379CC252B8E36B4005D9F8B /* mindfulness */ = {
 			isa = PBXGroup;
 			children = (
-				4FA4DF412BDBF86A00E67687 /* MindfulnessDataModel.xcdatamodeld */,
 				A379CC262B8E36B4005D9F8B /* AppDelegate.swift */,
 				FCAB00992BD2CE040098C644 /* PersistenceController.swift */,
+				FC01D2492BDBF8CD00F38211 /* MindfulnessDataModel.xcdatamodeld */,
 				FCAB00972BD2CC6E0098C644 /* EntryManager.swift */,
 				A379CC282B8E36B4005D9F8B /* SceneDelegate.swift */,
 				A379CC2A2B8E36B4005D9F8B /* BreathViewController.swift */,
@@ -135,6 +139,7 @@
 				4F750A412BCEDB6D00FA120D /* Journal.storyboard */,
 				66DFDDD82BDBED78003D2FCF /* QuickBreathing.storyboard */,
 				FC01D23E2BDA9F4B00F38211 /* QuickJournal.storyboard */,
+				FC01D24C2BDFEC8D00F38211 /* AddEditWEmojiViewController.swift */,
 				FCB98DF92BD87F9B00251537 /* AddEditEntryTableViewController.swift */,
 				FCAB004E2BD02A2E0098C644 /* JournalTableViewController.swift */,
 				4F750A432BCEDB8900FA120D /* Breathing.storyboard */,
@@ -227,11 +232,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FC01D24D2BDFEC8D00F38211 /* AddEditWEmojiViewController.swift in Sources */,
 				4FA4DF322BD8155A00E67687 /* (null) in Sources */,
 				4F750A4C2BD0283900FA120D /* MeditationSecondViewController.swift in Sources */,
 				A379CC3F2B962EED005D9F8B /* QuoteController.swift in Sources */,
 				A379CC2B2B8E36B4005D9F8B /* BreathViewController.swift in Sources */,
-				4FA4DF432BDBF86A00E67687 /* MindfulnessDataModel.xcdatamodeld in Sources */,
+				FC01D24B2BDBF8CE00F38211 /* MindfulnessDataModel.xcdatamodeld in Sources */,
 				A379CC272B8E36B4005D9F8B /* AppDelegate.swift in Sources */,
 				FCAB004F2BD02A2E0098C644 /* JournalTableViewController.swift in Sources */,
 				FCAB00982BD2CC6F0098C644 /* EntryManager.swift in Sources */,
@@ -467,14 +473,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		4FA4DF412BDBF86A00E67687 /* MindfulnessDataModel.xcdatamodeld */ = {
+		FC01D2492BDBF8CD00F38211 /* MindfulnessDataModel.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				4FA4DF422BDBF86A00E67687 /* MindfulnessDataModel.xcdatamodel */,
+				FC01D24A2BDBF8CE00F38211 /* MindfulnessDataModel.xcdatamodel */,
 			);
-			currentVersion = 4FA4DF422BDBF86A00E67687 /* MindfulnessDataModel.xcdatamodel */;
+			currentVersion = FC01D24A2BDBF8CE00F38211 /* MindfulnessDataModel.xcdatamodel */;
 			name = MindfulnessDataModel.xcdatamodeld;
-			path = "/Users/daxgerber/Documents/Mtec coding/MindfulGroup/mindfulness/MindfulnessDataModel.xcdatamodeld";
+			path = /Users/andrewhigbee/Documents/Developer/MindfulGroup/mindfulness/MindfulnessDataModel.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
