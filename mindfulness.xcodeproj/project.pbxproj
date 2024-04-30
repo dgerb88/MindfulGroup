@@ -20,6 +20,7 @@
 		4FA4DF2D2BD6BFAA00E67687 /* Waterfall.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 4FA4DF252BD6B91900E67687 /* Waterfall.m4a */; };
 		4FA4DF2F2BD80E5000E67687 /* MeditationModal.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4FA4DF2E2BD80E5000E67687 /* MeditationModal.storyboard */; };
 		4FA4DF322BD8155A00E67687 /* (null) in Sources */ = {isa = PBXBuildFile; };
+		4FA4DF432BDBF86A00E67687 /* MindfulnessDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4FA4DF412BDBF86A00E67687 /* MindfulnessDataModel.xcdatamodeld */; };
 		66DFDDD42BD811F1003D2FCF /* Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66DFDDD32BD811F1003D2FCF /* Hex.swift */; };
 		66DFDDD92BDBED78003D2FCF /* QuickBreathing.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 66DFDDD82BDBED78003D2FCF /* QuickBreathing.storyboard */; };
 		A379CC272B8E36B4005D9F8B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A379CC262B8E36B4005D9F8B /* AppDelegate.swift */; };
@@ -53,6 +54,7 @@
 		4FA4DF262BD6BA6500E67687 /* Rain.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = Rain.m4a; sourceTree = "<group>"; };
 		4FA4DF272BD6BB8E00E67687 /* Evil washing machine.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Evil washing machine.m4a"; sourceTree = "<group>"; };
 		4FA4DF2E2BD80E5000E67687 /* MeditationModal.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MeditationModal.storyboard; sourceTree = "<group>"; };
+		4FA4DF422BDBF86A00E67687 /* MindfulnessDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MindfulnessDataModel.xcdatamodel; sourceTree = "<group>"; };
 		66DFDDD32BD811F1003D2FCF /* Hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hex.swift; sourceTree = "<group>"; };
 		66DFDDD82BDBED78003D2FCF /* QuickBreathing.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = QuickBreathing.storyboard; sourceTree = "<group>"; };
 		A379CC232B8E36B4005D9F8B /* mindfulness.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mindfulness.app; sourceTree = BUILT_PRODUCTS_DIR; };
