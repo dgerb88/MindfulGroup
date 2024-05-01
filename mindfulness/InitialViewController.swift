@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import UserNotifications
 
 class InitialViewController: UIViewController {
     
@@ -22,6 +23,7 @@ class InitialViewController: UIViewController {
         journalOutLet.alpha = 1
         Hstack.alpha = 0
         howAreYou.alpha = 0
+        checkForPermission()
     }
     
     @IBAction func quickJournalButton(_ sender: Any) {
@@ -65,6 +67,52 @@ class InitialViewController: UIViewController {
             self.Hstack.alpha = 0
             self.howAreYou.alpha = 0
         }
+    }
+    
+    func checkForPermission() {
+        let notificationCenter = UNUserNotificationCenter.current()
+        notificationCenter.getNotificationSettings { settings in
+            switch settings.authorizationStatus {
+            case .notDetermined:
+                notificationCenter.requestAuthorization(options: [.alert, .sound]) { didAllow, error in
+                    if didAllow {
+                        self.dispatchNotification()
+                    }
+                }
+            case .denied:
+                return
+            case .authorized:
+                self.dispatchNotification()
+            default:
+                return
+            }
+        }
+    }
+    
+    func dispatchNotification() {
+        let id = "dailyReminder"
+        let title = "Meditation"
+        let body = "A daily meditation can give you the reset you need"
+        let hour = 17
+        let minute = 0
+        let isDaily = true
+        
+        let notificationCenter = UNUserNotificationCenter.current()
+        let content = UNMutableNotificationContent()
+        content.title = title
+        content.body = body
+        content.sound = .default
+        
+        let calendar = Calendar.current
+        var dateComponents = DateComponents(calendar: calendar, timeZone: TimeZone.current)
+        dateComponents.hour = hour
+        dateComponents.minute = minute
+        
+        let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: isDaily)
+        let request = UNNotificationRequest(identifier: id, content: content, trigger: trigger)
+        
+        notificationCenter.removeDeliveredNotifications(withIdentifiers: [id])
+        notificationCenter.add(request)
     }
     
     
