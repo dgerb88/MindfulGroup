@@ -10,7 +10,7 @@ import UIKit
 class InitialViewController: UIViewController {
     
     @IBOutlet weak var quoteLabel: UILabel!
-    let environments = ["Forest", "Waves", "Rain", "Waterfall", "Trickling water", "Evil washing machine"]
+    let environments = ["Forest", "Waves", "Rain", "Waterfall", "Trickling water"]
     
     override func viewDidLoad() {
         super.viewDidLoad()

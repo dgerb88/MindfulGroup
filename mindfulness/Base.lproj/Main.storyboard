@@ -77,7 +77,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gxg-w8-reD">
-                                <rect key="frame" x="16" y="586.66666666666663" width="361" height="58"/>
+                                <rect key="frame" x="16" y="610.33333333333337" width="361" height="58"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="58" id="7rL-jf-pQx"/>
                                 </constraints>
@@ -97,9 +97,9 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ufP-Ms-cK0">
-                                <rect key="frame" x="16" y="433.33333333333331" width="361" height="58"/>
+                                <rect key="frame" x="16" y="457" width="361" height="58"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="58" id="hcY-eF-JM0"/>
+                                    <constraint firstAttribute="height" constant="58" id="hcY-eF-JM0"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" image="book.pages" catalog="system" title="Quick Journal Entry">
@@ -110,15 +110,21 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hxK-E3-l9k">
-                                <rect key="frame" x="159" y="301" width="75" height="34.333333333333314"/>
+                                <rect key="frame" x="16" y="301" width="361" height="58"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="58" id="dRv-JJ-OcS"/>
+                                </constraints>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" image="wind" catalog="system" title="Quick breathing exercise">
+                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="baseBackgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </buttonConfiguration>
                                 <connections>
                                     <segue destination="pCv-Nc-IMK" kind="presentation" modalPresentationStyle="fullScreen" id="S9q-qR-vyC"/>
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="sbH-9b-uYX">
-                                <rect key="frame" x="8" y="499.33333333333326" width="377" height="30"/>
+                                <rect key="frame" x="8" y="523" width="377" height="30"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pne-JI-qgk">
                                         <rect key="frame" x="0.0" y="0.0" width="45.333333333333336" height="30"/>
@@ -202,7 +208,7 @@
                                 </constraints>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="How are you feeling today?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iDj-CJ-kMG">
-                                <rect key="frame" x="94.000000000000014" y="452.33333333333331" width="205.33333333333337" height="20.333333333333314"/>
+                                <rect key="frame" x="94.000000000000014" y="476" width="205.33333333333337" height="20.333333333333314"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -211,10 +217,12 @@
                         <viewLayoutGuide key="safeArea" id="GOt-Qx-xz1"/>
                         <color key="backgroundColor" red="0.59607843140000005" green="0.2156862745" blue="0.39607843139999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="GOt-Qx-xz1" firstAttribute="trailing" secondItem="hxK-E3-l9k" secondAttribute="trailing" constant="16" id="9k1-1G-Jff"/>
                             <constraint firstItem="sbH-9b-uYX" firstAttribute="top" secondItem="ufP-Ms-cK0" secondAttribute="bottom" constant="8" id="9q1-zO-oMS"/>
                             <constraint firstItem="gxg-w8-reD" firstAttribute="top" secondItem="sbH-9b-uYX" secondAttribute="bottom" constant="57.329999999999998" id="C7z-Kn-UZI"/>
                             <constraint firstItem="ufP-Ms-cK0" firstAttribute="leading" secondItem="GOt-Qx-xz1" secondAttribute="leading" constant="16" id="IKM-7O-Dyc"/>
                             <constraint firstItem="GOt-Qx-xz1" firstAttribute="trailing" secondItem="gxg-w8-reD" secondAttribute="trailing" constant="16" id="NWa-Ml-x7P"/>
+                            <constraint firstItem="hxK-E3-l9k" firstAttribute="leading" secondItem="GOt-Qx-xz1" secondAttribute="leading" constant="16" id="XE3-EV-WG9"/>
                             <constraint firstItem="GOt-Qx-xz1" firstAttribute="trailing" secondItem="0HA-RM-og1" secondAttribute="trailing" constant="20" id="XV2-Le-UC0"/>
                             <constraint firstItem="iDj-CJ-kMG" firstAttribute="top" secondItem="hxK-E3-l9k" secondAttribute="bottom" constant="117" id="a9m-bc-8C5"/>
                             <constraint firstItem="gxg-w8-reD" firstAttribute="leading" secondItem="GOt-Qx-xz1" secondAttribute="leading" constant="16" id="alf-TG-WHe"/>
@@ -284,5 +292,6 @@
         <image name="book.pages" catalog="system" width="107" height="128"/>
         <image name="figure.mind.and.body" catalog="system" width="128" height="102"/>
         <image name="house" catalog="system" width="128" height="104"/>
+        <image name="wind" catalog="system" width="128" height="103"/>
     </resources>
 </document>
