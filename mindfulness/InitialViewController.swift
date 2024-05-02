@@ -10,8 +10,10 @@ import UserNotifications
 
 class InitialViewController: UIViewController {
     
+    @IBOutlet weak var quoteLabelBackground: UIView!
     @IBOutlet weak var quoteLabel: UILabel!
     let environments = ["Forest", "Waves", "Rain", "Waterfall", "Trickling water"]
+    let gradientLayer = CAGradientLayer()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,6 +26,8 @@ class InitialViewController: UIViewController {
         Hstack.alpha = 0
         howAreYou.alpha = 0
         checkForPermission()
+        blurForQuoteBackground()
+        setupGradientBackground()
     }
     
     @IBAction func quickJournalButton(_ sender: Any) {
@@ -114,7 +118,32 @@ class InitialViewController: UIViewController {
         notificationCenter.removeDeliveredNotifications(withIdentifiers: [id])
         notificationCenter.add(request)
     }
-    
-    
+    func blurForQuoteBackground() {
+        let blurEffect = UIBlurEffect(style: .systemUltraThinMaterialLight) // Choose the appropriate style
+        let blurEffectView = UIVisualEffectView(effect: blurEffect)
+        blurEffectView.frame = quoteLabelBackground.bounds
+        blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight] // Ensures the blur effect resizes with its parent view
+
+        // Set the corner radius and enable clipping
+        blurEffectView.layer.cornerRadius = 10 // Adjust this value to control the roundness of the corners
+        blurEffectView.clipsToBounds = true
+        blurEffectView.layer.opacity = 0.4
+            quoteLabelBackground.addSubview(blurEffectView)
+        quoteLabelBackground.sendSubviewToBack(blurEffectView) // Sends the blur view behind any other content in otherInstructionLabelBackground
+    }
+    func setupGradientBackground() {
+        gradientLayer.frame = view.bounds
+        gradientLayer.colors = [
+            UIColor(hex: "#8F549D")?.cgColor,
+            UIColor(hex: "983765")?.cgColor,
+            UIColor(hex: "#8D331F")?.cgColor,
+            
+        ].compactMap { $0 }  // Ensure all color values are valid
+        gradientLayer.locations = [0.0, 0.8, 1.0]  // Points at which the color changes occur
+        gradientLayer.startPoint = CGPoint(x: 0.5, y: 0.0)  // Middle top
+        
+        gradientLayer.endPoint = CGPoint(x: 0.5, y: 1.0)  // Middle bottom
+        view.layer.insertSublayer(gradientLayer, at: 0)  // Insert the gradient layer behind all other views
+    }
 
 }
