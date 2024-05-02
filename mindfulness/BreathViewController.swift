@@ -54,7 +54,7 @@ class BreathViewController: UIViewController {
          gradientLayer.frame = view.bounds  // Ensure the gradient layer covers the full view
      }
     func setupBlurForOtherInstructionLabelBackground() {
-        let blurEffect = UIBlurEffect(style: .regular) // Choose the appropriate style
+        let blurEffect = UIBlurEffect(style: .systemUltraThinMaterialLight) // Choose the appropriate style
         let blurEffectView = UIVisualEffectView(effect: blurEffect)
         blurEffectView.frame = otherInstructionLabelBackground.bounds
         blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight] // Ensures the blur effect resizes with its parent view
@@ -62,7 +62,7 @@ class BreathViewController: UIViewController {
         // Set the corner radius and enable clipping
         blurEffectView.layer.cornerRadius = 10 // Adjust this value to control the roundness of the corners
         blurEffectView.clipsToBounds = true
-
+        blurEffectView.layer.opacity = 0.4
         otherInstructionLabelBackground.addSubview(blurEffectView)
         otherInstructionLabelBackground.sendSubviewToBack(blurEffectView) // Sends the blur view behind any other content in otherInstructionLabelBackground
     }

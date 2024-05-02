@@ -20,9 +20,9 @@
 		4FA4DF2D2BD6BFAA00E67687 /* Waterfall.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 4FA4DF252BD6B91900E67687 /* Waterfall.m4a */; };
 		4FA4DF2F2BD80E5000E67687 /* MeditationModal.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4FA4DF2E2BD80E5000E67687 /* MeditationModal.storyboard */; };
 		4FA4DF322BD8155A00E67687 /* (null) in Sources */ = {isa = PBXBuildFile; };
-		4FA4DF4B2BE140F500E67687 /* MindfulnessDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4FA4DF492BE140F500E67687 /* MindfulnessDataModel.xcdatamodeld */; };
 		66DFDDD42BD811F1003D2FCF /* Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66DFDDD32BD811F1003D2FCF /* Hex.swift */; };
 		66DFDDD92BDBED78003D2FCF /* QuickBreathing.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 66DFDDD82BDBED78003D2FCF /* QuickBreathing.storyboard */; };
+		66DFDDE42BE28594003D2FCF /* MindfulnessDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 66DFDDE22BE28594003D2FCF /* MindfulnessDataModel.xcdatamodeld */; };
 		A379CC272B8E36B4005D9F8B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A379CC262B8E36B4005D9F8B /* AppDelegate.swift */; };
 		A379CC292B8E36B4005D9F8B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A379CC282B8E36B4005D9F8B /* SceneDelegate.swift */; };
 		A379CC2B2B8E36B4005D9F8B /* BreathViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A379CC2A2B8E36B4005D9F8B /* BreathViewController.swift */; };
@@ -53,9 +53,9 @@
 		4FA4DF262BD6BA6500E67687 /* Rain.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = Rain.m4a; sourceTree = "<group>"; };
 		4FA4DF272BD6BB8E00E67687 /* Evil washing machine.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Evil washing machine.m4a"; sourceTree = "<group>"; };
 		4FA4DF2E2BD80E5000E67687 /* MeditationModal.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MeditationModal.storyboard; sourceTree = "<group>"; };
-		4FA4DF4A2BE140F500E67687 /* MindfulnessDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MindfulnessDataModel.xcdatamodel; sourceTree = "<group>"; };
 		66DFDDD32BD811F1003D2FCF /* Hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hex.swift; sourceTree = "<group>"; };
 		66DFDDD82BDBED78003D2FCF /* QuickBreathing.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = QuickBreathing.storyboard; sourceTree = "<group>"; };
+		66DFDDE32BE28594003D2FCF /* MindfulnessDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MindfulnessDataModel.xcdatamodel; sourceTree = "<group>"; };
 		A379CC232B8E36B4005D9F8B /* mindfulness.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mindfulness.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A379CC262B8E36B4005D9F8B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A379CC282B8E36B4005D9F8B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -118,8 +118,8 @@
 		A379CC252B8E36B4005D9F8B /* mindfulness */ = {
 			isa = PBXGroup;
 			children = (
-				4FA4DF492BE140F500E67687 /* MindfulnessDataModel.xcdatamodeld */,
 				A379CC262B8E36B4005D9F8B /* AppDelegate.swift */,
+				66DFDDE22BE28594003D2FCF /* MindfulnessDataModel.xcdatamodeld */,
 				FCAB00992BD2CE040098C644 /* PersistenceController.swift */,
 				FCAB00972BD2CC6E0098C644 /* EntryManager.swift */,
 				A379CC282B8E36B4005D9F8B /* SceneDelegate.swift */,
@@ -232,7 +232,7 @@
 			files = (
 				FC01D24D2BDFEC8D00F38211 /* AddEditWEmojiViewController.swift in Sources */,
 				4FA4DF322BD8155A00E67687 /* (null) in Sources */,
-				4FA4DF4B2BE140F500E67687 /* MindfulnessDataModel.xcdatamodeld in Sources */,
+				66DFDDE42BE28594003D2FCF /* MindfulnessDataModel.xcdatamodeld in Sources */,
 				4F750A4C2BD0283900FA120D /* MeditationSecondViewController.swift in Sources */,
 				A379CC3F2B962EED005D9F8B /* QuoteController.swift in Sources */,
 				A379CC2B2B8E36B4005D9F8B /* BreathViewController.swift in Sources */,
@@ -471,14 +471,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		4FA4DF492BE140F500E67687 /* MindfulnessDataModel.xcdatamodeld */ = {
+		66DFDDE22BE28594003D2FCF /* MindfulnessDataModel.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				4FA4DF4A2BE140F500E67687 /* MindfulnessDataModel.xcdatamodel */,
+				66DFDDE32BE28594003D2FCF /* MindfulnessDataModel.xcdatamodel */,
 			);
-			currentVersion = 4FA4DF4A2BE140F500E67687 /* MindfulnessDataModel.xcdatamodel */;
+			currentVersion = 66DFDDE32BE28594003D2FCF /* MindfulnessDataModel.xcdatamodel */;
 			name = MindfulnessDataModel.xcdatamodeld;
-			path = "/Users/daxgerber/Documents/Mtec coding/MindfulGroup/mindfulness/MindfulnessDataModel.xcdatamodeld";
+			path = "/Users/meganschmoyer/Projects/TablesAndPersistanceProjects/New Projects/MindfulGroup/mindfulness/MindfulnessDataModel.xcdatamodeld";
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
