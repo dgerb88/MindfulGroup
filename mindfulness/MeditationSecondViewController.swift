@@ -54,8 +54,11 @@ class MeditationSecondViewController: UIViewController {
     func stopProgressTimer() {
         timer?.invalidate()
         timer = nil
-        audioPlayer?.stop()
-        audioPlayer = nil
+        audioPlayer?.setVolume(0, fadeDuration: 1)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            self.audioPlayer?.stop()
+            self.audioPlayer = nil
+        }
     }
     func playSound() {
         let pathToSound = Bundle.main.path(forResource: environment, ofType: "m4a")!
