@@ -109,10 +109,10 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Jc9-hf-9Bg">
-                                <rect key="frame" x="15" y="262" width="363" height="196"/>
+                                <rect key="frame" x="15" y="262" width="363" height="350"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="196" id="Auc-ab-hNS"/>
+                                    <constraint firstAttribute="height" constant="350" id="Auc-ab-hNS"/>
                                 </constraints>
                                 <color key="textColor" systemColor="labelColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -124,13 +124,31 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a72-vq-oCA">
+                                <rect key="frame" x="15" y="632" width="84" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="4QZ-qk-7A5"/>
+                                    <constraint firstAttribute="width" constant="84" id="7xt-eM-cCk"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Camera"/>
+                                <connections>
+                                    <action selector="cameraButtonTapped:" destination="Mic-fx-36J" eventType="touchUpInside" id="tvg-tV-HJD"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fnm-a5-0fD">
+                                <rect key="frame" x="16" y="411" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="eBq-wy-Hvy"/>
                         <color key="backgroundColor" red="0.55294120309999995" green="0.23921570180000001" blue="0.39215683940000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="n8v-ww-yq3" firstAttribute="top" secondItem="PSw-oI-dbs" secondAttribute="bottom" constant="8" id="36b-8D-rSd"/>
+                            <constraint firstItem="a72-vq-oCA" firstAttribute="leading" secondItem="eBq-wy-Hvy" secondAttribute="leading" constant="15" id="DUH-bY-hPi"/>
                             <constraint firstItem="DzH-O1-y7h" firstAttribute="leading" secondItem="GCU-xM-bGx" secondAttribute="leadingMargin" id="Gpm-48-TWq"/>
                             <constraint firstItem="PSw-oI-dbs" firstAttribute="top" secondItem="sTd-75-gLy" secondAttribute="bottom" constant="4" id="Ht4-AQ-PGx"/>
+                            <constraint firstItem="a72-vq-oCA" firstAttribute="top" secondItem="Jc9-hf-9Bg" secondAttribute="bottom" constant="20" id="MWN-E5-c5m"/>
                             <constraint firstItem="Jc9-hf-9Bg" firstAttribute="top" secondItem="n8v-ww-yq3" secondAttribute="bottom" constant="4" id="QE6-y8-LGE"/>
                             <constraint firstItem="sTd-75-gLy" firstAttribute="leading" secondItem="Jc9-hf-9Bg" secondAttribute="leading" id="QGC-RM-ebl"/>
                             <constraint firstItem="sTd-75-gLy" firstAttribute="leading" secondItem="PSw-oI-dbs" secondAttribute="leading" id="R12-iE-8pq"/>
@@ -156,6 +174,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="bodyTextView" destination="Jc9-hf-9Bg" id="yYq-Qz-hMh"/>
+                        <outlet property="imageView" destination="fnm-a5-0fD" id="L9e-KH-x9Q"/>
                         <outlet property="titleTextField" destination="PSw-oI-dbs" id="eVU-RA-2cQ"/>
                     </connections>
                 </viewController>

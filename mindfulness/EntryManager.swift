@@ -17,12 +17,13 @@ class EntryManager {
     
     // MARK: - Lists
     
-    func createNewEntry(title: String, body: String) {
+    func createNewEntry(title: String, body: String, photo: Data) {
         let newEntry = JournalEntry(context: context)
         newEntry.id = UUID()
         newEntry.title = title
         newEntry.date = Date()
         newEntry.body = body
+        newEntry.photo = photo
         saveContext()
     }
     
