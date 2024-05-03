@@ -21,6 +21,7 @@ class AddEditWEmojiViewController: UIViewController, UIImagePickerControllerDele
     
     var emoji: String?
     var journalEntry: JournalEntry?
+    var photo: UIImage?
     
     init?(coder: NSCoder, journalEntry: JournalEntry?) {
         super.init(coder: coder)
@@ -41,6 +42,9 @@ class AddEditWEmojiViewController: UIViewController, UIImagePickerControllerDele
         if let journalEntry = self.journalEntry {
             titleTextField.text = journalEntry.title
             bodyTextView.text = journalEntry.body
+            if let photo = journalEntry.photo {
+                imageView.image = UIImage(data: journalEntry.photo!)
+            }
             
             title = "Edit Post"
         } else {
@@ -74,7 +78,12 @@ class AddEditWEmojiViewController: UIViewController, UIImagePickerControllerDele
         if let journalEntry = self.journalEntry {
             EntryManager.shared.updateEntry(journalEntry, title: titleTextField, body: bodyTextView)
         } else {
-            EntryManager.shared.createNewEntry(title: titleTextField, body: bodyTextView)
+            if let photo = self.photo {
+                let pngImageData  = photo.pngData()
+                EntryManager.shared.createNewEntryWPhoto(title: titleTextField, body: bodyTextView, photo: pngImageData!)
+            } else {
+                EntryManager.shared.createNewEntry(title: titleTextField, body: bodyTextView)
+            }
         }
     }
     
@@ -131,6 +140,7 @@ class AddEditWEmojiViewController: UIViewController, UIImagePickerControllerDele
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
             if let image = info[.originalImage] as? UIImage {
                 imageView.image = image
+                photo = image
             }
 
             dismiss(animated: true, completion: nil)
