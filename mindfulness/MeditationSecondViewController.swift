@@ -62,7 +62,8 @@ class MeditationSecondViewController: UIViewController {
         let url = URL(fileURLWithPath: pathToSound)
         do {
             audioPlayer = try AVAudioPlayer(contentsOf: url)
-            try AVAudioSession.sharedInstance().setCategory(.playback)
+            try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default, options: [])
+            try AVAudioSession.sharedInstance().setActive(true)
             audioPlayer?.play()
         } catch {
             print(error.localizedDescription)

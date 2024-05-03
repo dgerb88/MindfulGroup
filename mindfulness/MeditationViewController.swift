@@ -13,6 +13,7 @@ class MeditationViewController: UIViewController {
     let environments = ["Forest", "Waves", "Rain", "Waterfall", "Trickling water", "Evil washing machine"]
     var selectedTimeValue = 1
     var selectedEnvironmentValue = "Forest"
+    let gradientLayer = CAGradientLayer()
     
     @IBOutlet weak var timePicker: UIPickerView!
     @IBOutlet weak var typePicker: UIPickerView!
@@ -24,6 +25,8 @@ class MeditationViewController: UIViewController {
         typePicker.delegate = self
         typePicker.dataSource = self
         // Do any additional setup after loading the view.
+        
+        setupGradientBackground()
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -53,10 +56,23 @@ extension MeditationViewController: UIPickerViewDelegate, UIPickerViewDataSource
             selectedTimeValue = pickerView.selectedRow(inComponent: component) + 1
             return NSAttributedString(string: time[row], attributes: [NSAttributedString.Key.foregroundColor: UIColor.white])
         } else {
-            selectedEnvironmentValue = environments[pickerView.selectedRow(inComponent: component)]
+            selectedEnvironmentValue = environments[row]
             return NSAttributedString(string: environments[row], attributes: [NSAttributedString.Key.foregroundColor: UIColor.white])
         }
     }
-    
+    func setupGradientBackground() {
+        gradientLayer.frame = view.bounds
+        gradientLayer.colors = [
+            UIColor(hex: "#8F549D")?.cgColor,
+            UIColor(hex: "983765")?.cgColor,
+            UIColor(hex: "#8D331F")?.cgColor,
+            
+        ].compactMap { $0 }  // Ensure all color values are valid
+        gradientLayer.locations = [0.0, 0.8, 1.0]  // Points at which the color changes occur
+        gradientLayer.startPoint = CGPoint(x: 0.5, y: 0.0)  // Middle top
+        
+        gradientLayer.endPoint = CGPoint(x: 0.5, y: 1.0)  // Middle bottom
+        view.layer.insertSublayer(gradientLayer, at: 0)  // Insert the gradient layer behind all other views
+    }
     
 }
