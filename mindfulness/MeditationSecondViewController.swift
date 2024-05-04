@@ -54,15 +54,19 @@ class MeditationSecondViewController: UIViewController {
     func stopProgressTimer() {
         timer?.invalidate()
         timer = nil
-        audioPlayer?.stop()
-        audioPlayer = nil
+        audioPlayer?.setVolume(0, fadeDuration: 1)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            self.audioPlayer?.stop()
+            self.audioPlayer = nil
+        }
     }
     func playSound() {
         let pathToSound = Bundle.main.path(forResource: environment, ofType: "m4a")!
         let url = URL(fileURLWithPath: pathToSound)
         do {
             audioPlayer = try AVAudioPlayer(contentsOf: url)
-            try AVAudioSession.sharedInstance().setCategory(.playback)
+            try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default, options: [])
+            try AVAudioSession.sharedInstance().setActive(true)
             audioPlayer?.play()
         } catch {
             print(error.localizedDescription)

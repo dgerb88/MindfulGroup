@@ -67,39 +67,23 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0HA-RM-og1">
-                                <rect key="frame" x="20" y="96" width="353" height="168"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="168" id="0Qp-oy-4gO"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gxg-w8-reD">
-                                <rect key="frame" x="16" y="586.66666666666663" width="361" height="58"/>
+                                <rect key="frame" x="16" y="610.33333333333337" width="361" height="58"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="58" id="7rL-jf-pQx"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" image="figure.mind.and.body" catalog="system" title="Quick meditation">
+                                <buttonConfiguration key="configuration" style="filled" image="figure.mind.and.body" catalog="system" title="Quick Meditation">
                                     <color key="baseBackgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
                                 <connections>
                                     <segue destination="zUV-Ek-jBy" kind="presentation" modalPresentationStyle="fullScreen" id="iVl-CN-Qc3"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tKy-h0-V7G">
-                                <rect key="frame" x="319" y="620" width="0.0" height="0.0"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ufP-Ms-cK0">
-                                <rect key="frame" x="16" y="433.33333333333331" width="361" height="58"/>
+                                <rect key="frame" x="16" y="457" width="361" height="58"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="58" id="hcY-eF-JM0"/>
+                                    <constraint firstAttribute="height" constant="58" id="hcY-eF-JM0"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" image="book.pages" catalog="system" title="Quick Journal Entry">
@@ -110,15 +94,21 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hxK-E3-l9k">
-                                <rect key="frame" x="159" y="301" width="75" height="34.333333333333314"/>
+                                <rect key="frame" x="16" y="308" width="361" height="58"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="58" id="dRv-JJ-OcS"/>
+                                </constraints>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" image="wind" catalog="system" title="Quick Breathing Exercise">
+                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="baseBackgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </buttonConfiguration>
                                 <connections>
                                     <segue destination="pCv-Nc-IMK" kind="presentation" modalPresentationStyle="fullScreen" id="S9q-qR-vyC"/>
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="sbH-9b-uYX">
-                                <rect key="frame" x="8" y="499.33333333333326" width="377" height="30"/>
+                                <rect key="frame" x="8" y="523" width="377" height="30"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pne-JI-qgk">
                                         <rect key="frame" x="0.0" y="0.0" width="45.333333333333336" height="30"/>
@@ -202,32 +192,53 @@
                                 </constraints>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="How are you feeling today?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iDj-CJ-kMG">
-                                <rect key="frame" x="94.000000000000014" y="452.33333333333331" width="205.33333333333337" height="20.333333333333314"/>
+                                <rect key="frame" x="94.000000000000014" y="476" width="205.33333333333337" height="20.333333333333314"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="u1b-TV-z85">
+                                <rect key="frame" x="16" y="80" width="361" height="197"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0HA-RM-og1">
+                                        <rect key="frame" x="8" y="8" width="345" height="181"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="181" id="5vL-wQ-dX5"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Papyrus" family="Papyrus" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="0HA-RM-og1" firstAttribute="leading" secondItem="u1b-TV-z85" secondAttribute="leadingMargin" id="6hI-hI-7fF"/>
+                                    <constraint firstItem="0HA-RM-og1" firstAttribute="top" secondItem="u1b-TV-z85" secondAttribute="topMargin" id="F6r-nm-B3x"/>
+                                    <constraint firstItem="0HA-RM-og1" firstAttribute="trailing" secondItem="u1b-TV-z85" secondAttribute="trailingMargin" id="Y6a-g0-dFF"/>
+                                    <constraint firstItem="0HA-RM-og1" firstAttribute="bottom" secondItem="u1b-TV-z85" secondAttribute="bottomMargin" id="asK-in-2f4"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="GOt-Qx-xz1"/>
                         <color key="backgroundColor" red="0.59607843140000005" green="0.2156862745" blue="0.39607843139999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="sbH-9b-uYX" firstAttribute="top" secondItem="ufP-Ms-cK0" secondAttribute="bottom" constant="8" id="9q1-zO-oMS"/>
+                            <constraint firstItem="GOt-Qx-xz1" firstAttribute="trailing" secondItem="u1b-TV-z85" secondAttribute="trailing" constant="16" id="AgO-X7-qqU"/>
                             <constraint firstItem="gxg-w8-reD" firstAttribute="top" secondItem="sbH-9b-uYX" secondAttribute="bottom" constant="57.329999999999998" id="C7z-Kn-UZI"/>
-                            <constraint firstItem="ufP-Ms-cK0" firstAttribute="leading" secondItem="GOt-Qx-xz1" secondAttribute="leading" constant="16" id="IKM-7O-Dyc"/>
+                            <constraint firstItem="hxK-E3-l9k" firstAttribute="top" secondItem="u1b-TV-z85" secondAttribute="bottom" constant="31" id="EZq-Pg-53c"/>
                             <constraint firstItem="GOt-Qx-xz1" firstAttribute="trailing" secondItem="gxg-w8-reD" secondAttribute="trailing" constant="16" id="NWa-Ml-x7P"/>
-                            <constraint firstItem="GOt-Qx-xz1" firstAttribute="trailing" secondItem="0HA-RM-og1" secondAttribute="trailing" constant="20" id="XV2-Le-UC0"/>
-                            <constraint firstItem="iDj-CJ-kMG" firstAttribute="top" secondItem="hxK-E3-l9k" secondAttribute="bottom" constant="117" id="a9m-bc-8C5"/>
+                            <constraint firstItem="u1b-TV-z85" firstAttribute="leading" secondItem="GOt-Qx-xz1" secondAttribute="leading" constant="16" id="TLb-km-Lp9"/>
+                            <constraint firstItem="hxK-E3-l9k" firstAttribute="leading" secondItem="GOt-Qx-xz1" secondAttribute="leading" constant="16" id="XE3-EV-WG9"/>
+                            <constraint firstItem="iDj-CJ-kMG" firstAttribute="top" secondItem="hxK-E3-l9k" secondAttribute="bottom" constant="110" id="a9m-bc-8C5"/>
                             <constraint firstItem="gxg-w8-reD" firstAttribute="leading" secondItem="GOt-Qx-xz1" secondAttribute="leading" constant="16" id="alf-TG-WHe"/>
-                            <constraint firstItem="0HA-RM-og1" firstAttribute="top" secondItem="GOt-Qx-xz1" secondAttribute="top" constant="37" id="ay1-nD-Wf0"/>
-                            <constraint firstItem="ufP-Ms-cK0" firstAttribute="top" secondItem="hxK-E3-l9k" secondAttribute="bottom" constant="98" id="b0p-XX-Web"/>
+                            <constraint firstItem="ufP-Ms-cK0" firstAttribute="top" secondItem="hxK-E3-l9k" secondAttribute="bottom" constant="91" id="b0p-XX-Web"/>
                             <constraint firstItem="iDj-CJ-kMG" firstAttribute="centerX" secondItem="LJx-hr-3mJ" secondAttribute="centerX" id="bwm-ec-guY"/>
                             <constraint firstItem="hxK-E3-l9k" firstAttribute="centerX" secondItem="LJx-hr-3mJ" secondAttribute="centerX" id="dDs-mQ-br7"/>
                             <constraint firstItem="GOt-Qx-xz1" firstAttribute="trailing" secondItem="ufP-Ms-cK0" secondAttribute="trailing" constant="16" id="dEe-Wv-1e2"/>
                             <constraint firstItem="sbH-9b-uYX" firstAttribute="leading" secondItem="LJx-hr-3mJ" secondAttribute="leading" constant="8" id="iLi-jI-4c5"/>
                             <constraint firstItem="ufP-Ms-cK0" firstAttribute="centerX" secondItem="LJx-hr-3mJ" secondAttribute="centerX" id="iUB-1i-M2d"/>
-                            <constraint firstItem="0HA-RM-og1" firstAttribute="leading" secondItem="GOt-Qx-xz1" secondAttribute="leading" constant="20" id="idx-Ja-2Rp"/>
+                            <constraint firstItem="u1b-TV-z85" firstAttribute="top" secondItem="GOt-Qx-xz1" secondAttribute="top" constant="21" id="j72-fZ-pyF"/>
                             <constraint firstAttribute="trailing" secondItem="sbH-9b-uYX" secondAttribute="trailing" constant="8" id="q7d-7g-2F2"/>
-                            <constraint firstItem="hxK-E3-l9k" firstAttribute="top" secondItem="0HA-RM-og1" secondAttribute="bottom" constant="37" id="tFj-bK-Fji"/>
                             <constraint firstItem="sbH-9b-uYX" firstAttribute="centerX" secondItem="LJx-hr-3mJ" secondAttribute="centerX" id="zI8-Fz-RQm"/>
                         </constraints>
                     </view>
@@ -243,6 +254,7 @@
                         <outlet property="meganButton" destination="hxK-E3-l9k" id="LeX-fj-oUo"/>
                         <outlet property="neutralButton" destination="2A5-en-jXj" id="JDY-CS-Eqz"/>
                         <outlet property="quoteLabel" destination="0HA-RM-og1" id="Qzl-F2-o4D"/>
+                        <outlet property="quoteLabelBackground" destination="u1b-TV-z85" id="ygu-cW-rgN"/>
                         <outlet property="sadButton" destination="Fr6-7z-jF1" id="4V0-b2-bpC"/>
                         <outlet property="sleepyButton" destination="2Tt-Kr-WDE" id="sjN-yU-VLU"/>
                         <outlet property="surprisedButton" destination="8jC-KC-8JI" id="JIZ-HG-oMd"/>
@@ -278,11 +290,12 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="hzT-oC-HeV"/>
+        <segue reference="E4o-sp-QhU"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="book.pages" catalog="system" width="107" height="128"/>
         <image name="figure.mind.and.body" catalog="system" width="128" height="102"/>
         <image name="house" catalog="system" width="128" height="104"/>
+        <image name="wind" catalog="system" width="128" height="103"/>
     </resources>
 </document>

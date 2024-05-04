@@ -6,11 +6,14 @@
 //
 
 import UIKit
+import UserNotifications
 
 class InitialViewController: UIViewController {
     
+    @IBOutlet weak var quoteLabelBackground: UIView!
     @IBOutlet weak var quoteLabel: UILabel!
-    let environments = ["Forest", "Waves", "Rain", "Waterfall", "Trickling water", "Evil washing machine"]
+    let environments = ["Forest", "Waves", "Rain", "Waterfall", "Trickling water"]
+    let gradientLayer = CAGradientLayer()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,6 +25,9 @@ class InitialViewController: UIViewController {
         journalOutLet.alpha = 1
         Hstack.alpha = 0
         howAreYou.alpha = 0
+        checkForPermission()
+        blurForQuoteBackground()
+        setupGradientBackground()
     }
     
     @IBAction func quickJournalButton(_ sender: Any) {
@@ -67,6 +73,77 @@ class InitialViewController: UIViewController {
         }
     }
     
+    func checkForPermission() {
+        let notificationCenter = UNUserNotificationCenter.current()
+        notificationCenter.getNotificationSettings { settings in
+            switch settings.authorizationStatus {
+            case .notDetermined:
+                notificationCenter.requestAuthorization(options: [.alert, .sound]) { didAllow, error in
+                    if didAllow {
+                        self.dispatchNotification()
+                    }
+                }
+            case .denied:
+                return
+            case .authorized:
+                self.dispatchNotification()
+            default:
+                return
+            }
+        }
+    }
     
+    func dispatchNotification() {
+        let id = "dailyReminder"
+        let title = "Meditation"
+        let body = "A daily meditation can give you the reset you need"
+        let hour = 17
+        let minute = 0
+        let isDaily = true
+        
+        let notificationCenter = UNUserNotificationCenter.current()
+        let content = UNMutableNotificationContent()
+        content.title = title
+        content.body = body
+        content.sound = .default
+        
+        let calendar = Calendar.current
+        var dateComponents = DateComponents(calendar: calendar, timeZone: TimeZone.current)
+        dateComponents.hour = hour
+        dateComponents.minute = minute
+        
+        let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: isDaily)
+        let request = UNNotificationRequest(identifier: id, content: content, trigger: trigger)
+        
+        notificationCenter.removeDeliveredNotifications(withIdentifiers: [id])
+        notificationCenter.add(request)
+    }
+    func blurForQuoteBackground() {
+        let blurEffect = UIBlurEffect(style: .systemUltraThinMaterialLight) // Choose the appropriate style
+        let blurEffectView = UIVisualEffectView(effect: blurEffect)
+        blurEffectView.frame = quoteLabelBackground.bounds
+        blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight] // Ensures the blur effect resizes with its parent view
+
+        // Set the corner radius and enable clipping
+        blurEffectView.layer.cornerRadius = 10 // Adjust this value to control the roundness of the corners
+        blurEffectView.clipsToBounds = true
+        blurEffectView.layer.opacity = 0.4
+            quoteLabelBackground.addSubview(blurEffectView)
+        quoteLabelBackground.sendSubviewToBack(blurEffectView) // Sends the blur view behind any other content in otherInstructionLabelBackground
+    }
+    func setupGradientBackground() {
+        gradientLayer.frame = view.bounds
+        gradientLayer.colors = [
+            UIColor(hex: "#8F549D")?.cgColor,
+            UIColor(hex: "983765")?.cgColor,
+            UIColor(hex: "#8D331F")?.cgColor,
+            
+        ].compactMap { $0 }  // Ensure all color values are valid
+        gradientLayer.locations = [0.0, 0.8, 1.0]  // Points at which the color changes occur
+        gradientLayer.startPoint = CGPoint(x: 0.5, y: 0.0)  // Middle top
+        
+        gradientLayer.endPoint = CGPoint(x: 0.5, y: 1.0)  // Middle bottom
+        view.layer.insertSublayer(gradientLayer, at: 0)  // Insert the gradient layer behind all other views
+    }
 
 }
