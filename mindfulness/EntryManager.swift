@@ -26,6 +26,16 @@ class EntryManager {
         saveContext()
     }
     
+    func createNewEntryWPhoto(title: String, body: String, photo: Data) {
+        let newEntry = JournalEntry(context: context)
+        newEntry.id = UUID()
+        newEntry.title = title
+        newEntry.date = Date()
+        newEntry.body = body
+        newEntry.photo = photo
+        saveContext()
+    }
+    
     func allEntries() -> [JournalEntry] {
         let fetchRequest = JournalEntry.fetchRequest()
         let sortDescriptor = NSSortDescriptor(key: "date", ascending: false)
