@@ -29,10 +29,10 @@ class MeditationSecondViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         progressView.center = view.center
-        setProgressViewColor(environment!)
+        setProgressViewColor(environment ?? "Forest")
         progressView.trackColor = .lightGray
         view.addSubview(progressView)
-        timeLabel.text = String("\(time!):00")
+        timeLabel.text = String("\(time ?? 0):00")
         timeLabel.layer.cornerRadius = 15
         timeLabel.layer.masksToBounds = true
         let imageView = UIImageView(frame: UIScreen.main.bounds)
