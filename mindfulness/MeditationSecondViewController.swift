@@ -11,13 +11,20 @@ import MediaPlayer
 
 class MeditationSecondViewController: UIViewController {
     
+    @IBOutlet weak var timeLabelButton: UIButton!
+    @IBOutlet weak var timeLabel: UILabel!
+    @IBOutlet weak var congratulationsLabel: UILabel!
+    
     var time: Int?
     var environment: String?
     var progress: Float = 0
     var timeCount = 0
     var timer: Timer?
-    let progressView = CircularProgressView(frame: CGRect(x: 0, y: 0, width: 200, height: 200), lineWidth: 15, rounded: false)
+    var progressView = CircularProgressView(frame: CGRect(x: 0, y: 0, width: 200, height: 200), lineWidth: 15, rounded: false)
     var audioPlayer: AVAudioPlayer?
+    var hasStarted = false
+    var didFinishMeditation = false
+    var startTime = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,6 +36,7 @@ class MeditationSecondViewController: UIViewController {
         timeLabel.layer.cornerRadius = 15
         timeLabel.layer.masksToBounds = true
         let imageView = UIImageView(frame: UIScreen.main.bounds)
+        startTime = time ?? 0
         
         // Set the image
         imageView.image = UIImage(named: environment ?? "Evil washing machine")
@@ -41,14 +49,16 @@ class MeditationSecondViewController: UIViewController {
         
         
         progressView.progress = progress
-        progressView.layer.opacity = 0.6
-        timeLabel.layer.opacity = 0.7
         startProgressTimer()
     }
     
     func startProgressTimer() {
         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateProgress), userInfo: nil, repeats: true)
         playSound()
+        hasStarted = true
+        progressView.alpha = 0.6
+        timeLabel.alpha = 0.6
+        congratulationsLabel.alpha = 0
     }
     
     func stopProgressTimer() {
@@ -59,7 +69,18 @@ class MeditationSecondViewController: UIViewController {
             self.audioPlayer?.stop()
             self.audioPlayer = nil
         }
+        hasStarted = false
     }
+    
+    func pauseProgressTimer() {
+        timer?.invalidate()
+        timer = nil
+        audioPlayer?.setVolume(0, fadeDuration: 1)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            self.audioPlayer?.pause()
+        }
+    }
+    
     func playSound() {
         let pathToSound = Bundle.main.path(forResource: environment, ofType: "m4a")!
         let url = URL(fileURLWithPath: pathToSound)
@@ -99,12 +120,47 @@ class MeditationSecondViewController: UIViewController {
         let formatted = formatTimeCount(countDown)
         timeLabel.text = "\(formatted.0):\(formatted.1)"
         if progress >= 1.0 {
+            progressView.alpha = 0
+            timeLabel.alpha = 0
+            congratulationsLabel.alpha = 1
+            congratulationsLabel.layer.cornerRadius = 15
+            congratulationsLabel.layer.masksToBounds = true
             stopProgressTimer()
+            didFinishMeditation = true
+            timeLabelButton.setImage(UIImage(systemName: "play.fill"), for: .normal)
+            timeCount = 0
+            progress = 0
+            time = startTime
+            progressView.progress = progress
+            setProgressViewColor(environment!)
         }
     }
     
     
-    @IBOutlet weak var timeLabel: UILabel!
+    @IBAction func pauseTimeButton(_ sender: Any) {
+        if didFinishMeditation {
+            startProgressTimer()
+            timeLabelButton.setImage(UIImage(systemName: "pause.fill"), for: .normal)
+            didFinishMeditation = false
+        } else {
+            if hasStarted {
+                //Pause timer
+                timeLabelButton.setImage(UIImage(systemName: "play.fill"), for: .normal)
+                pauseProgressTimer()
+                hasStarted.toggle()
+                print("pause please")
+            } else {
+                timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateProgress), userInfo: nil, repeats: true)
+                audioPlayer?.setVolume(1, fadeDuration: 1)
+                audioPlayer?.play()
+                timeLabelButton.setImage(UIImage(systemName: "pause.fill"), for: .normal)
+                hasStarted.toggle()
+                print("start again")
+            }
+        }
+    }
+    
+    
     @IBAction func donePressed(_ sender: Any) {
         stopProgressTimer()
         dismiss(animated: true, completion: nil)
