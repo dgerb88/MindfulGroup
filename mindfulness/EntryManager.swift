@@ -53,6 +53,12 @@ class EntryManager {
     
     // MARK: - Items
     
+    func deleteEntry(at indexPath: IndexPath) {
+        let entry = allEntries()[indexPath.row]
+        context.delete(entry)
+        saveContext()
+    }
+    
     func delete(_ entry: JournalEntry) {
         let context = context
         context.delete(entry)

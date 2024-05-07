@@ -46,10 +46,10 @@ class AddEditWEmojiViewController: UIViewController, UIImagePickerControllerDele
                 imageView.image = UIImage(data: journalEntry.photo!)
             }
             
-            title = "Edit Post"
+            title = "Edit Entry"
         } else {
             
-            title = "Add Post"
+            title = "Add Entry"
         }
         if let emoji {
             titleTextField.text = "\(emoji) "
