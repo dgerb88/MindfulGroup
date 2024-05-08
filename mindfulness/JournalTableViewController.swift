@@ -6,127 +6,151 @@
 //
 
 import UIKit
+import CoreData
 
-class JournalTableViewController: UITableViewController {
+class JournalTableViewController: UITableViewController, NSFetchedResultsControllerDelegate {
     
     private let manager = EntryManager.shared
     
-    @IBOutlet weak var searchBar: UISearchBar!
+    private var fetchedResultsController: NSFetchedResultsController<JournalEntry>!
     
-    var allEntries: [JournalEntry] = []
-    var filteredEntries: [JournalEntry] = []
+    @IBOutlet weak var searchBar: UISearchBar!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        filteredEntries = manager.allEntries()
-        tableView.reloadData()
+//        filteredEntries = manager.allEntries()
+//        tableView.reloadData()
+        
+        let fetchRequest: NSFetchRequest<JournalEntry> = JournalEntry.fetchRequest()
+                fetchRequest.sortDescriptors = [NSSortDescriptor(key: "title", ascending: true)]
+
+                fetchedResultsController = NSFetchedResultsController(
+                    fetchRequest: fetchRequest,
+                    managedObjectContext: manager.context,
+                    sectionNameKeyPath: nil,
+                    cacheName: nil
+                )
+                fetchedResultsController.delegate = self
+
+                do {
+                    try fetchedResultsController.performFetch()
+                } catch {
+                    print("Error fetching entries: \(error)")
+                }
     }
 
     // MARK: - Table view data source
-
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return filteredEntries.count
-    }
+            return fetchedResultsController.sections?[section].numberOfObjects ?? 0
+        }
 
     
+//    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+//        let cell = tableView.dequeueReusableCell(withIdentifier: "entryCell", for: indexPath)
+//        
+//        let entry = filteredEntries[indexPath.row]
+//        cell.textLabel?.text = entry.title
+//        cell.detailTextLabel?.text = entry.date?.formatted(date: .complete, time: .complete)
+//
+//        return cell
+//    }
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "entryCell", for: indexPath)
-        
-        let entry = filteredEntries[indexPath.row]
-        cell.textLabel?.text = entry.title
-        cell.detailTextLabel?.text = entry.date?.formatted(date: .complete, time: .complete)
-
-        return cell
-    }
+            let cell = tableView.dequeueReusableCell(withIdentifier: "entryCell", for: indexPath)
+            let entry = fetchedResultsController.object(at: indexPath)
+            cell.textLabel?.text = entry.title
+            cell.detailTextLabel?.text = entry.date?.formatted(date: .complete, time: .complete)
+            return cell
+        }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
     }
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
     
     // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-            manager.deleteEntry(at: indexPath)
-            tableView.reloadData()
+//            tableView.deleteRows(at: [indexPath], with: .fade)
+//            allEntries.remove(at: indexPath.row)
+//            filteredEntries.remove(at: indexPath.row)
+            let entry = fetchedResultsController.object(at: indexPath)
+            manager.delete(entry)
+//            tableView.reloadData()
         }
-//        else if editingStyle == .insert {
-//            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-//        }    
     }
-    
-
-    
-//    @IBSegueAction func editEntrySegue(_ coder: NSCoder, sender: Any?) -> AddEditEntryTableViewController? {
-//        guard let cell = sender as? UITableViewCell, let indexPath = tableView.indexPath(for: cell) else { return nil }
-//
-//        let entryToEdit = filteredEntries[indexPath.row]
-//
-//        return AddEditEntryTableViewController(coder: coder, journalEntry: entryToEdit)
-//    }
-    
     
     @IBSegueAction func addEditEntrySegue(_ coder: NSCoder, sender: Any?) -> AddEditWEmojiViewController? {
         guard let cell = sender as? UITableViewCell, let indexPath = tableView.indexPath(for: cell) else { return nil }
 
-        let entryToEdit = filteredEntries[indexPath.row]
+        let entryToEdit = fetchedResultsController.object(at: indexPath)
 
         return AddEditWEmojiViewController(coder: coder, journalEntry: entryToEdit)
     }
     
-    
-    @IBAction func unwindToJournalTableView(segue: UIStoryboardSegue) {
-        filteredEntries = manager.allEntries()
-        tableView.reloadData()
+    func controllerWillChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
+        tableView.beginUpdates()
+    }
+
+    func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>,
+                    didChange anObject: Any,
+                    at indexPath: IndexPath?,
+                    for type: NSFetchedResultsChangeType,
+                    newIndexPath: IndexPath?) {
+        switch type {
+        case .insert:
+            if let newIndexPath = newIndexPath {
+                tableView.insertRows(at: [newIndexPath], with: .fade)
+            }
+        case .delete:
+            if let indexPath = indexPath {
+                tableView.deleteRows(at: [indexPath], with: .fade)
+            }
+        case .update:
+            if let indexPath = indexPath {
+                tableView.reloadRows(at: [indexPath], with: .fade)
+            }
+        case .move:
+            if let indexPath = indexPath, let newIndexPath = newIndexPath {
+                tableView.moveRow(at: indexPath, to: newIndexPath)
+            }
+        @unknown default:
+            fatalError("Unhandled case")
+        }
+    }
+
+    func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
+        tableView.endUpdates()
     }
     
     
-    
-    /*
-     if let cell = sender as? PostTableViewCell, let indexPath = tableView.indexPath(for: cell) {
-         let postToEdit = NetworkController.posts[indexPath.row]
-         
-         return EditPostTableViewController(coder: coder, post: postToEdit)
-     } else {
-         return EditPostTableViewController(coder: coder)
-     }
-     */
-
+    @IBAction func unwindToJournalTableView(segue: UIStoryboardSegue) {
+    }
     
     // MARK: - Navigation
 
-    
-        func getSearch() {
-            if !searchBar.text!.isEmpty {
-                let searchText = searchBar.text
-                filteredEntries = manager.allEntries().filter { entry in
-                    let titleMatch = entry.title!.lowercased().contains(searchText!.lowercased())
-                    let bodyMatch = entry.body!.lowercased().contains(searchText!.lowercased())
-                    return titleMatch || bodyMatch
-                }
-                tableView.reloadData()
-            } else {
-                filteredEntries = manager.allEntries()
-                tableView.reloadData()
-            }
-        }
 }
 
 extension JournalTableViewController: UISearchBarDelegate {
     
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+            let predicate: NSPredicate?
+            if searchText.isEmpty {
+                predicate = nil
+            } else {
+                predicate = NSPredicate(format: "title CONTAINS[c] %@ OR body CONTAINS[c] %@", searchText, searchText)
+            }
+            fetchedResultsController.fetchRequest.predicate = predicate
+            do {
+                try fetchedResultsController.performFetch()
+            } catch {
+                print("Error fetching entries: \(error)")
+            }
+            tableView.reloadData()
+        }
+    
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        getSearch()
-        searchBar.resignFirstResponder()
-    }
+            searchBar.resignFirstResponder()
+        }
 }

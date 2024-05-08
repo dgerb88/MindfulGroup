@@ -76,7 +76,13 @@ class AddEditWEmojiViewController: UIViewController, UIImagePickerControllerDele
         guard let titleTextField = titleTextField.text, let bodyTextView = bodyTextView.text else { return }
         
         if let journalEntry = self.journalEntry {
-            EntryManager.shared.updateEntry(journalEntry, title: titleTextField, body: bodyTextView)
+            if let photo = self.photo {
+                let pngImageData  = photo.pngData()
+                EntryManager.shared.updateEntry(journalEntry, title: titleTextField, body: bodyTextView, photo: pngImageData)
+            } else {
+                EntryManager.shared.updateEntry(journalEntry, title: titleTextField, body: bodyTextView, photo: nil)
+            }
+    
         } else {
             if let photo = self.photo {
                 let pngImageData  = photo.pngData()

@@ -12,7 +12,7 @@ import UIKit
 class EntryManager {
     static let shared = EntryManager()
     
-    private let context = PersistenceController.shared.viewContext
+    let context = PersistenceController.shared.viewContext
     
     
     // MARK: - Lists
@@ -53,11 +53,11 @@ class EntryManager {
     
     // MARK: - Items
     
-    func deleteEntry(at indexPath: IndexPath) {
-        let entry = allEntries()[indexPath.row]
-        context.delete(entry)
-        saveContext()
-    }
+//    func deleteEntry(at indexPath: IndexPath) {
+//        let entry = allEntries()[indexPath.row]
+//        context.delete(entry)
+//        saveContext()
+//    }
     
     func delete(_ entry: JournalEntry) {
         let context = context
@@ -65,10 +65,13 @@ class EntryManager {
         saveContext()
     }
     
-    func updateEntry(_ entry: JournalEntry, title: String, body: String) {
+    func updateEntry(_ entry: JournalEntry, title: String, body: String, photo: Data?) {
 
            entry.title = title
         entry.body = body
+        if let photo = photo {
+            entry.photo = photo
+        }
 
            do {
                try context.save()
