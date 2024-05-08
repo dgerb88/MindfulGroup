@@ -73,19 +73,19 @@ class MeditationSecondViewControllerTests: XCTestCase {
         sut.didFinishMeditation = true
         sut.pauseTimeButton(UIButton())
         XCTAssertFalse(sut.didFinishMeditation)
-        XCTAssertEqual(sut.timeLabelButton.currentImage, UIImage(systemName: "pause.fill"))
+        XCTAssertEqual(sut.playPauseButton.currentImage, UIImage(systemName: "pause.fill"))
         
         // Test when hasStarted is true
         sut.hasStarted = true
         sut.pauseTimeButton(UIButton())
         XCTAssertNil(sut.timer)
-        XCTAssertEqual(sut.timeLabelButton.currentImage, UIImage(systemName: "play.fill"))
+        XCTAssertEqual(sut.playPauseButton.currentImage, UIImage(systemName: "play.fill"))
         
         // Test when hasStarted is false
         sut.hasStarted = false
         sut.pauseTimeButton(UIButton())
         XCTAssertNotNil(sut.timer)
         XCTAssertNotNil(sut.audioPlayer)
-        XCTAssertEqual(sut.timeLabelButton.currentImage, UIImage(systemName: "pause.fill"))
+        XCTAssertEqual(sut.playPauseButton.currentImage, UIImage(systemName: "pause.fill"))
     }
 }

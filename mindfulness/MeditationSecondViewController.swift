@@ -11,7 +11,7 @@ import MediaPlayer
 
 class MeditationSecondViewController: UIViewController {
     
-    @IBOutlet weak var timeLabelButton: UIButton!
+    @IBOutlet weak var playPauseButton: UIButton!
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var congratulationsLabel: UILabel!
     
@@ -42,11 +42,14 @@ class MeditationSecondViewController: UIViewController {
         imageView.image = UIImage(named: environment ?? "Evil washing machine")
         
         // Set content mode to scale aspect fill
-        imageView.contentMode = .scaleAspectFill
+        if environment == "Pokemon" {
+            imageView.contentMode = .scaleAspectFit
+        } else {
+            imageView.contentMode = .scaleAspectFill
+        }
         // Add the image view to the view hierarchy
         self.view.addSubview(imageView)
         self.view.sendSubviewToBack(imageView)
-        
         
         progressView.progress = progress
         startProgressTimer()
@@ -56,9 +59,19 @@ class MeditationSecondViewController: UIViewController {
         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateProgress), userInfo: nil, repeats: true)
         playSound()
         hasStarted = true
-        progressView.alpha = 0.6
-        timeLabel.alpha = 0.6
-        congratulationsLabel.alpha = 0
+        
+        UIView.animate(withDuration: 0.3) {
+            self.progressView.alpha = 0.6
+            self.timeLabel.alpha = 0.6
+            self.congratulationsLabel.alpha = 0
+        }
+        if environment == "Pokemon" {
+            progressView.alpha = 0
+            timeLabel.alpha = 0
+            congratulationsLabel.alpha = 0
+            playPauseButton.alpha = 0
+        }
+        
     }
     
     func stopProgressTimer() {
@@ -114,20 +127,24 @@ class MeditationSecondViewController: UIViewController {
     
     @objc func updateProgress() {
         timeCount += 1
-        progress = Float(timeCount) / (Float(time!) * 60)
+        progress = Float(timeCount) / (Float(time ?? 1) * 60)
         progressView.progress = progress
         let countDown = (time! * 60) - timeCount
         let formatted = formatTimeCount(countDown)
         timeLabel.text = "\(formatted.0):\(formatted.1)"
         if progress >= 1.0 {
-            progressView.alpha = 0
-            timeLabel.alpha = 0
-            congratulationsLabel.alpha = 1
-            congratulationsLabel.layer.cornerRadius = 15
-            congratulationsLabel.layer.masksToBounds = true
+            UIView.animate(withDuration: 0.3) {
+                self.progressView.alpha = 0
+                self.timeLabel.alpha = 0
+                self.congratulationsLabel.alpha = 0.6
+                self.congratulationsLabel.layer.cornerRadius = 15
+                self.congratulationsLabel.layer.masksToBounds = true
+            }
+            let systemSoundId: SystemSoundID = 1111
+            AudioServicesPlaySystemSound(systemSoundId)
             stopProgressTimer()
             didFinishMeditation = true
-            timeLabelButton.setImage(UIImage(systemName: "play.fill"), for: .normal)
+            playPauseButton.setImage(UIImage(systemName: "play.fill"), for: .normal)
             timeCount = 0
             progress = 0
             time = startTime
@@ -140,12 +157,12 @@ class MeditationSecondViewController: UIViewController {
     @IBAction func pauseTimeButton(_ sender: Any) {
         if didFinishMeditation {
             startProgressTimer()
-            timeLabelButton.setImage(UIImage(systemName: "pause.fill"), for: .normal)
+            playPauseButton.setImage(UIImage(systemName: "pause.fill"), for: .normal)
             didFinishMeditation = false
         } else {
             if hasStarted {
                 //Pause timer
-                timeLabelButton.setImage(UIImage(systemName: "play.fill"), for: .normal)
+                playPauseButton.setImage(UIImage(systemName: "play.fill"), for: .normal)
                 pauseProgressTimer()
                 hasStarted.toggle()
                 print("pause please")
@@ -153,7 +170,7 @@ class MeditationSecondViewController: UIViewController {
                 timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateProgress), userInfo: nil, repeats: true)
                 audioPlayer?.setVolume(1, fadeDuration: 1)
                 audioPlayer?.play()
-                timeLabelButton.setImage(UIImage(systemName: "pause.fill"), for: .normal)
+                playPauseButton.setImage(UIImage(systemName: "pause.fill"), for: .normal)
                 hasStarted.toggle()
                 print("start again")
             }

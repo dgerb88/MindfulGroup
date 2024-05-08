@@ -62,7 +62,7 @@
         <!--Home-->
         <scene sceneID="InD-ug-PPP">
             <objects>
-                <viewController title="Home" id="DE8-LC-oMT" customClass="InitialViewController" customModule="mindfulness" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="InitialViewController" title="Home" id="DE8-LC-oMT" customClass="InitialViewController" customModule="mindfulness" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="LJx-hr-3mJ">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -218,6 +218,18 @@
                                     <constraint firstItem="0HA-RM-og1" firstAttribute="bottom" secondItem="u1b-TV-z85" secondAttribute="bottomMargin" id="asK-in-2f4"/>
                                 </constraints>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yC1-B5-4Bv">
+                                <rect key="frame" x="303" y="724" width="70" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="70" id="UA7-zD-7nf"/>
+                                    <constraint firstAttribute="height" constant="35" id="uQr-2z-xAq"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="       "/>
+                                <connections>
+                                    <segue destination="zUV-Ek-jBy" kind="presentation" modalPresentationStyle="fullScreen" id="BKG-g6-c0E"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="GOt-Qx-xz1"/>
                         <color key="backgroundColor" red="0.59607843140000005" green="0.2156862745" blue="0.39607843139999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -225,10 +237,12 @@
                             <constraint firstItem="sbH-9b-uYX" firstAttribute="top" secondItem="ufP-Ms-cK0" secondAttribute="bottom" constant="8" id="9q1-zO-oMS"/>
                             <constraint firstItem="GOt-Qx-xz1" firstAttribute="trailing" secondItem="u1b-TV-z85" secondAttribute="trailing" constant="16" id="AgO-X7-qqU"/>
                             <constraint firstItem="gxg-w8-reD" firstAttribute="top" secondItem="sbH-9b-uYX" secondAttribute="bottom" constant="57.329999999999998" id="C7z-Kn-UZI"/>
+                            <constraint firstItem="GOt-Qx-xz1" firstAttribute="trailing" secondItem="yC1-B5-4Bv" secondAttribute="trailing" constant="20" id="CJZ-qu-H4V"/>
                             <constraint firstItem="hxK-E3-l9k" firstAttribute="top" secondItem="u1b-TV-z85" secondAttribute="bottom" constant="31" id="EZq-Pg-53c"/>
                             <constraint firstItem="GOt-Qx-xz1" firstAttribute="trailing" secondItem="gxg-w8-reD" secondAttribute="trailing" constant="16" id="NWa-Ml-x7P"/>
                             <constraint firstItem="u1b-TV-z85" firstAttribute="leading" secondItem="GOt-Qx-xz1" secondAttribute="leading" constant="16" id="TLb-km-Lp9"/>
                             <constraint firstItem="hxK-E3-l9k" firstAttribute="leading" secondItem="GOt-Qx-xz1" secondAttribute="leading" constant="16" id="XE3-EV-WG9"/>
+                            <constraint firstItem="GOt-Qx-xz1" firstAttribute="bottom" secondItem="yC1-B5-4Bv" secondAttribute="bottom" constant="10" id="XXY-KB-znB"/>
                             <constraint firstItem="iDj-CJ-kMG" firstAttribute="top" secondItem="hxK-E3-l9k" secondAttribute="bottom" constant="110" id="a9m-bc-8C5"/>
                             <constraint firstItem="gxg-w8-reD" firstAttribute="leading" secondItem="GOt-Qx-xz1" secondAttribute="leading" constant="16" id="alf-TG-WHe"/>
                             <constraint firstItem="ufP-Ms-cK0" firstAttribute="top" secondItem="hxK-E3-l9k" secondAttribute="bottom" constant="91" id="b0p-XX-Web"/>
@@ -246,6 +260,7 @@
                     <connections>
                         <outlet property="DaxButton" destination="gxg-w8-reD" id="qbt-j2-GMh"/>
                         <outlet property="Hstack" destination="sbH-9b-uYX" id="wnT-Ks-qbY"/>
+                        <outlet property="PokemonButton" destination="yC1-B5-4Bv" id="tOR-Ph-FDK"/>
                         <outlet property="angryButton" destination="tZq-CW-cb5" id="RTf-qK-hcO"/>
                         <outlet property="concernedButton" destination="HGA-8e-ErN" id="eRK-HD-4vh"/>
                         <outlet property="happyButton" destination="Pne-JI-qgk" id="bin-TN-sgf"/>
@@ -290,6 +305,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="BKG-g6-c0E"/>
         <segue reference="E4o-sp-QhU"/>
     </inferredMetricsTieBreakers>
     <resources>
