@@ -17,18 +17,18 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0:34" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cp6-pc-dwJ">
-                                <rect key="frame" x="159" y="405" width="75" height="42"/>
+                                <rect key="frame" x="156.66666666666666" y="403.66666666666669" width="80" height="45"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="75" id="RTg-MR-UqP"/>
-                                    <constraint firstAttribute="height" constant="42" id="TPS-Zu-NcL"/>
+                                    <constraint firstAttribute="width" constant="80" id="RTg-MR-UqP"/>
+                                    <constraint firstAttribute="height" constant="45" id="TPS-Zu-NcL"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="32"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MJp-YV-FcI">
-                                <rect key="frame" x="128" y="728.66666666666663" width="137" height="44"/>
+                                <rect key="frame" x="128" y="730.33333333333337" width="137" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="aKh-0G-d4u"/>
                                 </constraints>
@@ -42,7 +42,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jhv-yI-jvu">
-                                <rect key="frame" x="128" y="654.66666666666663" width="137" height="44"/>
+                                <rect key="frame" x="128" y="656.33333333333337" width="137" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="JJY-R6-OfA"/>
                                 </constraints>
