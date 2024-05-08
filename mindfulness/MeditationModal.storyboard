@@ -80,8 +80,8 @@
                     </view>
                     <connections>
                         <outlet property="congratulationsLabel" destination="dmv-jH-GWh" id="eS1-5d-4Hl"/>
+                        <outlet property="playPauseButton" destination="Jhv-yI-jvu" id="fBp-Jj-91Q"/>
                         <outlet property="timeLabel" destination="cp6-pc-dwJ" id="Pzx-sJ-3Qo"/>
-                        <outlet property="timeLabelButton" destination="Jhv-yI-jvu" id="fBp-Jj-91Q"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pfs-Vl-yyi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

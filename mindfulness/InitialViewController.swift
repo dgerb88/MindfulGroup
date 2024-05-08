@@ -12,7 +12,7 @@ class InitialViewController: UIViewController {
     
     @IBOutlet weak var quoteLabelBackground: UIView!
     @IBOutlet weak var quoteLabel: UILabel!
-    let environments = ["Forest", "Waves", "Rain", "Waterfall", "Trickling water"]
+    let environments = ["Forest", "Waves", "Rain", "Waterfall", "Trickling water", "Pokemon"]
     let gradientLayer = CAGradientLayer()
     
     override func viewDidLoad() {
@@ -43,6 +43,7 @@ class InitialViewController: UIViewController {
     @IBOutlet weak var Hstack: UIStackView!
     @IBOutlet weak var DaxButton: UIButton!
     
+    @IBOutlet weak var PokemonButton: UIButton!
     @IBOutlet weak var meganButton: UIButton!
     
     @IBOutlet weak var happyButton: UIButton!
@@ -60,6 +61,10 @@ class InitialViewController: UIViewController {
             destination.environment = environments.randomElement()
         } else if sender as? UIButton == meganButton {
             //Do nothing
+        } else if sender as? UIButton == PokemonButton {
+            let destination = segue.destination as! MeditationSecondViewController
+            destination.time = 2
+            destination.environment = environments.last!
         } else {
             let button = sender as? UIButton
             let destinationNavigationController = segue.destination as! UINavigationController
