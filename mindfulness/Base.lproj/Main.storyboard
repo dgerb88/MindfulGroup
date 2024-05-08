@@ -62,7 +62,7 @@
         <!--Home-->
         <scene sceneID="InD-ug-PPP">
             <objects>
-                <viewController title="Home" id="DE8-LC-oMT" customClass="InitialViewController" customModule="mindfulness" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="InitialViewController" title="Home" id="DE8-LC-oMT" customClass="InitialViewController" customModule="mindfulness" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="LJx-hr-3mJ">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

@@ -47,7 +47,6 @@ class MeditationSecondViewController: UIViewController {
         self.view.addSubview(imageView)
         self.view.sendSubviewToBack(imageView)
         
-        
         progressView.progress = progress
         startProgressTimer()
     }
@@ -56,9 +55,14 @@ class MeditationSecondViewController: UIViewController {
         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateProgress), userInfo: nil, repeats: true)
         playSound()
         hasStarted = true
-        progressView.alpha = 0.6
-        timeLabel.alpha = 0.6
-        congratulationsLabel.alpha = 0
+        
+        UIView.animate(withDuration: 0.3) {
+            self.progressView.alpha = 0.6
+            self.timeLabel.alpha = 0.6
+            self.congratulationsLabel.alpha = 0
+        }
+        
+        
     }
     
     func stopProgressTimer() {
@@ -114,17 +118,20 @@ class MeditationSecondViewController: UIViewController {
     
     @objc func updateProgress() {
         timeCount += 1
-        progress = Float(timeCount) / (Float(time!) * 60)
+        progress = Float(timeCount) / (Float(time ?? 1) * 60)
         progressView.progress = progress
         let countDown = (time! * 60) - timeCount
         let formatted = formatTimeCount(countDown)
         timeLabel.text = "\(formatted.0):\(formatted.1)"
         if progress >= 1.0 {
-            progressView.alpha = 0
-            timeLabel.alpha = 0
-            congratulationsLabel.alpha = 1
-            congratulationsLabel.layer.cornerRadius = 15
-            congratulationsLabel.layer.masksToBounds = true
+            UIView.animate(withDuration: 0.3) {
+                self.progressView.alpha = 0
+                self.timeLabel.alpha = 0
+                self.congratulationsLabel.alpha = 0.6
+                self.congratulationsLabel.layer.cornerRadius = 15
+                self.congratulationsLabel.layer.masksToBounds = true
+            }
+            
             stopProgressTimer()
             didFinishMeditation = true
             timeLabelButton.setImage(UIImage(systemName: "play.fill"), for: .normal)
