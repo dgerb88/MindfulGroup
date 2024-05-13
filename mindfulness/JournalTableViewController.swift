@@ -15,11 +15,13 @@ class JournalTableViewController: UITableViewController, NSFetchedResultsControl
     private var fetchedResultsController: NSFetchedResultsController<JournalEntry>!
     
     @IBOutlet weak var searchBar: UISearchBar!
+    
+    let gradientLayer = CAGradientLayer()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-//        filteredEntries = manager.allEntries()
-//        tableView.reloadData()
+        
+        setupGradientBackground()
         
         let fetchRequest: NSFetchRequest<JournalEntry> = JournalEntry.fetchRequest()
                 fetchRequest.sortDescriptors = [NSSortDescriptor(key: "title", ascending: true)]
@@ -37,6 +39,20 @@ class JournalTableViewController: UITableViewController, NSFetchedResultsControl
                 } catch {
                     print("Error fetching entries: \(error)")
                 }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+//        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+//        navigationController?.navigationBar.shadowImage = UIImage()
+//        navigationController?.navigationBar.isTranslucent = true
+        
+//        let appearance = UINavigationBarAppearance()
+//        appearance.configureWithTransparentBackground()
+//        self.navigationController?.navigationBar.standardAppearance = appearance
+//        self.navigationController?.navigationBar.scrollEdgeAppearance = appearance
+        
     }
 
     // MARK: - Table view data source
@@ -128,7 +144,22 @@ class JournalTableViewController: UITableViewController, NSFetchedResultsControl
     @IBAction func unwindToJournalTableView(segue: UIStoryboardSegue) {
     }
     
-    // MARK: - Navigation
+    func setupGradientBackground() {
+        gradientLayer.frame = view.bounds
+        gradientLayer.colors = [
+            UIColor(hex: "#8F549D")?.cgColor,
+            UIColor(hex: "983765")?.cgColor,
+            UIColor(hex: "#8D331F")?.cgColor,
+            
+        ].compactMap { $0 }  // Ensure all color values are valid
+        gradientLayer.locations = [0.0, 0.8, 1.0]  // Points at which the color changes occur
+        gradientLayer.startPoint = CGPoint(x: 0.5, y: 0.0)  // Middle top
+        
+        gradientLayer.endPoint = CGPoint(x: 0.5, y: 1.0)  // Middle bottom
+        let backgroundView = UIView()
+        backgroundView.layer.insertSublayer(gradientLayer, at: 0)  // Insert the gradient layer behind all other views
+        tableView.backgroundView = backgroundView
+    }
 
 }
 
