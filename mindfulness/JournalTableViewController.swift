@@ -60,17 +60,6 @@ class JournalTableViewController: UITableViewController, NSFetchedResultsControl
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
             return fetchedResultsController.sections?[section].numberOfObjects ?? 0
         }
-
-    
-//    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        let cell = tableView.dequeueReusableCell(withIdentifier: "entryCell", for: indexPath)
-//        
-//        let entry = filteredEntries[indexPath.row]
-//        cell.textLabel?.text = entry.title
-//        cell.detailTextLabel?.text = entry.date?.formatted(date: .complete, time: .complete)
-//
-//        return cell
-//    }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
             let cell = tableView.dequeueReusableCell(withIdentifier: "entryCell", for: indexPath)
