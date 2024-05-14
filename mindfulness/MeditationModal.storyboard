@@ -11,20 +11,24 @@
         <!--Meditation Second View Controller-->
         <scene sceneID="HYI-Dq-hje">
             <objects>
-                <viewController id="G6X-9T-kIb" customClass="MeditationSecondViewController" customModule="mindfulness" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MeditationSecondViewController" id="G6X-9T-kIb" customClass="MeditationSecondViewController" customModule="mindfulness" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="eat-4m-nan">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0:34" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cp6-pc-dwJ">
-                                <rect key="frame" x="162.66666666666666" y="407" width="68" height="38.333333333333314"/>
+                            <label userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0:34" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cp6-pc-dwJ">
+                                <rect key="frame" x="156.66666666666666" y="403.66666666666669" width="80" height="45"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="RTg-MR-UqP"/>
+                                    <constraint firstAttribute="height" constant="45" id="TPS-Zu-NcL"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="32"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MJp-YV-FcI">
-                                <rect key="frame" x="128" y="670" width="137" height="44"/>
+                                <rect key="frame" x="128" y="730.33333333333337" width="137" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="aKh-0G-d4u"/>
                                 </constraints>
@@ -37,18 +41,46 @@
                                     <action selector="donePressed:" destination="G6X-9T-kIb" eventType="touchUpInside" id="atp-YH-dfb"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jhv-yI-jvu">
+                                <rect key="frame" x="128" y="656.33333333333337" width="137" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="JJY-R6-OfA"/>
+                                </constraints>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="gray" image="pause.fill" catalog="system">
+                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="baseBackgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="pauseTimeButton:" destination="G6X-9T-kIb" eventType="touchUpInside" id="Bfs-2v-073"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Congratulations! You finished your meditation!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dmv-jH-GWh">
+                                <rect key="frame" x="16" y="383" width="361" height="86"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="32"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="GbM-L6-RWy"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="Jhv-yI-jvu" firstAttribute="leading" secondItem="GbM-L6-RWy" secondAttribute="leading" constant="128" id="E0S-mR-EcM"/>
+                            <constraint firstItem="MJp-YV-FcI" firstAttribute="top" secondItem="Jhv-yI-jvu" secondAttribute="bottom" constant="30" id="E5i-FW-w4K"/>
                             <constraint firstItem="cp6-pc-dwJ" firstAttribute="centerX" secondItem="eat-4m-nan" secondAttribute="centerX" id="I9f-QJ-uMI"/>
                             <constraint firstItem="GbM-L6-RWy" firstAttribute="trailing" secondItem="MJp-YV-FcI" secondAttribute="trailing" constant="128" id="Jzr-K2-rqc"/>
                             <constraint firstItem="MJp-YV-FcI" firstAttribute="leading" secondItem="GbM-L6-RWy" secondAttribute="leading" constant="128" id="KhM-hB-VgV"/>
                             <constraint firstItem="cp6-pc-dwJ" firstAttribute="centerY" secondItem="eat-4m-nan" secondAttribute="centerY" id="Out-0g-1aC"/>
-                            <constraint firstItem="MJp-YV-FcI" firstAttribute="top" secondItem="cp6-pc-dwJ" secondAttribute="bottom" constant="224.66999999999999" id="hau-CD-vud"/>
+                            <constraint firstItem="Jhv-yI-jvu" firstAttribute="top" secondItem="cp6-pc-dwJ" secondAttribute="bottom" constant="207.66999999999999" id="cQA-Mv-Fsa"/>
+                            <constraint firstItem="GbM-L6-RWy" firstAttribute="trailing" secondItem="Jhv-yI-jvu" secondAttribute="trailing" constant="128" id="st5-Zr-tc9"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="congratulationsLabel" destination="dmv-jH-GWh" id="eS1-5d-4Hl"/>
+                        <outlet property="playPauseButton" destination="Jhv-yI-jvu" id="fBp-Jj-91Q"/>
                         <outlet property="timeLabel" destination="cp6-pc-dwJ" id="Pzx-sJ-3Qo"/>
                     </connections>
                 </viewController>
@@ -58,6 +90,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="pause.fill" catalog="system" width="117" height="128"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

@@ -51,21 +51,30 @@ extension MeditationViewController: UIPickerViewDelegate, UIPickerViewDataSource
         }
     }
     
-    func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         if pickerView == timePicker {
-            selectedTimeValue = pickerView.selectedRow(inComponent: component) + 1
-            return NSAttributedString(string: time[row], attributes: [NSAttributedString.Key.foregroundColor: UIColor.white])
+            selectedTimeValue = row + 1
         } else {
             selectedEnvironmentValue = environments[row]
-            return NSAttributedString(string: environments[row], attributes: [NSAttributedString.Key.foregroundColor: UIColor.white])
         }
     }
+    
+    func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
+        var title = ""
+        if pickerView == timePicker {
+            title = time[row]
+        } else {
+            title = environments[row]
+        }
+        return NSAttributedString(string: title, attributes: [NSAttributedString.Key.foregroundColor: UIColor.white])
+    }
+
     func setupGradientBackground() {
         gradientLayer.frame = view.bounds
         gradientLayer.colors = [
             UIColor(hex: "#8F549D")?.cgColor,
             UIColor(hex: "983765")?.cgColor,
-            UIColor(hex: "#8D331F")?.cgColor,
+            UIColor(hex: "#8D331F")?.cgColor
             
         ].compactMap { $0 }  // Ensure all color values are valid
         gradientLayer.locations = [0.0, 0.8, 1.0]  // Points at which the color changes occur

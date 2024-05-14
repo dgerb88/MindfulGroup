@@ -46,7 +46,7 @@ class AddEditEntryTableViewController: UITableViewController {
         guard let titleTextField = titleTextField.text, let bodyTextView = bodyTextView.text else { return }
         
         if let journalEntry = self.journalEntry {
-            EntryManager.shared.updateEntry(journalEntry, title: titleTextField, body: bodyTextView)
+            EntryManager.shared.updateEntry(journalEntry, title: titleTextField, body: bodyTextView, photo: nil)
         } else {
             EntryManager.shared.createNewEntry(title: titleTextField, body: bodyTextView)
         }
