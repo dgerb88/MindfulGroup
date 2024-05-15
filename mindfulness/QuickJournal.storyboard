@@ -131,7 +131,10 @@
                                     <constraint firstAttribute="width" constant="84" id="7xt-eM-cCk"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Camera"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Camera">
+                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="baseBackgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </buttonConfiguration>
                                 <connections>
                                     <action selector="cameraButtonTapped:" destination="Mic-fx-36J" eventType="touchUpInside" id="tvg-tV-HJD"/>
                                 </connections>
@@ -162,11 +165,13 @@
                     </view>
                     <navigationItem key="navigationItem" id="N62-ki-X4a">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="Rj6-gU-fxU">
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
                                 <action selector="cancelTapped:" destination="Mic-fx-36J" id="I6K-SY-FsG"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="HQa-I5-e35">
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
                                 <segue destination="oP7-JI-Jaz" kind="unwind" identifier="saveUnwind" unwindAction="unwindToJournalTableViewWithSegue:" id="dUc-0w-DXj"/>
                             </connections>

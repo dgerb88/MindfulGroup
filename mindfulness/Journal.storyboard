@@ -59,6 +59,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Journal" id="egF-bd-Jec">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="TKB-XN-tLi">
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
                                 <segue destination="C69-JC-YKk" kind="presentation" id="usk-9l-wuq"/>
                             </connections>
@@ -66,6 +67,7 @@
                     </navigationItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="addButton" destination="TKB-XN-tLi" id="bAn-Kp-hCR"/>
                         <outlet property="searchBar" destination="zGx-oV-qae" id="hUI-gB-qO0"/>
                     </connections>
                 </tableViewController>

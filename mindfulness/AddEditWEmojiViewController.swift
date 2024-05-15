@@ -19,6 +19,8 @@ class AddEditWEmojiViewController: UIViewController, UIImagePickerControllerDele
     
     let imagePicker = UIImagePickerController()
     
+    let gradientLayer = CAGradientLayer()
+    
     var emoji: String?
     var journalEntry: JournalEntry?
     var photo: UIImage?
@@ -34,6 +36,8 @@ class AddEditWEmojiViewController: UIViewController, UIImagePickerControllerDele
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        setupGradientBackground()
         
         imagePicker.delegate = self
         imagePicker.sourceType = .camera
@@ -156,21 +160,20 @@ class AddEditWEmojiViewController: UIViewController, UIImagePickerControllerDele
             dismiss(animated: true, completion: nil)
         }
     
-//    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
-//        let image = info[UIImagePickerController.InfoKey.originalImage.rawValue] as! UIImage
-//        //create and NSTextAttachment and add your image to it.
-//        let attachment = NSTextAttachment()
-//        attachment.image = image
-//        //calculate new size.  (-20 because I want to have a litle space on the right of picture)
-//        let newImageWidth = (bodyTextView.bounds.size.width - 20 )
-//        let scale = newImageWidth/image.size.width
-//        let newImageHeight = image.size.height * scale
-//        //resize this
-//        attachment.bounds = CGRect.init(x: 0, y: 0, width: newImageWidth, height: newImageHeight)
-//        //put your NSTextAttachment into and attributedString
-//        let attString = NSAttributedString(attachment: attachment)
-//        //add this attributed string to the current position.
-//        bodyTextView.textStorage.insert(attString, at: bodyTextView.selectedRange.location)
-//        picker.dismiss(animated: true, completion: nil)
-//    }
+    func setupGradientBackground() {
+        gradientLayer.frame = view.bounds
+        gradientLayer.colors = [
+            UIColor(hex: "#8F549D")?.cgColor,
+            UIColor(hex: "983765")?.cgColor,
+            UIColor(hex: "#8D331F")?.cgColor,
+            
+        ].compactMap { $0 }  // Ensure all color values are valid
+        gradientLayer.locations = [0.0, 0.8, 1.0]  // Points at which the color changes occur
+        gradientLayer.startPoint = CGPoint(x: 0.5, y: 0.0)  // Middle top
+        
+        gradientLayer.endPoint = CGPoint(x: 0.5, y: 1.0)  // Middle bottom
+        let backgroundView = UIView()
+        backgroundView.layer.insertSublayer(gradientLayer, at: 0)  // Insert the gradient layer behind all other views
+//        tableView.backgroundView = backgroundView
+    }
 }
