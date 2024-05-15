@@ -16,6 +16,8 @@ class JournalTableViewController: UITableViewController, NSFetchedResultsControl
     
     @IBOutlet weak var searchBar: UISearchBar!
     
+    @IBOutlet weak var addButton: UIBarButtonItem!
+    
     let gradientLayer = CAGradientLayer()
 
     override func viewDidLoad() {
@@ -24,7 +26,7 @@ class JournalTableViewController: UITableViewController, NSFetchedResultsControl
         setupGradientBackground()
         
         let fetchRequest: NSFetchRequest<JournalEntry> = JournalEntry.fetchRequest()
-                fetchRequest.sortDescriptors = [NSSortDescriptor(key: "title", ascending: true)]
+                fetchRequest.sortDescriptors = [NSSortDescriptor(key: "date", ascending: false)]
 
                 fetchedResultsController = NSFetchedResultsController(
                     fetchRequest: fetchRequest,
