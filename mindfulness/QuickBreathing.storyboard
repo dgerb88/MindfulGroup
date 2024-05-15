@@ -34,8 +34,8 @@
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="sullyTestImage" translatesAutoresizingMaskIntoConstraints="NO" id="dmL-Lf-n7W">
-                                <rect key="frame" x="-294" y="335" width="981" height="643"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="BreathIn" translatesAutoresizingMaskIntoConstraints="NO" id="bEw-jM-tOs">
+                                <rect key="frame" x="0.0" y="87" width="393" height="926"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IdU-6V-DIK">
@@ -62,10 +62,10 @@
                         <color key="backgroundColor" red="0.59607843140000005" green="0.2156862745" blue="0.39607843139999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <connections>
+                        <outlet property="imageViewForBreathing" destination="bEw-jM-tOs" id="FEh-EU-YGg"/>
                         <outlet property="instructionLabel" destination="21v-Am-AEQ" id="DQS-WU-hTX"/>
                         <outlet property="instructionLabelBackground" destination="G93-hv-n66" id="yyD-gC-60R"/>
                         <outlet property="otherInstructionLabelBackground" destination="Q4H-VP-y5I" id="lNF-oD-BeJ"/>
-                        <outlet property="testImageView" destination="dmL-Lf-n7W" id="cD9-DO-ILF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -74,6 +74,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="sullyTestImage" width="860" height="716"/>
+        <image name="BreathIn" width="589.5" height="1278"/>
     </resources>
 </document>

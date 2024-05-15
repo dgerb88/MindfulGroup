@@ -11,7 +11,8 @@ import UIKit
 
 class BreathViewController: UIViewController {
     
-    @IBOutlet weak var testImageView: UIImageView!
+
+    @IBOutlet weak var imageViewForBreathing: UIImageView!
     @IBOutlet weak var instructionLabel: UILabel!
     @IBOutlet weak var instructionLabelBackground: UIView!
     @IBOutlet weak var otherInstructionLabelBackground: UIView!
@@ -19,7 +20,9 @@ class BreathViewController: UIViewController {
     var startAnimation: Bool = false
     var stopAnimation: Bool = false
     let gradientLayer = CAGradientLayer()
-    
+    var hold = UIImage(named: "Hold")
+    var breathOutImage = UIImage(named: "BreathOut")
+    var breathInImage = UIImage(named: "BreathIn")
     
     
     
@@ -69,8 +72,9 @@ class BreathViewController: UIViewController {
     func setupGradientBackground() {
         gradientLayer.frame = view.bounds
         gradientLayer.colors = [
-            UIColor(hex: "#983765")?.cgColor,  // Adjust the hex value as needed (including alpha as FF)
-            UIColor(hex: "#3F0B27")?.cgColor,
+            
+            UIColor(hex: "#8D331F")?.cgColor,  // Adjust the hex value as needed (including alpha as FF)
+            UIColor(hex: "#983765")?.cgColor,
             
         ].compactMap { $0 }  // Ensure all color values are valid
         gradientLayer.locations = [0.0, 0.8, 1.0]  // Points at which the color changes occur
@@ -80,13 +84,13 @@ class BreathViewController: UIViewController {
         view.layer.insertSublayer(gradientLayer, at: 0)  // Insert the gradient layer behind all other views
     }
     func setupInitialShadowState() {
-        testImageView.layer.shadowOpacity = 1
-        testImageView.layer.shadowRadius = 10
-        testImageView.layer.shadowColor = UIColor.systemPink.cgColor
+        imageViewForBreathing.layer.shadowOpacity = 1
+        imageViewForBreathing.layer.shadowRadius = 10
+        imageViewForBreathing.layer.shadowColor = UIColor.systemPink.cgColor
     }
     
     private func resetAnimationState() {
-        testImageView.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
+        imageViewForBreathing.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
         instructionLabel.text = " "
     }
     
@@ -100,11 +104,11 @@ class BreathViewController: UIViewController {
         dismiss(animated: true, completion: nil)
     }
     private func scaleUp() {
-       
+        imageViewForBreathing.image = breathInImage
         if !stopAnimation {
             UIView.animate(withDuration: 6, animations: {
                
-                self.testImageView.transform = CGAffineTransform(scaleX: 1.5, y: 1.5)
+                self.imageViewForBreathing.transform = CGAffineTransform(translationX: 0, y: -100)
                 self.instructionLabel.text = "Breath In"
                 print("Breathin In")
             }) { _ in
@@ -114,12 +118,13 @@ class BreathViewController: UIViewController {
     }
     
     private func holdBreath() {
+        imageViewForBreathing.image = hold
         if !stopAnimation {
             UIView.animate(withDuration: 4, animations: {
-                self.testImageView.layer.shadowOpacity = 1
-                self.testImageView.layer.shadowRadius = 10
-                self.testImageView.layer.shadowColor = UIColor(hex: "#A979DA")?.cgColor
-                self.testImageView.transform = CGAffineTransform(scaleX: 1.49, y: 1.49)
+                self.imageViewForBreathing.layer.shadowOpacity = 1
+                self.imageViewForBreathing.layer.shadowRadius = 10
+                self.imageViewForBreathing.layer.shadowColor = UIColor(hex: "#A979DA")?.cgColor
+                self.imageViewForBreathing.transform = CGAffineTransform(translationX: 0, y: -99)
                 self.instructionLabel.text = "Hold"
                 print("Holding")
             }) { _ in
@@ -130,13 +135,14 @@ class BreathViewController: UIViewController {
     }
     
     private func scaleDown() {
+        imageViewForBreathing.image = breathOutImage
         if !stopAnimation {
             UIView.animate(withDuration: 6, animations: {
                
-                self.testImageView.transform = CGAffineTransform.identity
-                self.testImageView.layer.shadowOpacity = 1
-                self.testImageView.layer.shadowRadius = 10
-                self.testImageView.layer.shadowColor = UIColor(hex: "#CFD7FF")?.cgColor
+                self.imageViewForBreathing.transform = CGAffineTransform.identity
+                self.imageViewForBreathing.layer.shadowOpacity = 1
+                self.imageViewForBreathing.layer.shadowRadius = 10
+                self.imageViewForBreathing.layer.shadowColor = UIColor(hex: "#CFD7FF")?.cgColor
                 self.instructionLabel.text = "Breath Out"
             }) { _ in
                 if self.startAnimation {  // Check if we should repeat

@@ -11,7 +11,7 @@
         <!--Breathing-->
         <scene sceneID="vhW-kb-smM">
             <objects>
-                <viewController id="ywn-1x-StT" sceneMemberID="viewController">
+                <viewController id="ywn-1x-StT" customClass="BreathingViewController" customModule="mindfulness" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="m3I-qU-P7e">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
