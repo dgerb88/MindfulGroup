@@ -155,6 +155,7 @@ class MeditationSecondViewController: UIViewController {
     
     
     @IBAction func pauseTimeButton(_ sender: Any) {
+        playPauseButton.isEnabled = false
         if didFinishMeditation {
             startProgressTimer()
             playPauseButton.setImage(UIImage(systemName: "pause.fill"), for: .normal)
@@ -165,16 +166,15 @@ class MeditationSecondViewController: UIViewController {
                 playPauseButton.setImage(UIImage(systemName: "play.fill"), for: .normal)
                 pauseProgressTimer()
                 hasStarted.toggle()
-                print("pause please")
             } else {
                 timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateProgress), userInfo: nil, repeats: true)
                 audioPlayer?.setVolume(1, fadeDuration: 1)
                 audioPlayer?.play()
                 playPauseButton.setImage(UIImage(systemName: "pause.fill"), for: .normal)
                 hasStarted.toggle()
-                print("start again")
             }
         }
+        playPauseButton.isEnabled = true
     }
     
     
