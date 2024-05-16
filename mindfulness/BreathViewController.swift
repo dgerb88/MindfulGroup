@@ -74,8 +74,8 @@ class BreathViewController: UIViewController {
         gradientLayer.frame = view.bounds
         gradientLayer.colors = [
             
-            UIColor(hex: "#8D331F")?.cgColor,  // Adjust the hex value as needed (including alpha as FF)
-            UIColor(hex: "#983765")?.cgColor,
+            UIColor(hex: "#87CEEB")?.cgColor,  // Adjust the hex value as needed (including alpha as FF)
+            UIColor(hex: "#FFFFFF")?.cgColor,
             
         ].compactMap { $0 }  // Ensure all color values are valid
         gradientLayer.locations = [0.0, 0.8, 1.0]  // Points at which the color changes occur

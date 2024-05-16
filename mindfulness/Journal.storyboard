@@ -3,6 +3,7 @@
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -59,7 +60,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Journal" id="egF-bd-Jec">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="TKB-XN-tLi">
-                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="tintColor" name="JournalButtonColor"/>
                             <connections>
                                 <segue destination="C69-JC-YKk" kind="presentation" id="usk-9l-wuq"/>
                             </connections>
@@ -107,6 +108,9 @@
     </inferredMetricsTieBreakers>
     <resources>
         <image name="book.pages" catalog="system" width="107" height="128"/>
+        <namedColor name="JournalButtonColor">
+            <color red="0.92156862745098034" green="0.52941176470588236" blue="0.6470588235294118" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
