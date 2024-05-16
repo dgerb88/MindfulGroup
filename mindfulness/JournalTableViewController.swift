@@ -23,6 +23,8 @@ class JournalTableViewController: UITableViewController, NSFetchedResultsControl
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.hideKeyboardWhenTappedAround()
+        
         setupGradientBackground()
         
         let fetchRequest: NSFetchRequest<JournalEntry> = JournalEntry.fetchRequest()
