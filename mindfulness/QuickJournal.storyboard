@@ -3,6 +3,7 @@
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -165,13 +166,13 @@
                     </view>
                     <navigationItem key="navigationItem" id="N62-ki-X4a">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="Rj6-gU-fxU">
-                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="tintColor" name="JournalButtonColor"/>
                             <connections>
                                 <action selector="cancelTapped:" destination="Mic-fx-36J" id="I6K-SY-FsG"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="HQa-I5-e35">
-                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="tintColor" name="JournalButtonColor"/>
                             <connections>
                                 <segue destination="oP7-JI-Jaz" kind="unwind" identifier="saveUnwind" unwindAction="unwindToJournalTableViewWithSegue:" id="dUc-0w-DXj"/>
                             </connections>
@@ -190,6 +191,9 @@
         </scene>
     </scenes>
     <resources>
+        <namedColor name="JournalButtonColor">
+            <color red="0.92156862745098034" green="0.52941176470588236" blue="0.6470588235294118" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
