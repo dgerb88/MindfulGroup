@@ -8,10 +8,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Yoga View Controller-->
         <scene sceneID="txu-AL-tcd">
             <objects>
-                <viewController id="CfF-Ns-Jud" sceneMemberID="viewController">
+                <viewController id="CfF-Ns-Jud" customClass="YogaViewController" customModule="mindfulness" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3z4-5S-8x0">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -24,7 +24,7 @@
                                     <color key="baseBackgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <segue destination="Y6W-OH-hqX" kind="presentation" modalPresentationStyle="fullScreen" id="RvE-rL-w3V"/>
+                                    <segue destination="Y6W-OH-hqX" kind="show" identifier="TrianglePoseSegue" id="RvE-rL-w3V"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j5z-do-c4P">
@@ -35,7 +35,7 @@
                                     <color key="baseBackgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <segue destination="Y6W-OH-hqX" kind="presentation" modalPresentationStyle="fullScreen" id="DmJ-n1-Xjf"/>
+                                    <segue destination="Y6W-OH-hqX" kind="show" identifier="TreePoseSegue" id="DmJ-n1-Xjf"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lZW-tN-QYZ">
@@ -46,7 +46,7 @@
                                     <color key="baseBackgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <segue destination="Y6W-OH-hqX" kind="presentation" modalPresentationStyle="fullScreen" id="ogO-yx-6fk"/>
+                                    <segue destination="Y6W-OH-hqX" kind="show" identifier="WarriorTwoSegue" id="ogO-yx-6fk"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8a7-7g-Hab">
@@ -57,7 +57,7 @@
                                     <color key="baseBackgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <segue destination="Y6W-OH-hqX" kind="presentation" modalPresentationStyle="fullScreen" id="wyq-H7-DCZ"/>
+                                    <segue destination="Y6W-OH-hqX" kind="show" identifier="ChildPoseSegue" id="wyq-H7-DCZ"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hkC-nX-ham">
@@ -68,18 +68,18 @@
                                     <color key="baseBackgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <segue destination="Y6W-OH-hqX" kind="presentation" modalPresentationStyle="fullScreen" id="aZP-sD-Q26"/>
+                                    <segue destination="Y6W-OH-hqX" kind="show" identifier="MountainPoseSegue" id="aZP-sD-Q26"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wof-ci-gXQ">
                                 <rect key="frame" x="16" y="624" width="361" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Eagle Pose">
+                                <buttonConfiguration key="configuration" style="filled" title="Downward Dog">
                                     <color key="baseBackgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <segue destination="Y6W-OH-hqX" kind="presentation" modalPresentationStyle="fullScreen" id="FJK-BP-sAp"/>
+                                    <segue destination="Y6W-OH-hqX" kind="show" identifier="DownwardDogSegue" id="FJK-BP-sAp"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BXF-Bk-HQO">
@@ -90,7 +90,7 @@
                                     <color key="baseBackgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <segue destination="Y6W-OH-hqX" kind="presentation" modalPresentationStyle="fullScreen" id="EmU-nD-iq3"/>
+                                    <segue destination="Y6W-OH-hqX" kind="show" identifier="CorpsePoseSegue" id="EmU-nD-iq3"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="10r-lI-DQx">
@@ -101,7 +101,7 @@
                                     <color key="baseBackgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <segue destination="Y6W-OH-hqX" kind="presentation" modalPresentationStyle="fullScreen" id="19B-XG-Lvx"/>
+                                    <segue destination="Y6W-OH-hqX" kind="show" identifier="WarriorOneSegue" destinationCreationSelector="warriorOneSegue:" id="19B-XG-Lvx"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -113,12 +113,12 @@
             </objects>
             <point key="canvasLocation" x="-695.41984732824426" y="-27.464788732394368"/>
         </scene>
-        <!--View Controller-->
+        <!--Yoga Instruction View Controller-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
-                <viewController id="Y6W-OH-hqX" sceneMemberID="viewController">
+                <viewController id="Y6W-OH-hqX" customClass="YogaInstructionViewController" customModule="mindfulness" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="M2l-zW-kNY">
@@ -157,6 +157,12 @@
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" red="0.55294120309999995" green="0.23921570180000001" blue="0.39215683940000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </view>
+                    <navigationItem key="navigationItem" id="PEJ-pP-T6Z"/>
+                    <connections>
+                        <outlet property="yogaBreathingText" destination="twc-7x-loR" id="qtU-1B-6vo"/>
+                        <outlet property="yogaInstructionText" destination="dpb-Xs-oJI" id="ZGk-ie-WOl"/>
+                        <outlet property="yogaPoseImageView" destination="BCk-dv-kjf" id="BZG-IO-LVJ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -164,7 +170,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="EmU-nD-iq3"/>
+        <segue reference="19B-XG-Lvx"/>
     </inferredMetricsTieBreakers>
     <resources>
         <systemColor name="systemBackgroundColor">

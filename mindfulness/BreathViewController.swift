@@ -20,9 +20,10 @@ class BreathViewController: UIViewController {
     var startAnimation: Bool = false
     var stopAnimation: Bool = false
     let gradientLayer = CAGradientLayer()
-    var hold = UIImage(named: "Hold")
-    var breathOutImage = UIImage(named: "BreathOut")
-    var breathInImage = UIImage(named: "BreathIn")
+    var startBreathInMonster = UIImage(named: "StartingBreathingMonster")
+    var hold = UIImage(named: "BlueHoldMonster")
+    var breathOutImage = UIImage(named: "BlueBreathOutMonster")
+    var breathInImage = UIImage(named: "BlueBreathingMonster")
     
     
     
@@ -106,7 +107,7 @@ class BreathViewController: UIViewController {
     private func scaleUp() {
         imageViewForBreathing.image = breathInImage
         if !stopAnimation {
-            UIView.animate(withDuration: 6, animations: {
+            UIView.animate(withDuration: 4, animations: {
                
                 self.imageViewForBreathing.transform = CGAffineTransform(translationX: 0, y: -100)
                 self.instructionLabel.text = "Breath In"
@@ -120,7 +121,7 @@ class BreathViewController: UIViewController {
     private func holdBreath() {
         imageViewForBreathing.image = hold
         if !stopAnimation {
-            UIView.animate(withDuration: 4, animations: {
+            UIView.animate(withDuration: 7, animations: {
                 self.imageViewForBreathing.layer.shadowOpacity = 1
                 self.imageViewForBreathing.layer.shadowRadius = 10
                 self.imageViewForBreathing.layer.shadowColor = UIColor(hex: "#A979DA")?.cgColor
@@ -137,7 +138,7 @@ class BreathViewController: UIViewController {
     private func scaleDown() {
         imageViewForBreathing.image = breathOutImage
         if !stopAnimation {
-            UIView.animate(withDuration: 6, animations: {
+            UIView.animate(withDuration: 8, animations: {
                
                 self.imageViewForBreathing.transform = CGAffineTransform.identity
                 self.imageViewForBreathing.layer.shadowOpacity = 1
