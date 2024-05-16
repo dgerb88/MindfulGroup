@@ -66,7 +66,7 @@ extension MeditationViewController: UIPickerViewDelegate, UIPickerViewDataSource
         } else {
             title = environments[row]
         }
-        return NSAttributedString(string: title, attributes: [NSAttributedString.Key.foregroundColor: UIColor.white])
+        return NSAttributedString(string: title, attributes: [NSAttributedString.Key.foregroundColor: UIColor.black])
     }
 
     func setupGradientBackground() {
