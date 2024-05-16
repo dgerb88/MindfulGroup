@@ -128,9 +128,9 @@ class AddEditWEmojiViewController: UIViewController, UIImagePickerControllerDele
     func setupGradientBackground() {
         gradientLayer.frame = view.bounds
         gradientLayer.colors = [
-            UIColor(hex: "#8F549D")?.cgColor,
+            UIColor(hex: "#87CEEB")?.cgColor,
             UIColor(hex: "983765")?.cgColor,
-            UIColor(hex: "#8D331F")?.cgColor,
+            UIColor(hex: "#FFFFFF")?.cgColor,
         ].compactMap { $0 }
         gradientLayer.locations = [0.0, 0.8, 1.0]
         gradientLayer.startPoint = CGPoint(x: 0.5, y: 0.0)

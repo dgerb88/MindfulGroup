@@ -72,9 +72,9 @@ extension MeditationViewController: UIPickerViewDelegate, UIPickerViewDataSource
     func setupGradientBackground() {
         gradientLayer.frame = view.bounds
         gradientLayer.colors = [
-            UIColor(hex: "#8F549D")?.cgColor,
+            UIColor(hex: "#87CEEB")?.cgColor,
             UIColor(hex: "983765")?.cgColor,
-            UIColor(hex: "#8D331F")?.cgColor
+            UIColor(hex: "#FFFFFF")?.cgColor
             
         ].compactMap { $0 }  // Ensure all color values are valid
         gradientLayer.locations = [0.0, 0.8, 1.0]  // Points at which the color changes occur
