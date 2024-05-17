@@ -32,7 +32,7 @@ class AddEditWEmojiViewController: UIViewController, UIImagePickerControllerDele
         if let journalEntry = self.journalEntry {
             titleTextField.text = journalEntry.title
             bodyTextView.text = journalEntry.body
-            if let photo = journalEntry.photo {
+            if journalEntry.photo != nil {
                 imageView.image = UIImage(data: journalEntry.photo!)
             }
             title = "Edit Entry"
