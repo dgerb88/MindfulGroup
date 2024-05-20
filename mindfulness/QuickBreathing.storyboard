@@ -34,8 +34,8 @@
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="BreathIn" translatesAutoresizingMaskIntoConstraints="NO" id="bEw-jM-tOs">
-                                <rect key="frame" x="0.0" y="87" width="393" height="926"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="StartingBreathingMonster" translatesAutoresizingMaskIntoConstraints="NO" id="bEw-jM-tOs">
+                                <rect key="frame" x="0.0" y="104" width="393" height="875"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IdU-6V-DIK">
@@ -74,6 +74,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="BreathIn" width="589.5" height="1278"/>
+        <image name="StartingBreathingMonster" width="1179" height="2556"/>
     </resources>
 </document>
